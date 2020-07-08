@@ -225,7 +225,7 @@ bool NexRtc::read_rtc_time(char *time,uint32_t len)
     cmd = "";
     cmd = "get rtc1";
     sendCommand(cmd.c_str());
-    if(recvRetNumber(&mon))
+    if(!recvRetNumber(&mon))
     {
         return false;
     }    
@@ -241,7 +241,7 @@ bool NexRtc::read_rtc_time(char *time,uint32_t len)
     cmd = "";
     cmd = "get rtc3";
     sendCommand(cmd.c_str());
-    if(recvRetNumber(&hour))
+    if(!recvRetNumber(&hour))
     {
         return false;
     } 
@@ -249,7 +249,7 @@ bool NexRtc::read_rtc_time(char *time,uint32_t len)
     cmd = "";
     cmd = "get rtc4";
     sendCommand(cmd.c_str());
-    if(recvRetNumber(&min))
+    if(!recvRetNumber(&min))
     {
         return false;
     } 
@@ -257,7 +257,7 @@ bool NexRtc::read_rtc_time(char *time,uint32_t len)
     cmd = "";
     cmd = "get rtc5";
     sendCommand(cmd.c_str());
-    if(recvRetNumber(&sec))
+    if(!recvRetNumber(&sec))
     {
         return false;
     }    
@@ -326,7 +326,7 @@ bool NexRtc::read_rtc_time(uint32_t *time,uint32_t len)
     cmd = "";
     cmd = "get rtc2";
     sendCommand(cmd.c_str());
-    if(recvRetNumber(&time_buf[2]))
+    if(!recvRetNumber(&time_buf[2]))
     {
         return false;
     }
