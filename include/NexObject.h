@@ -78,6 +78,13 @@ public: /* methods */
      */
     void printObjInfo(void);
 
+    /**
+     * Hide or Show componen on current page
+     *
+     * @param visible - true Show component, false Hide component 
+     * @return true if success, false for failure
+     */
+    bool setVisible(bool visible)
 
 protected: /* methods */
 

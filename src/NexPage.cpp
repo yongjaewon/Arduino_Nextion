@@ -37,5 +37,20 @@ bool NexPage::show(void)
     cmd += name;
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
+
+
+bool NexPage::setVisibleAll(bool visible)
+{
+    String cmd = String("vis ");
+    cmd += "255,";
+    if (flag)
+    {
+        cmd += "1";
+    } else
+    {
+        cmd += "0";
+    }
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
 }
 
