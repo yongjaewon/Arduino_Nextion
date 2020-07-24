@@ -456,7 +456,7 @@ bool Nextion::nexInit(const uint32_t baud)
     if (m_nexSerialType==HW)
     {
 
-        // try to connect first with default baud as daspaly may have forgot set baud
+        // try to connect first with default baud as display may have forgot set baud
         ((HardwareSerial*)m_nexSerial)->begin(NEX_SERIAL_DEFAULT_BAUD); // default baud, it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
         if(!connect())
         {
