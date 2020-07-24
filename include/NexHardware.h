@@ -232,7 +232,7 @@ virtual ~Nextion();
 * @retval true - success.
 * @retval false - failed. 
 */
-bool recvRetNumber(uint32_t *number, size_t timeout = 100) const final;
+bool recvRetNumber(uint32_t *number, size_t timeout = NEX_TIMEOUT_RETURN) const final;
 
 /* Receive signed number
 *
@@ -242,7 +242,7 @@ bool recvRetNumber(uint32_t *number, size_t timeout = 100) const final;
 * @retval true - success.
 * @retval false - failed. 
 */
-bool recvRetNumber(int32_t *number, size_t timeout = 100) const final;
+bool recvRetNumber(int32_t *number, size_t timeout = NEX_TIMEOUT_RETURN) const final;
 
 /* Receive string
 *
@@ -252,7 +252,7 @@ bool recvRetNumber(int32_t *number, size_t timeout = 100) const final;
 * @retval true - success.
 * @retval false - failed. 
 */
-bool recvRetString(String &str, size_t timeout = 100) const final;
+bool recvRetString(String &str, size_t timeout = NEX_TIMEOUT_RETURN) const final;
 
 /* Receive string
 *
@@ -263,7 +263,7 @@ bool recvRetString(String &str, size_t timeout = 100) const final;
 * @retval true - success.
 * @retval false - failed. 
 */
-bool recvRetString(char *buffer, uint16_t &len, size_t timeout = 100) const final;
+bool recvRetString(char *buffer, uint16_t &len, size_t timeout = NEX_TIMEOUT_RETURN) const final;
 
 /* Send Command to device
 *
@@ -312,7 +312,7 @@ bool recvCommand(const uint8_t command, size_t timeout) const  final;
  * @retval false - failed. 
  *
  */
-bool recvRetCommandFinished(size_t timeout = 200) const final;
+bool recvRetCommandFinished(size_t timeout = NEX_TIMEOUT_COMMAND) const final;
 
 /*
  * Transpared data mode setup successfully 
@@ -323,7 +323,7 @@ bool recvRetCommandFinished(size_t timeout = 200) const final;
  * @retval false - failed. 
  *
  */
-bool RecvTransparendDataModeReady(size_t timeout = 400) const final;
+bool RecvTransparendDataModeReady(size_t timeout = NEX_TIMEOUT_TRANSPARENT_DATA_MODE) const final;
 
 /*
  * Transpared data mode finished 
@@ -334,7 +334,7 @@ bool RecvTransparendDataModeReady(size_t timeout = 400) const final;
  * @retval false - failed. 
  *
  */
-bool RecvTransparendDataModeFinished(size_t timeout = 200) const final;
+bool RecvTransparendDataModeFinished(size_t timeout = NEX_TIMEOUT_COMMAND) const final;
 
 /**
  * Init Nextion connection.
@@ -343,7 +343,7 @@ bool RecvTransparendDataModeFinished(size_t timeout = 200) const final;
  * 
  * @return true if success, false for failure. 
  */
-bool nexInit(const uint32_t baud=9600);
+bool nexInit(const uint32_t baud = STD_SERIAL_DEFAULT_BAUD);
 
 /**
  * current baud value

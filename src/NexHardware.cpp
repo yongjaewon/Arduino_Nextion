@@ -452,10 +452,12 @@ bool Nextion::RecvTransparendDataModeFinished(size_t timeout) const
 
 bool Nextion::nexInit(const uint32_t baud)
 {
-    m_baud=9600;
+    m_baud=STD_SERIAL_DEFAULT_BAUD;
     if (m_nexSerialType==HW)
     {
-        ((HardwareSerial*)m_nexSerial)->begin(9600); // default baud, it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
+
+        // try to connect first with default baud as daspaly may have forgot set baud
+        ((HardwareSerial*)m_nexSerial)->begin(STD_SERIAL_DEFAULT_BAUD); // default baud, it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
         if(!connect())
         {
             if(!findBaud(m_baud))
@@ -463,8 +465,9 @@ bool Nextion::nexInit(const uint32_t baud)
                 return false;
             }
         }
-        if(baud!=9600)
+        if(baud!=STD_SERIAL_DEFAULT_BAUD)
         {
+            // change baud to wanted
             char cmd[14];
             sprintf(cmd,"baud=%lu",(unsigned long)baud);
             sendCommand(cmd);
@@ -480,7 +483,8 @@ bool Nextion::nexInit(const uint32_t baud)
 #ifdef NEX_ENABLE_SW_SERIAL   
     if (m_nexSerialType==SW)
     {
-        ((SoftwareSerial*)m_nexSerial)->begin(9600); // default baud, it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
+        // try to connect first with default baud as daspaly may have forgot set baud
+        ((SoftwareSerial*)m_nexSerial)->begin(STD_SERIAL_DEFAULT_BAUD); // default baud, it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
         if(!connect())
         {
             if(!findBaud(m_baud))
@@ -488,8 +492,9 @@ bool Nextion::nexInit(const uint32_t baud)
                 return false;
             }
         }
-        if(baud!=9600)
+        if(baud!=STD_SERIAL_DEFAULT_BAUD)
         {
+            // change baud to wanted
             char cmd[14];
             sprintf(cmd,"baud=%lu",(unsigned long)baud);
             sendCommand(cmd);
