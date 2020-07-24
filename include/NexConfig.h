@@ -31,7 +31,7 @@
  * If changing this value check that vakue is the same as factory set default baud in the used display.
  * 
 */
-#define STD_SERIAL_DEFAULT_BAUD 9600
+#define NEX_SERIAL_DEFAULT_BAUD 9600
 
 /**
  * Define standard (dafault) or fast timeout,  you may use fast timeout in case of baudrate higher than 115200

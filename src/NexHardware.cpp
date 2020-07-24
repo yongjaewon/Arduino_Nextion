@@ -452,12 +452,12 @@ bool Nextion::RecvTransparendDataModeFinished(size_t timeout) const
 
 bool Nextion::nexInit(const uint32_t baud)
 {
-    m_baud=STD_SERIAL_DEFAULT_BAUD;
+    m_baud=NEX_SERIAL_DEFAULT_BAUD;
     if (m_nexSerialType==HW)
     {
 
         // try to connect first with default baud as daspaly may have forgot set baud
-        ((HardwareSerial*)m_nexSerial)->begin(STD_SERIAL_DEFAULT_BAUD); // default baud, it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
+        ((HardwareSerial*)m_nexSerial)->begin(NEX_SERIAL_DEFAULT_BAUD); // default baud, it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
         if(!connect())
         {
             if(!findBaud(m_baud))
@@ -465,7 +465,7 @@ bool Nextion::nexInit(const uint32_t baud)
                 return false;
             }
         }
-        if(baud!=STD_SERIAL_DEFAULT_BAUD)
+        if(baud!=NEX_SERIAL_DEFAULT_BAUD)
         {
             // change baud to wanted
             char cmd[14];
@@ -484,7 +484,7 @@ bool Nextion::nexInit(const uint32_t baud)
     if (m_nexSerialType==SW)
     {
         // try to connect first with default baud as daspaly may have forgot set baud
-        ((SoftwareSerial*)m_nexSerial)->begin(STD_SERIAL_DEFAULT_BAUD); // default baud, it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
+        ((SoftwareSerial*)m_nexSerial)->begin(NEX_SERIAL_DEFAULT_BAUD); // default baud, it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
         if(!connect())
         {
             if(!findBaud(m_baud))
@@ -492,7 +492,7 @@ bool Nextion::nexInit(const uint32_t baud)
                 return false;
             }
         }
-        if(baud!=STD_SERIAL_DEFAULT_BAUD)
+        if(baud!=NEX_SERIAL_DEFAULT_BAUD)
         {
             // change baud to wanted
             char cmd[14];

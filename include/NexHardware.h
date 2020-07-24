@@ -343,7 +343,7 @@ bool RecvTransparendDataModeFinished(size_t timeout = NEX_TIMEOUT_COMMAND) const
  * 
  * @return true if success, false for failure. 
  */
-bool nexInit(const uint32_t baud = STD_SERIAL_DEFAULT_BAUD);
+bool nexInit(const uint32_t baud = NEX_SERIAL_DEFAULT_BAUD);
 
 /**
  * current baud value
