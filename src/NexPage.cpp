@@ -43,10 +43,11 @@ bool NexPage::setVisibleAll(bool visible)
 {
     String cmd = String("vis ");
     cmd += "255,";
-    if (flag)
+    if(visible)
     {
         cmd += "1";
-    } else
+    }
+    else
     {
         cmd += "0";
     }
