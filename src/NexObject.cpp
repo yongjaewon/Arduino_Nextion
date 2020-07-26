@@ -96,7 +96,7 @@ void NexObject::printObjInfo(void)
     {
         dbSerialPrint("(null)");
     }    
-    if (_name)
+    if(_name)
     {
         dbSerialPrint(_name);
     }
@@ -112,10 +112,11 @@ bool NexObject::setVisible(bool visible)
     String cmd = String("vis ");
     cmd += __name;
     cmd += ",";
-    if (flag)
+    if(visible)
     {
         cmd += "1";
-    } else
+    }
+    else
     {
         cmd += "0";
     }
