@@ -9,7 +9,7 @@
  * @date    2015/7/10
  * @updated 2016/12/25 bring HMI up to v0.32 to avoid too old issues
  * @convert by Patrick Martin, no other changes made
- * @author Jyrki Berg 2/27/2019 (https://github.com/jyberg)
+ * @author Jyrki Berg 7/28/2020 (https://github.com/jyberg)
  *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
@@ -18,12 +18,10 @@
  * published by the Free Software Foundation; either version 2 of
  * the License, or (at your option) any later version.
  * 
- * @copyright 2019 Jyrki Berg
+ * @copyright 2020 Jyrki Berg
  * 
  */
 #include <SoftwareSerial.h>
-
-#define DEBUG_SERIAL_ENABLE
 
 #include "Nextion.h"
 
