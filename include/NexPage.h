@@ -45,10 +45,9 @@ public: /* methods */
      *
      * @param nextion - nextion interface
      * @param pid - page id. 
-     * @param cid - component id.    
      * @param name - pointer to an unique name in range of all components.
      */
-    NexPage(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name);
+    NexPage(const Nextion *nextion, uint8_t pid, const char *name);
     
     /**
      * Show itself. 
