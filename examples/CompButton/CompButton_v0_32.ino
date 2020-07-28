@@ -23,27 +23,35 @@
  */
 #include <SoftwareSerial.h>
 
-//#define DEBUG_SERIAL_ENABLE
+#define DEBUG_SERIAL_ENABLE
 
 #include "Nextion.h"
 
-
-//SoftwareSerial mySerial(D2, D1); // RX, TX
+#ifdef ESP8266
+// esp8266 / NodeMCU software serial ports
+SoftwareSerial mySerial(D2, D1); // RX, TX
+#else
+SoftwareSerial mySerial(3,2); // RX, TX
+#endif
 
 /*
 * Declare Nextion instance
 */
-//Nextion *next = Nextion::GetInstance(mySerial);
-//Nextion *next = Nextion::GetInstance(Serial);
+Nextion *next = Nextion::GetInstance(mySerial); // software serial
+//Nextion *next = Nextion::GetInstance(Serial); // HW serial
 
 
 /*
- * Declare a button object [page id:0,component id:1, component name: "b0"]. 
+ * Declare a main page object [nextion instance, page id:0, page name: "page0"]. 
  */
-//NexButton b0(next, 0, 1, "b0");
-NexButton b0( 0, 1, "b0");
+NexPage p0(next, 0, "page0");
 
-char buffer[100] = {0};
+/*
+ * Declare a button object [nextion instance, page id:0,component id:1, component name: "b0", optional page]. 
+ */
+NexButton b0( next, 0, 1, "b0", &p0);
+
+
 
 /*
  * Register a button object to the touch event list.  
@@ -54,6 +62,8 @@ NexTouch *nex_listen_list[] =
     NULL
 };
 
+char buffer[100] = {0};
+
 /*
  * Button component pop callback function. 
  * In this example,the button's text value will plus one every time when it is released. 
@@ -62,38 +72,38 @@ void b0PopCallback(void *ptr)
 {
     uint16_t len;
     uint16_t number;
-    dbSerialPrintln("b0PopCallback");
     buffer[0]= 0;
 
     /* Get the text value of button component [the value is string type]. */
     len = sizeof(buffer);
     if(b0.getText(buffer, len ))
-    {        
+    {
+        // increment button value
         number = atoi(buffer);
         number += 1;
 
-        memset(buffer, 0, sizeof(buffer));
         itoa(number, buffer, 10);
 
         /* Set the text value of button component [the value is string type]. */
         b0.setText(buffer);
-    }
+    }    
 }
 
 void setup(void)
-{    
+{   
+    // HW serial used for dobug messages
     Serial.begin(9600);
-    /* Set the baudrate which is for debug and communicate with Nextion screen. */
-//    if(!next->nexInit())
-     if(!nexInit(19200))
+
+    // Initialize Nextion connection wiht selected baud in this case 19200
+    if(!next->nexInit(19200))
     {
         Serial.println("nextion init fails"); 
     }
-
     buffer[0]= 0;
 
     /* Register the pop event callback function of the current button component. */
     b0.attachPop(b0PopCallback);
+
     Serial.println("setup done"); 
 }
 
@@ -103,6 +113,5 @@ void loop(void)
      * When a pop or push event occured every time,
      * the corresponding component[right page id and component id] in touch event list will be asked.
      */
-//    next->nexLoop(nex_listen_list);
-    nexLoop(nex_listen_list);
+    next->nexLoop(nex_listen_list);
 }

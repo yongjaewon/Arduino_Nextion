@@ -55,22 +55,24 @@ bool recvRetNumber(int32_t *number, size_t timeout = 100) const final;
 *
 * @param string - received value
 * @param timeout - set timeout time.
+* @param start_flag - is str start flag (0x70) expected, default falue true
 *
 * @retval true - success.
 * @retval false - failed. 
 */
-virtual bool recvRetString(String &str, size_t timeout = 100) const final;
+virtual bool recvRetString(String &str, size_t timeout = 100, bool start_flag = true) const final;
 
 /* Receive string
 *
 * @param buffer - received value buffer
 * @param le - value buffer size
 * @param timeout - set timeout time.
+* @param start_flag - is str start flag (0x70) expected, default falue true
 *
 * @retval true - success.
 * @retval false - failed. 
 */
-bool recvRetString(char *buffer, uint16_t &len, size_t timeout = 100) const final;
+bool recvRetString(char *buffer, uint16_t &len, size_t timeout = 100, bool start_flag = true) const final;
 
 /* Send Command to device
 *
@@ -99,6 +101,16 @@ void sendRawData(const uint8_t *buf, uint16_t len) const final;
 * parameter raw byte
 */
 void sendRawByte(const uint8_t byte) const final;
+
+/* read Bytes from device
+ * @brief 
+ * 
+ * @param buffer - receive buffer
+ * @param size  - bytes to read
+ * @param timeout  timeout ms
+ * @return size_t read bytes can be less that size (timeout case) 
+ */
+size_t readBytes(uint8_t* buffer, size_t size, size_t timeout =100) const final;
 
 /* Receive command
 *

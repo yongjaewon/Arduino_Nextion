@@ -43,7 +43,7 @@ public:
 * @retval true - success.
 * @retval false - failed. 
 */
-virtual bool recvRetNumber(uint32_t *number, size_t timeout = 100) const =0;
+virtual bool recvRetNumber(uint32_t *number, size_t timeout) const =0;
 
 /* Receive signed number
 *
@@ -53,28 +53,30 @@ virtual bool recvRetNumber(uint32_t *number, size_t timeout = 100) const =0;
 * @retval true - success.
 * @retval false - failed. 
 */
-virtual bool recvRetNumber(int32_t *number, size_t timeout = 100) const =0;
+virtual bool recvRetNumber(int32_t *number, size_t timeout) const =0;
 
 /* Receive string
 *
 * @param string - received value
 * @param timeout - set timeout time.
+* @param start_flag - is str start flag (0x70) expected, default falue true
 *
 * @retval true - success.
 * @retval false - failed. 
 */
-virtual bool recvRetString(String &str, size_t timeout = 100) const =0;
+virtual bool recvRetString(String &str, size_t timeout, bool start_flag) const =0;
 
 /* Receive string
 *
 * @param buffer - received value buffer
 * @param le - value buffer size
 * @param timeout - set timeout time.
+* @param start_flag - is str start flag (0x70) expected, default falue true
 *
 * @retval true - success.
 * @retval false - failed. 
 */
-virtual bool recvRetString(char *buffer, uint16_t &len, size_t timeout = 100) const =0;
+virtual bool recvRetString(char *buffer, uint16_t &len, size_t timeout, bool start_flag) const =0;
 
 /* Send Command to device
 *
@@ -104,6 +106,16 @@ virtual void sendRawData(const uint8_t *buf, uint16_t len) const =0;
 */
 virtual void sendRawByte(const uint8_t byte) const =0;
 
+/* read Bytes from device
+ * @brief 
+ * 
+ * @param buffer - receive buffer
+ * @param size  - bytes to read
+ * @param timeout  timeout ms
+ * @return size_t read bytes can be less that size (timeout case) 
+ */
+virtual size_t readBytes(uint8_t* buffer, size_t size, size_t timeout) const =0;
+
 /* Receive command
 *
 * @param command - command to be received / checked
@@ -123,7 +135,7 @@ virtual bool recvCommand(const uint8_t command, size_t timeout) const =0;
  * @retval false - failed. 
  *
  */
-virtual bool recvRetCommandFinished(size_t timeout = 200) const =0;
+virtual bool recvRetCommandFinished(size_t timeout) const =0;
 
 /*
  * Transpared data mode setup successfully 
@@ -134,7 +146,7 @@ virtual bool recvRetCommandFinished(size_t timeout = 200) const =0;
  * @retval false - failed. 
  *
  */
-virtual bool RecvTransparendDataModeReady(size_t timeout = 400) const =0;
+virtual bool RecvTransparendDataModeReady(size_t timeout) const =0;
 
 /*
  * Transpared data mode finished 
@@ -145,7 +157,7 @@ virtual bool RecvTransparendDataModeReady(size_t timeout = 400) const =0;
  * @retval false - failed. 
  *
  */
-virtual bool RecvTransparendDataModeFinished(size_t timeout = 200) const =0;
+virtual bool RecvTransparendDataModeFinished(size_t timeout) const =0;
 
 /**
  * current baud value

@@ -37,7 +37,7 @@ bool NexPage::show(void)
     cmd += name;
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
-
+}
 
 bool NexPage::setVisibleAll(bool visible)
 {

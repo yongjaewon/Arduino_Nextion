@@ -91,10 +91,11 @@ void NexObject::printObjInfo(void)
     if(_page)
     {
         dbSerialPrint(_page->getObjName());
+        dbSerialPrint(".");
     }
     else
     {
-        dbSerialPrint("(null)");
+        dbSerialPrint("(null).");
     }    
     if(_name)
     {
@@ -110,7 +111,7 @@ void NexObject::printObjInfo(void)
 bool NexObject::setVisible(bool visible)
 {
     String cmd = String("vis ");
-    cmd += __name;
+    cmd += _name;
     cmd += ",";
     if(visible)
     {

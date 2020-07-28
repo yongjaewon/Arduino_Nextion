@@ -121,9 +121,11 @@ bool Nextion::connect()
     sendCommand("");
     sendCommand("connect");
     String resp;
-    recvRetString(resp);
+    recvRetString(resp,NEX_TIMEOUT_RETURN, false);
     if(resp.indexOf("comok") != -1)
     {
+        dbSerialPrint("Nextion device details: ");
+        dbSerialPrintln(resp);
         return true;
     }
     return false;
@@ -153,6 +155,8 @@ bool Nextion::findBaud(uint32_t &baud)
         if(connect())
         {
             baud = baudRates[i];
+            dbSerialPrint("Nextion found baud: ");
+            dbSerialPrintln(baud);
             return true;
         }
     }
@@ -180,7 +184,7 @@ bool Nextion::recvRetNumber(uint32_t *number, size_t timeout) const
     }
 
     m_nexSerial->setTimeout(timeout);
-    if (sizeof(temp) != m_nexSerial->((char *)temp, sizeof(temp)))
+    if (sizeof(temp) != m_nexSerial->readBytes((char *)temp, sizeof(temp)))
     {
         goto __return;
     }
@@ -230,7 +234,6 @@ bool Nextion::recvRetNumber(int32_t *number, size_t timeout) const
         goto __return;
     }
     
-    m_nexSerial->setTimeout(timeout);
     if (sizeof(temp) != m_nexSerial->readBytes((char *)temp, sizeof(temp)))
     {
         goto __return;
@@ -266,20 +269,21 @@ __return:
  * 
  * @param str - save string data. 
  * @param timeout - set timeout time. 
+ * @param start_flag - is str start flag (0x70) expected, default falue true
  *
  * @retval true - success. 
  * @retval false - failed.
  *
  */
-bool Nextion::recvRetString(String &str, size_t timeout) const
+bool Nextion::recvRetString(String &str, size_t timeout, bool start_flag) const
 {
     str = "";
     bool ret{false};
-    bool str_start_flag = false;
+    bool str_start_flag {!start_flag};
     uint8_t cnt_0xff = 0;
     uint8_t c = 0;
-    auto start{millis()};
-    size_t avail{(size_t)nexSerial.available()};
+    uint32_t start{millis()};
+//    size_t avail{(size_t)m_nexSerial->available()};
     while(ret == false && (millis()-start)<timeout)
     {
         while (m_nexSerial->available())
@@ -305,9 +309,11 @@ bool Nextion::recvRetString(String &str, size_t timeout) const
             {
                 str_start_flag = true;
             }
+            yield();
         }
+        delayMicroseconds(20);
+        yield();
     }
-
     dbSerialPrint("recvRetString[");
     dbSerialPrint(str.length());
     dbSerialPrint(",");
@@ -323,15 +329,17 @@ bool Nextion::recvRetString(String &str, size_t timeout) const
  * @param buffer - save string data. 
  * @param len - in buffer len / out saved string len excluding null char. 
  * @param timeout - set timeout time. 
+ * @param start_flag - is str start flag (0x70) expected, default falue true
+ *
  *
  * @retval true - success. 
  * @retval false - failed.  
  *
  */
-bool Nextion::recvRetString(char *buffer, uint16_t &len, size_t timeout) const
+bool Nextion::recvRetString(char *buffer, uint16_t &len, size_t timeout, bool start_flag) const
 {
     String temp;
-    bool ret = recvRetString(temp,timeout);
+    bool ret = recvRetString(temp,timeout, start_flag);
 
     if(ret && len)
     {
@@ -377,15 +385,34 @@ void Nextion::sendRawByte(const uint8_t byte) const
     m_nexSerial->write(&byte, 1);
 }
 
+size_t Nextion::readBytes(uint8_t* buffer, size_t size, size_t timeout) const
+{
+    uint32_t start{millis()};
+    size_t avail{(size_t)m_nexSerial->available()};
+    while(size>avail && (millis()-start)<timeout)
+    {
+        delayMicroseconds(10);
+        yield();
+        avail=m_nexSerial->available();
+    }
+    size_t read=min(size,avail);
+    for(size_t i{read}; i;--i)
+    {
+        *buffer=m_nexSerial->read();
+        ++buffer;
+    }
+    return read;
+}
+
 bool Nextion::recvCommand(const uint8_t command, size_t timeout) const
 {
     bool ret = false;
     uint8_t temp[4] = {0};
-    
-    m_nexSerial->setTimeout(timeout);
-    if (sizeof(temp) != m_nexSerial->readBytes((char *)temp, sizeof(temp)))
+    size_t bytesRead = readBytes((uint8_t *)temp, sizeof(temp), timeout);
+    if (sizeof(temp) != bytesRead)
     {
-        dbSerialPrintln("recv command timeout");
+        dbSerialPrint("recv command timeout: ");
+
         ret = false;
     }
     else
@@ -455,17 +482,17 @@ bool Nextion::nexInit(const uint32_t baud)
     m_baud=NEX_SERIAL_DEFAULT_BAUD;
     if (m_nexSerialType==HW)
     {
-
         // try to connect first with default baud as display may have forgot set baud
-        ((HardwareSerial*)m_nexSerial)->begin(NEX_SERIAL_DEFAULT_BAUD); // default baud, it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
+        ((HardwareSerial*)m_nexSerial)->begin(m_baud); // default baud, it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
         if(!connect())
         {
             if(!findBaud(m_baud))
             {
+                ((HardwareSerial*)m_nexSerial)->begin(NEX_SERIAL_DEFAULT_BAUD);
                 return false;
             }
         }
-        if(baud!=NEX_SERIAL_DEFAULT_BAUD)
+        if(baud!=NEX_SERIAL_DEFAULT_BAUD  || baud!=m_baud)
         {
             // change baud to wanted
             char cmd[14];
@@ -484,15 +511,16 @@ bool Nextion::nexInit(const uint32_t baud)
     if (m_nexSerialType==SW)
     {
         // try to connect first with default baud as daspaly may have forgot set baud
-        ((SoftwareSerial*)m_nexSerial)->begin(NEX_SERIAL_DEFAULT_BAUD); // default baud, it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
+        ((SoftwareSerial*)m_nexSerial)->begin(m_baud); // default baud, it is recommended that do not change defaul baud on Nextion, because it can forgot it on re-start
         if(!connect())
         {
             if(!findBaud(m_baud))
             {
+                ((SoftwareSerial*)m_nexSerial)->begin(NEX_SERIAL_DEFAULT_BAUD);
                 return false;
             }
         }
-        if(baud!=NEX_SERIAL_DEFAULT_BAUD)
+        if(baud!=NEX_SERIAL_DEFAULT_BAUD || baud!=m_baud)
         {
             // change baud to wanted
             char cmd[14];
@@ -508,6 +536,8 @@ bool Nextion::nexInit(const uint32_t baud)
         }
     } 
 #endif
+    dbSerialPrint("Used Nextion baud: ");
+    dbSerialPrintln(m_baud);
     sendCommand("bkcmd=3");
     recvRetCommandFinished();
     sendCommand("page 0");
@@ -527,12 +557,11 @@ void Nextion::nexLoop(NexTouch *nex_listen_list[]) const
     while (m_nexSerial->available())
     {
         __buffer[0] = m_nexSerial->read();
-        m_nexSerial->setTimeout(200);
         switch(__buffer[0])
         {
             case NEX_RET_EVENT_NEXTION_STARTUP:
             {
-                if(5==m_nexSerial->readBytes(&__buffer[1],5))
+                if(5==readBytes(&__buffer[1],5))
                 {
                     if (0x00 == __buffer[1] && 0x00 == __buffer[2] && 0xFF == __buffer[3] && 0xFF == __buffer[4] && 0xFF == __buffer[5])
                     {
@@ -546,7 +575,7 @@ void Nextion::nexLoop(NexTouch *nex_listen_list[]) const
             }
             case NEX_RET_EVENT_TOUCH_HEAD:
             {
-                if(6==m_nexSerial->readBytes(&__buffer[1],6))
+                if(6==readBytes(&__buffer[1],6))
                 {
                     if (0xFF == __buffer[4] && 0xFF == __buffer[5] && 0xFF == __buffer[6])
                     {
@@ -557,7 +586,7 @@ void Nextion::nexLoop(NexTouch *nex_listen_list[]) const
             }
             case NEX_RET_CURRENT_PAGE_ID_HEAD:
             {
-                if(4==m_nexSerial->readBytes(&__buffer[1],4))
+                if(4==readBytes(&__buffer[1],4))
                 {
                     if (0xFF == __buffer[2] && 0xFF == __buffer[3] && 0xFF == __buffer[4])
                     {
@@ -572,7 +601,7 @@ void Nextion::nexLoop(NexTouch *nex_listen_list[]) const
             case NEX_RET_EVENT_POSITION_HEAD:
             case NEX_RET_EVENT_SLEEP_POSITION_HEAD:
             {
-                if(8==m_nexSerial->readBytes(&__buffer[1],8))
+                if(8==readBytes(&__buffer[1],8,200))
                 {                  
                     if (0xFF == __buffer[6] && 0xFF == __buffer[7] && 0xFF == __buffer[8])
                     {
@@ -593,7 +622,7 @@ void Nextion::nexLoop(NexTouch *nex_listen_list[]) const
             case NEX_RET_AUTOMATIC_SLEEP:
             case NEX_RET_AUTOMATIC_WAKE_UP:
             {
-                if(3==m_nexSerial->readBytes(&__buffer[1],3))
+                if(3==readBytes(&__buffer[1],3,200))
                 {
                     if (0xFF == __buffer[1] && 0xFF == __buffer[2] && 0xFF == __buffer[3])
                     {
@@ -629,10 +658,10 @@ void Nextion::nexLoop(NexTouch *nex_listen_list[]) const
             {
                 // unnoun data clean buffer.
                 dbSerialPrint("Unexpected data received hex: ");
-                while (nexSerial.available())
+                while (m_nexSerial->available())
                 {
-                    dbSerialPrintByte(__buffer[0]);
-                    __buffer[0]=nexSerial.read();
+                    dbSerialPrint(__buffer[0]);
+                    __buffer[0]=m_nexSerial->read();
                     yield();
                 }
                 dbSerialPrintln(__buffer[0]);

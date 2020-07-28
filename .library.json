@@ -1,7 +1,6 @@
 {
-  "name":"Enhanced-Nextion-Library",
-  "keywords":
-  [
+  "name": "Enhanced-Nextion-Library",
+  "keywords": [
     "Arduino",
     "NodeMCU",
     "esp8266",
@@ -9,17 +8,15 @@
     "Display",
     "Touch screen"
   ],
-  "description":"Arduino / NodeMcu Library for Nextion displays. Support for multiple connected dispalayse simultaneusly",
-  "authors":
-  [
+  "description": "Arduino / NodeMcu Library for Nextion displays. Support for multiple connected dispalayse simultaneusly",
+  "authors": [
     {
       "name": "Jyrki Berg",
       "url": "https://github.com/jyberg",
       "maintainer": true
     }
   ],
-  "dependencies":
-  [
+  "dependencies": [
     {
       "name": "SoftwareSerial",
       "version": ">=1.0",
@@ -28,16 +25,21 @@
     },
     {
       "name": "EspSoftwareSerial",
-      "version": ">=5.0.4"  
+      "version": ">=5.0.4"
     },
     {
-    "name": "SdFat",
-    "version": ">=1.1.0",
-    "authors": "Bill Greiman",
-    "frameworks": "arduino"
+      "name": "SdFat",
+      "version": ">=1.1.0",
+      "authors": "Bill Greiman",
+      "frameworks": "arduino"
     }
   ],
-  "version":"2.0.0",
-  "frameworks":"arduino",
-  "platforms":"*"
+  "version": "1.1.3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jyberg/Enhanced-Nextion-Library.git",
+    "branch": "Multi-display-support"
+  },
+  "frameworks": "arduino",
+  "platforms": "*"
 }

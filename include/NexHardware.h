@@ -248,22 +248,24 @@ bool recvRetNumber(int32_t *number, size_t timeout = NEX_TIMEOUT_RETURN) const f
 *
 * @param string - received value
 * @param timeout - set timeout time.
+* @param start_flag - is str start flag (0x70) expected, default falue true
 *
 * @retval true - success.
 * @retval false - failed. 
 */
-bool recvRetString(String &str, size_t timeout = NEX_TIMEOUT_RETURN) const final;
+bool recvRetString(String &str, size_t timeout = NEX_TIMEOUT_RETURN, bool start_flag = true) const final;
 
 /* Receive string
 *
 * @param buffer - received value buffer
 * @param len - value buffer size
 * @param timeout - set timeout time.
+* @param start_flag - is str start flag (0x70) expected, default falue true
 *
 * @retval true - success.
 * @retval false - failed. 
 */
-bool recvRetString(char *buffer, uint16_t &len, size_t timeout = NEX_TIMEOUT_RETURN) const final;
+bool recvRetString(char *buffer, uint16_t &len, size_t timeout = NEX_TIMEOUT_RETURN, bool start_flag = true) const final;
 
 /* Send Command to device
 *
@@ -293,6 +295,17 @@ void sendRawData(const uint8_t *buf, uint16_t len) const final;
 */
 void sendRawByte(const uint8_t byte) const final;
 
+
+/* read Bytes from device
+ * @brief 
+ * 
+ * @param buffer - receive buffer
+ * @param size  - bytes to read
+ * @param timeout  timeout ms
+ * @return size_t read bytes can be less that size (timeout case) 
+ */
+size_t readBytes(uint8_t* buffer, size_t size, size_t timeout = NEX_TIMEOUT_RETURN) const final;
+
 /* Receive command
 *
 * @param command - command to be received / checked
@@ -301,7 +314,7 @@ void sendRawByte(const uint8_t byte) const final;
 * @retval true - success.
 * @retval false - failed. 
 */
-bool recvCommand(const uint8_t command, size_t timeout) const  final;
+bool recvCommand(const uint8_t command, size_t timeout = NEX_TIMEOUT_COMMAND) const  final;
 
 /*
  * Command is executed successfully. 

@@ -30,14 +30,14 @@ bool NextionIf::recvRetNumber(int32_t *number, size_t timeout) const
     return m_nextion->recvRetNumber(number, timeout);
 }
 
-bool NextionIf::recvRetString(String &str, size_t timeout) const
+bool NextionIf::recvRetString(String &str, size_t timeout, bool start_flag) const
 {
-    return m_nextion->recvRetString(str, timeout);
+    return m_nextion->recvRetString(str, timeout, start_flag);
 }
 
-bool NextionIf::recvRetString(char *buffer, uint16_t &len, size_t timeout) const
+bool NextionIf::recvRetString(char *buffer, uint16_t &len, size_t timeout, bool start_flag) const
 {
-    return m_nextion->recvRetString(buffer, len, timeout);
+    return m_nextion->recvRetString(buffer, len, timeout, start_flag);
 }
 
 void NextionIf::sendCommand(const char* cmd) const
@@ -61,6 +61,12 @@ void NextionIf::sendRawByte(const uint8_t byte) const
 {
     return m_nextion->sendRawByte(byte);
 }
+
+size_t NextionIf::readBytes(uint8_t* buffer, size_t size, size_t timeout) const
+{
+    return m_nextion->readBytes(buffer, size, timeout);
+}
+
 
 bool NextionIf::recvCommand(const uint8_t command, size_t timeout) const
 {
