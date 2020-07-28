@@ -84,7 +84,7 @@ public: /* methods */
      * @param visible - true Show component, false Hide component 
      * @return true if success, false for failure
      */
-    bool setVisible(bool visible)
+    bool setVisible(bool visible);
 
 protected: /* methods */
 

@@ -63,7 +63,7 @@ public: /* methods */
      * @param visible - true Show components, false Hide components
      * @return true if success, false for failure
      */
-    bool setVisibleAll(bool visible)
+    bool setVisibleAll(bool visible);
 };
 /**
  * @}
