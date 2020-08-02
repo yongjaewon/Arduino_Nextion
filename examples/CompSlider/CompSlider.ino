@@ -67,9 +67,10 @@ NexTouch *nex_listen_list[] =
 void MinCallback(void *ptr)
 {
     uint32_t val;
-    /* Get the state value of dual state button component . */
+    // Get the slider value.
     if(sMin.getValue(&val))
     {
+        // set slider minimun value
         sSlider.setMinval(val);
     }
 }
@@ -81,9 +82,10 @@ void MinCallback(void *ptr)
 void MaxCallback(void *ptr)
 {
     uint32_t val;
-    /* Get the state value of dual state button component . */
+    // Get the slider value.
     if(sMax.getValue(&val))
     {
+        // set slider maximun value
         sSlider.setMaxval(val);
     }
 }
