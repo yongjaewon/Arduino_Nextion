@@ -211,3 +211,31 @@ bool NexSlider::setMinval(uint32_t number)
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
+
+uint32_t NexSlider::Get_background_image_pic(uint32_t *number)
+{
+    String cmd;
+    cmd += "get ";
+    getObjGlobalPageName(cmd);
+    cmd += ".pic";
+    sendCommand(cmd.c_str());
+    return recvRetNumber(number);
+}
+
+bool NexSlider::Set_background_image_pic(uint32_t number)
+{
+    char buf[10] = {0};
+    String cmd;
+    
+    utoa(number, buf, 10);
+    getObjGlobalPageName(cmd);
+    cmd += ".pic=";
+    cmd += buf;
+    sendCommand(cmd.c_str());
+	
+    cmd = "";
+    cmd += "ref ";
+    getObjGlobalPageName(cmd);
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
+}
