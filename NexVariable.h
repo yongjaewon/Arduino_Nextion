@@ -76,9 +76,9 @@ public: /* methods */
      * Get val attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t getValue(int32_t *number);
+    bool getValue(int32_t *number);
 	
     /**
      * Set val attribute of component

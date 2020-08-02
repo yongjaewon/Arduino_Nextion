@@ -101,9 +101,9 @@ public: /* methods */
      * Get tim attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_cycle_tim(uint32_t *number);
+    bool Get_cycle_tim(uint32_t *number);
 
     /**
      * Set tim attribute of component

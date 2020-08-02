@@ -1,6 +1,12 @@
 # Release Notes
 
 --------------------------------------------------------------------------------
+# Release v0.12.00
+- Function return values corrected
+- component refresh removed bacause automatic in case of component variable value change
+- NexSlider bacround image and crop image functions
+- NexObject refresh function
+
 # Release v0.11.10
 - setVisible added for components and setVisibleAll for page
 

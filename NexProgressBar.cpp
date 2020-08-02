@@ -45,7 +45,7 @@ bool NexProgressBar::setValue(uint32_t number)
     return recvRetCommandFinished();
 }
  
-uint32_t NexProgressBar::Get_background_color_bco(uint32_t *number)
+bool NexProgressBar::Get_background_color_bco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -73,7 +73,7 @@ bool NexProgressBar::Set_background_color_bco(uint32_t number)
     return recvRetCommandFinished();
 }
 
-uint32_t NexProgressBar::Get_font_color_pco(uint32_t *number)
+bool NexProgressBar::Get_font_color_pco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";

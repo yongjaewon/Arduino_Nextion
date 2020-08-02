@@ -156,9 +156,9 @@ public: /* methods */
      * Get pic attribute of component
      *
      * @param number - buffer storing data return
-     * @return the length of the data 
+     * @return true if success, false for failure
      */
-    uint32_t Get_background_image_pic(uint32_t *number);	
+    bool Get_background_image_pic(uint32_t *number);	
 
     /**
      * Set pic attribute of component
@@ -166,7 +166,23 @@ public: /* methods */
      * @param number - To set up the data
      * @return true if success, false for failure
      */
-    bool Set_background_image_pic(uint32_t number);		
+    bool Set_background_image_pic(uint32_t number);
+
+    /**
+     * Get crop image picc attribute of component
+     *
+     * @param number - buffer storing data return
+     * @return true if success, false for failure
+     */
+    bool Get_background_image_picc(uint32_t *number);	
+
+    /**
+     * Set crop image picc attribute of component
+     *
+     * @param number - To set up the data
+     * @return true if success, false for failure
+     */
+    bool Set_background_image_picc(uint32_t number);		
 };
 /**
  * @}

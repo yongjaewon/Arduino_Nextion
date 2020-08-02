@@ -64,7 +64,7 @@ bool NexText::appendText(const char *buffer)
     return recvRetCommandFinished();    
 }
 
-uint32_t NexText::Get_background_color_bco(uint32_t *number)
+bool NexText::Get_background_color_bco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -84,15 +84,10 @@ bool NexText::Set_background_color_bco(uint32_t number)
     cmd += ".bco=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd="";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexText::Get_font_color_pco(uint32_t *number)
+bool NexText::Get_font_color_pco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -112,15 +107,10 @@ bool NexText::Set_font_color_pco(uint32_t number)
     cmd += ".pco=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexText::Get_place_xcen(uint32_t *number)
+bool NexText::Get_place_xcen(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -140,15 +130,10 @@ bool NexText::Set_place_xcen(uint32_t number)
     cmd += ".xcen=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexText::Get_place_ycen(uint32_t *number)
+bool NexText::Get_place_ycen(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -168,15 +153,10 @@ bool NexText::Set_place_ycen(uint32_t number)
     cmd += ".ycen=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexText::getFont(uint32_t *number)
+bool NexText::getFont(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -196,15 +176,10 @@ bool NexText::setFont(uint32_t number)
     cmd += ".font=";
     cmd += buf;
     sendCommand(cmd.c_str());
-
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexText::Get_background_crop_picc(uint32_t *number)
+bool NexText::Get_background_crop_picc(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -224,15 +199,10 @@ bool NexText::Set_background_crop_picc(uint32_t number)
     cmd += ".picc=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexText::Get_background_image_pic(uint32_t *number)
+bool NexText::Get_background_image_pic(uint32_t *number)
 {
     String cmd = String("get ");
     getObjGlobalPageName(cmd);

@@ -3,8 +3,13 @@
 # Enhanced Nextion Library
 
 --------------------------------------------------------------------------------
+Jyrki Berg 8/2/2019 (https://github.com/jyberg)
+- Function return values corrected
+- component refresh removed bacause automatic in case of component variable value change
+- NexSlider bacround image and crop image functions
+- NexObject refresh function
 
-Jyrki Berg 7/24/2019 (https://github.com/jyberg)
+Jyrki Berg 7/24/2019
 
 - NexConfig: standard (dafault) or fast timeout,  you may use fast timeout in case of baudrate higher than 115200
 - bug in NexRtc::read_rtc_time() #12 Corrected

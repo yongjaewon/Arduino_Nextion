@@ -40,7 +40,6 @@ bool NexPicture::Set_background_image_pic(uint32_t number)
     getObjGlobalPageName(cmd);
     cmd += ".pic=";
     cmd += buf;
-
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -63,7 +62,6 @@ bool NexPicture::setPic(uint32_t number)
     getObjGlobalPageName(cmd);
     cmd += ".pic=";
     cmd += buf;
-
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }

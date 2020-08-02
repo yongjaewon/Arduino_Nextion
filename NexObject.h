@@ -74,6 +74,13 @@ public: /* methods */
      */
     bool setVisible(bool visible);
 
+    /**
+     * Refresh componen on current page
+     *
+     * @return true if success, false for failure
+     */
+    bool refresh();
+
 protected: /* methods */
 
     /*

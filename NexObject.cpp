@@ -120,3 +120,10 @@ bool NexObject::setVisible(bool visible)
     return recvRetCommandFinished();
 }
 
+bool NexObject::refresh()
+{
+    String cmd = String("ref ");
+    cmd += __name;
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
+}

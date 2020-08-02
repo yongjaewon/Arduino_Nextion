@@ -91,7 +91,7 @@ bool NexUpload::_checkFile(void)
     if(!SD.begin(_SD_chip_select))
     {
         dbSerialPrintln("init sd failed");
-        return 0;
+        return false;
     }
     if(!SD.exists(_file_name))
     {
@@ -102,7 +102,7 @@ bool NexUpload::_checkFile(void)
     dbSerialPrintln("tft file size is:");
     dbSerialPrintln(_undownloadByte);
     dbSerialPrintln("check file ok");
-    return 1;
+    return true;
 }
 
 bool NexUpload::_searchBaudrate(uint32_t baudrate)
@@ -114,9 +114,9 @@ bool NexUpload::_searchBaudrate(uint32_t baudrate)
     this->recvRetString(string);  
     if(string.indexOf("comok") != -1)
     {
-        return 1;
+        return true;
     } 
-    return 0;
+    return false;
 }
 
 void NexUpload::sendCommand(const char* cmd)
@@ -184,9 +184,9 @@ bool NexUpload::_setDownloadBaudrate(uint32_t baudrate)
     this->recvRetString(string,500);  
     if(string.indexOf(0x05) != -1)
     { 
-        return 1;
+        return true;
     } 
-    return 0;
+    return false;
 }
 
 bool NexUpload::_downloadTftFile(void)
@@ -232,9 +232,10 @@ bool NexUpload::_downloadTftFile(void)
         } 
         else
         {
-            return 0;
+            return false;
         }
          --send_timer;
-    }  
+    } 
+    return true;
 }
 

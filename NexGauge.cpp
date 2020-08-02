@@ -45,7 +45,7 @@ bool NexGauge::setValue(uint32_t number)
     return recvRetCommandFinished();
 }
 
-uint32_t NexGauge::Get_background_color_bco(uint32_t *number)
+bool NexGauge::Get_background_color_bco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -65,15 +65,10 @@ bool NexGauge::Set_background_color_bco(uint32_t number)
     cmd += ".bco=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd="";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexGauge::Get_font_color_pco(uint32_t *number)
+bool NexGauge::Get_font_color_pco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -92,16 +87,10 @@ bool NexGauge::Set_font_color_pco(uint32_t number)
     getObjGlobalPageName(cmd);
     cmd += ".pco=";
     cmd += buf;
-    sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexGauge::Get_pointer_thickness_wid(uint32_t *number)
+bool NexGauge::Get_pointer_thickness_wid(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -121,15 +110,10 @@ bool NexGauge::Set_pointer_thickness_wid(uint32_t number)
     cmd += ".wid=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexGauge::Get_background_cropi_picc(uint32_t *number)
+bool NexGauge::Get_background_cropi_picc(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -148,11 +132,6 @@ bool NexGauge::Set_background_crop_picc(uint32_t number)
     getObjGlobalPageName(cmd);
     cmd += ".picc=";
     cmd += buf;
-    sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }

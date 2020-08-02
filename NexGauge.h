@@ -60,9 +60,9 @@ public: /* methods */
      * Get bco attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_background_color_bco(uint32_t *number);
+    bool Get_background_color_bco(uint32_t *number);
 	
     /**
      * Set bco attribute of component
@@ -76,9 +76,9 @@ public: /* methods */
      * Get pco attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_font_color_pco(uint32_t *number);	
+    bool Get_font_color_pco(uint32_t *number);	
 
     /**
      * Set pco attribute of component
@@ -92,9 +92,9 @@ public: /* methods */
      * Get wid attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */	
-    uint32_t Get_pointer_thickness_wid(uint32_t *number);		
+    bool Get_pointer_thickness_wid(uint32_t *number);		
 	
     /**
      * Set wid attribute of component
@@ -108,9 +108,9 @@ public: /* methods */
      * Get picc attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_background_cropi_picc(uint32_t *number);		
+    bool Get_background_cropi_picc(uint32_t *number);		
 	
     /**
      * Set picc attribute of component

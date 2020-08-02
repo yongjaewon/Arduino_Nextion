@@ -64,11 +64,6 @@ bool NexSlider::Set_background_color_bco(uint32_t number)
     cmd += ".bco=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd="";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
@@ -91,11 +86,6 @@ bool NexSlider::Set_font_color_pco(uint32_t number)
     getObjGlobalPageName(cmd);
     cmd += ".pco=";
     cmd += buf;
-    sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -120,11 +110,6 @@ bool NexSlider::Set_pointer_thickness_wid(uint32_t number)
     cmd += ".wid=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
@@ -147,11 +132,6 @@ bool NexSlider::Set_cursor_height_hig(uint32_t number)
     getObjGlobalPageName(cmd);
     cmd += ".hig=";
     cmd += buf;
-    sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -176,11 +156,6 @@ bool NexSlider::setMaxval(uint32_t number)
     cmd += ".maxval=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
@@ -204,15 +179,10 @@ bool NexSlider::setMinval(uint32_t number)
     cmd += ".minval=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexSlider::Get_background_image_pic(uint32_t *number)
+bool NexSlider::Get_background_image_pic(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -232,10 +202,28 @@ bool NexSlider::Set_background_image_pic(uint32_t number)
     cmd += ".pic=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
+    return recvRetCommandFinished();
+}
+
+bool NexSlider::Get_background_image_picc(uint32_t *number)
+{
+    String cmd;
+    cmd += "get ";
     getObjGlobalPageName(cmd);
+    cmd += ".picc";
+    sendCommand(cmd.c_str());
+    return recvRetNumber(number);
+}
+
+bool NexSlider::Set_background_image_picc(uint32_t number)
+{
+    char buf[10] = {0};
+    String cmd;
+    
+    utoa(number, buf, 10);
+    getObjGlobalPageName(cmd);
+    cmd += ".picc=";
+    cmd += buf;
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }

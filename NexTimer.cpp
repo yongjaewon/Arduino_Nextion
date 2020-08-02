@@ -85,7 +85,7 @@ bool NexTimer::disable(void)
     return recvRetCommandFinished();
 }
 
-uint32_t NexTimer::Get_cycle_tim(uint32_t *number)
+bool NexTimer::Get_cycle_tim(uint32_t *number)
 {
     String cmd = String("get ");
     getObjGlobalPageName(cmd);

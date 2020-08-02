@@ -21,7 +21,7 @@ NexCheckbox::NexCheckbox(uint8_t pid, uint8_t cid, const char *name, const NexOb
 {
 }
 
-uint32_t NexCheckbox::getValue(uint32_t *number)
+bool NexCheckbox::getValue(uint32_t *number)
 {
     String cmd = String("get ");
     getObjGlobalPageName(cmd);
@@ -44,7 +44,7 @@ bool NexCheckbox::setValue(uint32_t number)
     return recvRetCommandFinished();
 }
 
-uint32_t NexCheckbox::Get_background_color_bco(uint32_t *number)
+bool NexCheckbox::Get_background_color_bco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -64,15 +64,10 @@ bool NexCheckbox::Set_background_color_bco(uint32_t number)
     cmd += ".bco=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd="";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexCheckbox::Get_font_color_pco(uint32_t *number)
+bool NexCheckbox::Get_font_color_pco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -91,11 +86,6 @@ bool NexCheckbox::Set_font_color_pco(uint32_t number)
     getObjGlobalPageName(cmd);
     cmd += ".pco=";
     cmd += buf;
-    sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }

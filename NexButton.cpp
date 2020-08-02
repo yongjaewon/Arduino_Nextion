@@ -55,7 +55,7 @@ bool NexButton::setText(const char *buffer)
 }
 
 
-uint32_t NexButton::Get_background_color_bco(uint32_t *number)
+bool NexButton::Get_background_color_bco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -75,15 +75,10 @@ bool NexButton::Set_background_color_bco(uint32_t number)
     cmd += ".bco=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd="";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexButton::Get_press_background_color_bco2(uint32_t *number)
+bool NexButton::Get_press_background_color_bco2(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -103,15 +98,10 @@ bool NexButton::Set_press_background_color_bco2(uint32_t number)
     cmd += ".bco2=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd="";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexButton::Get_font_color_pco(uint32_t *number)
+bool NexButton::Get_font_color_pco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -131,15 +121,10 @@ bool NexButton::Set_font_color_pco(uint32_t number)
     cmd += ".pco=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexButton::Get_press_font_color_pco2(uint32_t *number)
+bool NexButton::Get_press_font_color_pco2(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -159,15 +144,10 @@ bool NexButton::Set_press_font_color_pco2(uint32_t number)
     cmd += ".pco2=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexButton::Get_place_xcen(uint32_t *number)
+bool NexButton::Get_place_xcen(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -187,15 +167,10 @@ bool NexButton::Set_place_xcen(uint32_t number)
     cmd += ".xcen=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexButton::Get_place_ycen(uint32_t *number)
+bool NexButton::Get_place_ycen(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -215,15 +190,10 @@ bool NexButton::Set_place_ycen(uint32_t number)
     cmd += ".ycen=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexButton::getFont(uint32_t *number)
+bool NexButton::getFont(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -243,15 +213,10 @@ bool NexButton::setFont(uint32_t number)
     cmd += ".font=";
     cmd += buf;
     sendCommand(cmd.c_str());
-
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexButton::Get_background_cropi_picc(uint32_t *number)
+bool NexButton::Get_background_cropi_picc(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -271,15 +236,10 @@ bool NexButton::Set_background_crop_picc(uint32_t number)
     cmd += ".picc=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexButton::Get_press_background_crop_picc2(uint32_t *number)
+bool NexButton::Get_press_background_crop_picc2(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -299,15 +259,10 @@ bool NexButton::Set_press_background_crop_picc2(uint32_t number)
     cmd += ".picc2=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexButton::Get_background_image_pic(uint32_t *number)
+bool NexButton::Get_background_image_pic(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -327,15 +282,10 @@ bool NexButton::Set_background_image_pic(uint32_t number)
     cmd += ".pic=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexButton::Get_press_background_image_pic2(uint32_t *number)
+bool NexButton::Get_press_background_image_pic2(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -354,11 +304,6 @@ bool NexButton::Set_press_background_image_pic2(uint32_t number)
     getObjGlobalPageName(cmd);
     cmd += ".pic2=";
     cmd += buf;
-    sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }

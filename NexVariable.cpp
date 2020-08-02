@@ -21,7 +21,7 @@ NexVariable::NexVariable(uint8_t pid, uint8_t cid, const char *name, const NexOb
 {
 }
 
-uint32_t NexVariable::getValue(int32_t *number)
+bool NexVariable::getValue(int32_t *number)
 {
     String cmd = String("get ");
     getObjGlobalPageName(cmd);

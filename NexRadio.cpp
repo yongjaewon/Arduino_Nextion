@@ -21,7 +21,7 @@ NexRadio::NexRadio(uint8_t pid, uint8_t cid, const char *name, const NexObject* 
 {
 }
 
-uint32_t NexRadio::getValue(uint32_t *number)
+bool NexRadio::getValue(uint32_t *number)
 {
     String cmd = String("get ");
     getObjGlobalPageName(cmd);
@@ -44,7 +44,7 @@ bool NexRadio::setValue(uint32_t number)
     return recvRetCommandFinished();
 }
 
-uint32_t NexRadio::Get_background_color_bco(uint32_t *number)
+bool NexRadio::Get_background_color_bco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -72,7 +72,7 @@ bool NexRadio::Set_background_color_bco(uint32_t number)
     return recvRetCommandFinished();
 }
 
-uint32_t NexRadio::Get_font_color_pco(uint32_t *number)
+bool NexRadio::Get_font_color_pco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
