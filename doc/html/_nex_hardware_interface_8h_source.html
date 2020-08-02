@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('_nex_hardware_interface_8h_source.html
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;WString.h&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifdef STD_SUPPORT</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifdef ESP8266</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
@@ -116,7 +116,7 @@ $(document).ready(function(){initNavTree('_nex_hardware_interface_8h_source.html
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">* @retval true - success.</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">* @retval false - failed. </span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_nextion_interface.html#a0d0a14a767b850e19e05f5d92fe6bdd5">recvRetNumber</a>(uint32_t *number, uint32_t timeout = 100) <span class="keyword">const</span> =0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_nextion_interface.html#a0471b58fa293fcb236d82c3d903d91d4">recvRetNumber</a>(uint32_t *number, <span class="keywordtype">size_t</span> timeout) =0;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/* Receive signed number</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">*</span></div>
@@ -126,119 +126,132 @@ $(document).ready(function(){initNavTree('_nex_hardware_interface_8h_source.html
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">* @retval true - success.</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">* @retval false - failed. </span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_nextion_interface.html#a0d0a14a767b850e19e05f5d92fe6bdd5">recvRetNumber</a>(int32_t *number, uint32_t timeout = 100) <span class="keyword">const</span> =0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_nextion_interface.html#a0471b58fa293fcb236d82c3d903d91d4">recvRetNumber</a>(int32_t *number, <span class="keywordtype">size_t</span> timeout) =0;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">/* Receive string</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">*</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">* @param string - received value</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">* @param timeout - set timeout time.</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">* @retval true - success.</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">* @retval false - failed. </span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_nextion_interface.html#abbd25ed5a00e81a0aea7096a8cdf7d27">recvRetString</a>(String &amp;str, uint32_t timeout = 100) <span class="keyword">const</span> =0;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">/* Receive string</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">* @param buffer - received value buffer</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">* @param le - value buffer size</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">* @param timeout - set timeout time.</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">* @retval true - success.</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">* @retval false - failed. </span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_nextion_interface.html#abbd25ed5a00e81a0aea7096a8cdf7d27">recvRetString</a>(<span class="keywordtype">char</span> *buffer, uint16_t &amp;len, uint32_t timeout = 100) <span class="keyword">const</span> =0;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">/* Send Command to device</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">* parameter command string</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_nextion_interface.html#a3dfba81dcbba9b636c4c20e98142f37c">sendCommand</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* cmd) <span class="keyword">const</span> =0;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">/* Send Raw data to device</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">* parameter raw data buffer</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#ifdef STD_SUPPORT</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_nextion_interface.html#a113a8fb688d0d5ff65484bf8bc8336da">sendRawData</a>(<span class="keyword">const</span> std::vector&lt;uint8_t&gt; &amp;data) <span class="keyword">const</span> =0;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">/* Send Raw data to device</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">* @param buf - raw data buffer poiter</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">* @param len - raw data buffer pointer</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_nextion_interface.html#a113a8fb688d0d5ff65484bf8bc8336da">sendRawData</a>(<span class="keyword">const</span> uint8_t *buf, uint16_t len) <span class="keyword">const</span> =0;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">/* Send Raw byte to device</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">* parameter raw byte</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_nextion_interface.html#abc966f951fb0eb26687950abc95c43bd">sendRawByte</a>(<span class="keyword">const</span> uint8_t <span class="keywordtype">byte</span>) <span class="keyword">const</span> =0;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">/* Receive command</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">* @param command - command to be received / checked</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">* @param timeout - set timeout time.</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">* @retval true - success.</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">* @retval false - failed. </span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_nextion_interface.html#a3cdd310bf2c17d5e33ee3d56d9eb5f52">recvCommand</a>(<span class="keyword">const</span> uint8_t command, uint32_t timeout) <span class="keyword">const</span> =0;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment"> * Command is executed successfully. </span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment"> * @param timeout - set timeout time.</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment"> * @retval true - success.</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment"> * @retval false - failed. </span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_nextion_interface.html#ab10b4d527df27118998649981e7a50e4">recvRetCommandFinished</a>(uint32_t timeout = 200) <span class="keyword">const</span> =0;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment"> * Transpared data mode setup successfully </span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment"> * @param timeout - set timeout time.</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment"> * @retval true - success.</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment"> * @retval false - failed. </span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_nextion_interface.html#a933cb5e605b39cbb7ca33ad4feb6a774">RecvTransparendDataModeReady</a>(uint32_t timeout = 400) <span class="keyword">const</span> =0;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment"> * Transpared data mode finished </span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment"> * @param timeout - set timeout time.</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment"> * @retval true - success.</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment"> * @retval false - failed. </span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_nextion_interface.html#af2112c27c170ac19d79c81bd0eec04be">RecvTransparendDataModeFinished</a>(uint32_t timeout = 200) <span class="keyword">const</span> =0;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keyword">virtual</span> uint32_t <a class="code" href="class_nextion_interface.html#aaf94d6c3c053b4833fea28be993ce5ea">GetCurrentBaud</a>() <span class="keyword">const</span> =0;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;};</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">* @param start_flag - is str start flag (0x70) expected, default falue true</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">* @retval true - success.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">* @retval false - failed. </span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_nextion_interface.html#a819c48ccca49d2a1aa44e46a0bf9f64d">recvRetString</a>(String &amp;str, <span class="keywordtype">size_t</span> timeout, <span class="keywordtype">bool</span> start_flag) =0;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">/* Receive string</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">* @param buffer - received value buffer</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">* @param le - value buffer size</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">* @param timeout - set timeout time.</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">* @param start_flag - is str start flag (0x70) expected, default falue true</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">* @retval true - success.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">* @retval false - failed. </span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_nextion_interface.html#a819c48ccca49d2a1aa44e46a0bf9f64d">recvRetString</a>(<span class="keywordtype">char</span> *buffer, uint16_t &amp;len, <span class="keywordtype">size_t</span> timeout, <span class="keywordtype">bool</span> start_flag) =0;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">/* Send Command to device</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">* parameter command string</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_nextion_interface.html#a4b9a0834cdebee03aea139f6bc790d4d">sendCommand</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* cmd) =0;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">/* Send Raw data to device</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">* parameter raw data buffer</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#ifdef ESP8266</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_nextion_interface.html#a7f22083248dcc76156a90ff6813f429a">sendRawData</a>(<span class="keyword">const</span> std::vector&lt;uint8_t&gt; &amp;data) =0;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">/* Send Raw data to device</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">* @param buf - raw data buffer poiter</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">* @param len - raw data buffer pointer</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_nextion_interface.html#a7f22083248dcc76156a90ff6813f429a">sendRawData</a>(<span class="keyword">const</span> uint8_t *buf, uint16_t len) =0;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">/* Send Raw byte to device</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">* parameter raw byte</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_nextion_interface.html#a92b2af84c33db66bbf35385c299501cf">sendRawByte</a>(<span class="keyword">const</span> uint8_t <span class="keywordtype">byte</span>) =0;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">/* read Bytes from device</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment"> * @brief </span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"> * </span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"> * @param buffer - receive buffer</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"> * @param size  - bytes to read</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"> * @param timeout  timeout ms</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"> * @return size_t read bytes can be less that size (timeout case) </span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">size_t</span> <a class="code" href="class_nextion_interface.html#ae5a69671ce28fc30188e1d4c76f1e576">readBytes</a>(uint8_t* buffer, <span class="keywordtype">size_t</span> size, <span class="keywordtype">size_t</span> timeout) =0;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">/* Receive command</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">* @param command - command to be received / checked</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">* @param timeout - set timeout time.</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">* @retval true - success.</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">* @retval false - failed. </span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_nextion_interface.html#a3ad8b3db5251be5305129dbe1bbaf0e1">recvCommand</a>(<span class="keyword">const</span> uint8_t command, <span class="keywordtype">size_t</span> timeout) =0;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment"> * Command is executed successfully. </span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment"> * @param timeout - set timeout time.</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment"> * @retval true - success.</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment"> * @retval false - failed. </span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_nextion_interface.html#a1d7c729f014f7435f065585cc7ad4c5c">recvRetCommandFinished</a>(<span class="keywordtype">size_t</span> timeout) =0;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment"> * Transpared data mode setup successfully </span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment"> * @param timeout - set timeout time.</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment"> * @retval true - success.</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment"> * @retval false - failed. </span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_nextion_interface.html#a6b7a51df607099cc028df175d17cf820">RecvTransparendDataModeReady</a>(<span class="keywordtype">size_t</span> timeout) =0;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment"> * Transpared data mode finished </span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment"> * @param timeout - set timeout time.</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment"> * @retval true - success.</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment"> * @retval false - failed. </span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_nextion_interface.html#a51fbdfaf2a7b61b78aa560be9b591cc0">RecvTransparendDataModeFinished</a>(<span class="keywordtype">size_t</span> timeout) =0;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keyword">virtual</span> uint32_t <a class="code" href="class_nextion_interface.html#aed0e7876a55d3ef2a12723467406f11b">GetCurrentBaud</a>() =0;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;};</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_nextion_interface_html_a0d0a14a767b850e19e05f5d92fe6bdd5"><div class="ttname"><a href="class_nextion_interface.html#a0d0a14a767b850e19e05f5d92fe6bdd5">NextionInterface::recvRetNumber</a></div><div class="ttdeci">virtual bool recvRetNumber(uint32_t *number, uint32_t timeout=100) const =0</div></div>
+<div class="ttc" id="aclass_nextion_interface_html_a51fbdfaf2a7b61b78aa560be9b591cc0"><div class="ttname"><a href="class_nextion_interface.html#a51fbdfaf2a7b61b78aa560be9b591cc0">NextionInterface::RecvTransparendDataModeFinished</a></div><div class="ttdeci">virtual bool RecvTransparendDataModeFinished(size_t timeout)=0</div></div>
+<div class="ttc" id="aclass_nextion_interface_html_a4b9a0834cdebee03aea139f6bc790d4d"><div class="ttname"><a href="class_nextion_interface.html#a4b9a0834cdebee03aea139f6bc790d4d">NextionInterface::sendCommand</a></div><div class="ttdeci">virtual void sendCommand(const char *cmd)=0</div></div>
+<div class="ttc" id="aclass_nextion_interface_html_a0471b58fa293fcb236d82c3d903d91d4"><div class="ttname"><a href="class_nextion_interface.html#a0471b58fa293fcb236d82c3d903d91d4">NextionInterface::recvRetNumber</a></div><div class="ttdeci">virtual bool recvRetNumber(uint32_t *number, size_t timeout)=0</div></div>
 <div class="ttc" id="aclass_nextion_interface_html_a71a5caf3fe010525993590d28051050f"><div class="ttname"><a href="class_nextion_interface.html#a71a5caf3fe010525993590d28051050f">NextionInterface::NextionInterface</a></div><div class="ttdeci">NextionInterface()</div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_interface_8h_source.html#l00034">NexHardwareInterface.h:34</a></div></div>
-<div class="ttc" id="aclass_nextion_interface_html_abc966f951fb0eb26687950abc95c43bd"><div class="ttname"><a href="class_nextion_interface.html#abc966f951fb0eb26687950abc95c43bd">NextionInterface::sendRawByte</a></div><div class="ttdeci">virtual void sendRawByte(const uint8_t byte) const =0</div></div>
-<div class="ttc" id="aclass_nextion_interface_html_ab10b4d527df27118998649981e7a50e4"><div class="ttname"><a href="class_nextion_interface.html#ab10b4d527df27118998649981e7a50e4">NextionInterface::recvRetCommandFinished</a></div><div class="ttdeci">virtual bool recvRetCommandFinished(uint32_t timeout=200) const =0</div></div>
-<div class="ttc" id="aclass_nextion_interface_html_a3cdd310bf2c17d5e33ee3d56d9eb5f52"><div class="ttname"><a href="class_nextion_interface.html#a3cdd310bf2c17d5e33ee3d56d9eb5f52">NextionInterface::recvCommand</a></div><div class="ttdeci">virtual bool recvCommand(const uint8_t command, uint32_t timeout) const =0</div></div>
-<div class="ttc" id="aclass_nextion_interface_html_af2112c27c170ac19d79c81bd0eec04be"><div class="ttname"><a href="class_nextion_interface.html#af2112c27c170ac19d79c81bd0eec04be">NextionInterface::RecvTransparendDataModeFinished</a></div><div class="ttdeci">virtual bool RecvTransparendDataModeFinished(uint32_t timeout=200) const =0</div></div>
-<div class="ttc" id="aclass_nextion_interface_html_aaf94d6c3c053b4833fea28be993ce5ea"><div class="ttname"><a href="class_nextion_interface.html#aaf94d6c3c053b4833fea28be993ce5ea">NextionInterface::GetCurrentBaud</a></div><div class="ttdeci">virtual uint32_t GetCurrentBaud() const =0</div></div>
-<div class="ttc" id="aclass_nextion_interface_html_a113a8fb688d0d5ff65484bf8bc8336da"><div class="ttname"><a href="class_nextion_interface.html#a113a8fb688d0d5ff65484bf8bc8336da">NextionInterface::sendRawData</a></div><div class="ttdeci">virtual void sendRawData(const uint8_t *buf, uint16_t len) const =0</div></div>
+<div class="ttc" id="aclass_nextion_interface_html_a7f22083248dcc76156a90ff6813f429a"><div class="ttname"><a href="class_nextion_interface.html#a7f22083248dcc76156a90ff6813f429a">NextionInterface::sendRawData</a></div><div class="ttdeci">virtual void sendRawData(const uint8_t *buf, uint16_t len)=0</div></div>
+<div class="ttc" id="aclass_nextion_interface_html_a6b7a51df607099cc028df175d17cf820"><div class="ttname"><a href="class_nextion_interface.html#a6b7a51df607099cc028df175d17cf820">NextionInterface::RecvTransparendDataModeReady</a></div><div class="ttdeci">virtual bool RecvTransparendDataModeReady(size_t timeout)=0</div></div>
+<div class="ttc" id="aclass_nextion_interface_html_a1d7c729f014f7435f065585cc7ad4c5c"><div class="ttname"><a href="class_nextion_interface.html#a1d7c729f014f7435f065585cc7ad4c5c">NextionInterface::recvRetCommandFinished</a></div><div class="ttdeci">virtual bool recvRetCommandFinished(size_t timeout)=0</div></div>
+<div class="ttc" id="aclass_nextion_interface_html_ae5a69671ce28fc30188e1d4c76f1e576"><div class="ttname"><a href="class_nextion_interface.html#ae5a69671ce28fc30188e1d4c76f1e576">NextionInterface::readBytes</a></div><div class="ttdeci">virtual size_t readBytes(uint8_t *buffer, size_t size, size_t timeout)=0</div></div>
+<div class="ttc" id="aclass_nextion_interface_html_aed0e7876a55d3ef2a12723467406f11b"><div class="ttname"><a href="class_nextion_interface.html#aed0e7876a55d3ef2a12723467406f11b">NextionInterface::GetCurrentBaud</a></div><div class="ttdeci">virtual uint32_t GetCurrentBaud()=0</div></div>
 <div class="ttc" id="aclass_nextion_interface_html_a60f455ff9baf5a6897ecc0c067eddda3"><div class="ttname"><a href="class_nextion_interface.html#a60f455ff9baf5a6897ecc0c067eddda3">NextionInterface::~NextionInterface</a></div><div class="ttdeci">virtual ~NextionInterface()</div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_interface_8h_source.html#l00035">NexHardwareInterface.h:35</a></div></div>
-<div class="ttc" id="aclass_nextion_interface_html_a933cb5e605b39cbb7ca33ad4feb6a774"><div class="ttname"><a href="class_nextion_interface.html#a933cb5e605b39cbb7ca33ad4feb6a774">NextionInterface::RecvTransparendDataModeReady</a></div><div class="ttdeci">virtual bool RecvTransparendDataModeReady(uint32_t timeout=400) const =0</div></div>
+<div class="ttc" id="aclass_nextion_interface_html_a819c48ccca49d2a1aa44e46a0bf9f64d"><div class="ttname"><a href="class_nextion_interface.html#a819c48ccca49d2a1aa44e46a0bf9f64d">NextionInterface::recvRetString</a></div><div class="ttdeci">virtual bool recvRetString(String &amp;str, size_t timeout, bool start_flag)=0</div></div>
 <div class="ttc" id="aclass_nextion_interface_html"><div class="ttname"><a href="class_nextion_interface.html">NextionInterface</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_interface_8h_source.html#l00030">NexHardwareInterface.h:30</a></div></div>
-<div class="ttc" id="aclass_nextion_interface_html_a3dfba81dcbba9b636c4c20e98142f37c"><div class="ttname"><a href="class_nextion_interface.html#a3dfba81dcbba9b636c4c20e98142f37c">NextionInterface::sendCommand</a></div><div class="ttdeci">virtual void sendCommand(const char *cmd) const =0</div></div>
-<div class="ttc" id="aclass_nextion_interface_html_abbd25ed5a00e81a0aea7096a8cdf7d27"><div class="ttname"><a href="class_nextion_interface.html#abbd25ed5a00e81a0aea7096a8cdf7d27">NextionInterface::recvRetString</a></div><div class="ttdeci">virtual bool recvRetString(String &amp;str, uint32_t timeout=100) const =0</div></div>
+<div class="ttc" id="aclass_nextion_interface_html_a92b2af84c33db66bbf35385c299501cf"><div class="ttname"><a href="class_nextion_interface.html#a92b2af84c33db66bbf35385c299501cf">NextionInterface::sendRawByte</a></div><div class="ttdeci">virtual void sendRawByte(const uint8_t byte)=0</div></div>
+<div class="ttc" id="aclass_nextion_interface_html_a3ad8b3db5251be5305129dbe1bbaf0e1"><div class="ttname"><a href="class_nextion_interface.html#a3ad8b3db5251be5305129dbe1bbaf0e1">NextionInterface::recvCommand</a></div><div class="ttdeci">virtual bool recvCommand(const uint8_t command, size_t timeout)=0</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

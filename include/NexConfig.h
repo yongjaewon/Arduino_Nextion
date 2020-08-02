@@ -55,16 +55,19 @@
  * Define DEBUG_SERIAL_ENABLE to enable debug serial. 
  * Comment it to disable debug serial. 
  */
-#define DEBUG_SERIAL_ENABLE
+//#define DEBUG_SERIAL_ENABLE
 
 /**
  * Define dbSerial for the output of debug messages. 
  * it is resonsibility of main program to initialize debug serial port (begin(...)
  */
-#define dbSerial Serial
+//#define dbSerial Serial
 
 // Enable Next TFT file upload functionality
 //#define NEX_ENABLE_TFT_UPLOAD
+
+// Enable HardwareSerial support by definign NEX_ENABLE_HW_SERIAL
+#define NEX_ENABLE_HW_SERIAL
 
 // Enable SoftwareSerial support by definign NEX_ENABLE_SW_SERIAL
 // NodeMcu / Esp8266 use Softwareserial if usb port is used for debuging

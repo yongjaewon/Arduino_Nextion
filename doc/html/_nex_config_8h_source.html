@@ -94,32 +94,48 @@ $(document).ready(function(){initNavTree('_nex_config_8h_source.html','');});
 <a href="_nex_config_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//#define STD_SUPPORT</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//#define DEBUG_SERIAL_ENABLE</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//#define dbSerial Serial</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// Enable HardwareSerial support by definign NEX_ENABLE_HW_SERIAL</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="group___configuration.html#ga5446baadd7f775404556a957cf6d03fc">   48</a></span>&#160;<span class="preprocessor">#define NEX_ENABLE_HW_SERIAL</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// Enable SoftwareSerial support by definign NEX_ENABLE_SW_SERIAL</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// NodeMcu / Esp8266 use Softwareserial if usb port is used for debuging</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// NodeMcu board pin numbers not match with Esp8266 pin numbers use NodeMcu Pin number definitions (pins_arduino.h)</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="group___configuration.html#ga90ca07f4dc231d7b3ecd20d615315445">   53</a></span>&#160;<span class="preprocessor">#define NEX_ENABLE_SW_SERIAL</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#ifdef DEBUG_SERIAL_ENABLE</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define dbSerialPrint(a)    dbSerial.print(a)</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#define dbSerialPrintln(a)  dbSerial.println(a)</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#define dbSerialBegin(a)    dbSerial.begin(a)</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="group___configuration.html#gaf018322c574c0f39d5feb76995cdf2d6">   61</a></span>&#160;<span class="preprocessor">#define dbSerialPrint(a)   do{}while(0)</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="group___configuration.html#ga7792c838c043fae9a630823f1c328a30">   62</a></span>&#160;<span class="preprocessor">#define dbSerialPrintln(a) do{}while(0)</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="group___configuration.html#gabec12d271fea8fd82696961bc9339edf">   63</a></span>&#160;<span class="preprocessor">#define dbSerialBegin(a)   do{}while(0)</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="group___configuration.html#ga0d9afe49b80c7a5c460c0fd86f3c10ff">   34</a></span>&#160;<span class="preprocessor">#define NEX_SERIAL_DEFAULT_BAUD 9600</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="group___configuration.html#ga5e399427a4fb32529f5af170aae6ddc5">   40</a></span>&#160;<span class="preprocessor">#define NEX_TIMEOUT_STANDARD</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//#define NEX_TIMEOUT_FAST</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#ifdef NEX_TIMEOUT_FAST</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#define NEX_TIMEOUT_COMMAND   10</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define NEX_TIMEOUT_RETURN    10</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="group___configuration.html#gab669a035a97723735f7a2003f7839f81">   47</a></span>&#160;<span class="preprocessor">#define NEX_TIMEOUT_COMMAND  200</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="group___configuration.html#ga5ae87f8c93cd3b2f119ea3708ca4f049">   48</a></span>&#160;<span class="preprocessor">#define NEX_TIMEOUT_RETURN   100</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="group___configuration.html#ga2c6a26713ffadd18a4d56a3f8ea357ed">   51</a></span>&#160;<span class="preprocessor">#define NEX_TIMEOUT_TRANSPARENT_DATA_MODE 400</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">//#define DEBUG_SERIAL_ENABLE</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">//#define dbSerial Serial</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// Enable Next TFT file upload functionality</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">//#define NEX_ENABLE_TFT_UPLOAD</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// Enable HardwareSerial support by definign NEX_ENABLE_HW_SERIAL</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="group___configuration.html#ga5446baadd7f775404556a957cf6d03fc">   70</a></span>&#160;<span class="preprocessor">#define NEX_ENABLE_HW_SERIAL</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">// Enable SoftwareSerial support by definign NEX_ENABLE_SW_SERIAL</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">// NodeMcu / Esp8266 use Softwareserial if usb port is used for debuging</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">// NodeMcu board pin numbers not match with Esp8266 pin numbers use NodeMcu Pin number definitions (pins_arduino.h)</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="group___configuration.html#ga90ca07f4dc231d7b3ecd20d615315445">   75</a></span>&#160;<span class="preprocessor">#define NEX_ENABLE_SW_SERIAL</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#ifdef DEBUG_SERIAL_ENABLE</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#define dbSerialPrint(a)    dbSerial.print(a)</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#define dbSerialPrintln(a)  dbSerial.println(a)</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#define dbSerialBegin(a)    dbSerial.begin(a)</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="group___configuration.html#gaf018322c574c0f39d5feb76995cdf2d6">   83</a></span>&#160;<span class="preprocessor">#define dbSerialPrint(a)   do{}while(0)</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="group___configuration.html#ga7792c838c043fae9a630823f1c328a30">   84</a></span>&#160;<span class="preprocessor">#define dbSerialPrintln(a) do{}while(0)</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="group___configuration.html#gabec12d271fea8fd82696961bc9339edf">   85</a></span>&#160;<span class="preprocessor">#define dbSerialBegin(a)   do{}while(0)</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

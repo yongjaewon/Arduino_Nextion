@@ -92,61 +92,33 @@ $(document).ready(function(){initNavTree('md_release_notes.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><hr  />
-<h1><a class="anchor" id="autotoc_md9"></a>
-Release v0.11.0</h1>
-<p>-Backward compatinility issue: -systemStartUpCallback function pointer name corrected to match <a class="el" href="class_nextion.html">Nextion</a> functionality/documentation new name: nextionReadyCallback</p>
-<p>-Error code list updated (<a class="el" href="_nex_hardware_8cpp.html">NexHardware.cpp</a>)</p><ul>
-<li>nextionStartupCallback function added called when when <a class="el" href="class_nextion.html">Nextion</a> has started or reset</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md10"></a>
-Release v0.10.0</h1>
+ <h1><a class="anchor" id="autotoc_md10"></a>
+Release v1.2.0</h1>
 <ul>
-<li>version: v0.10.0</li>
-<li>base: v0.9.0 </li>
+<li>component refresh removed as it is now automatic in variable change</li>
+<li>functions return values corrected</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md11"></a>
-Brief</h2>
-<p>Enhanced and corrected <a class="el" href="class_nextion.html">Nextion</a> library version for Arduino/Esp8266/NodeMcu, based on original <a class="el" href="class_nextion.html">Nextion</a> Arduino library</p>
-<ul>
-<li>Added support for NodeMcu/esp8266, Software serial, Software serial can be used with arduino also</li>
-<li>Added support for global <a class="el" href="class_nextion.html">Nextion</a> objects. (Optional page parameter added in the components)</li>
-<li><a class="el" href="class_nex_variable.html">NexVariable</a> corrected to use int32_t data type</li>
-<li>NextText corrected to return tru/false, and string length is returned in len parameter</li>
-<li>NextText String object support added</li>
-<li>other small bug fixes done</li>
-<li>Added to support global <a class="el" href="class_nextion.html">Nextion</a> events like CurrentPageIdCallback,systemStartUpCallback,...</li>
-</ul>
+<h1><a class="anchor" id="autotoc_md11"></a>
+Release v1.1.0</h1>
+<p>-<a class="el" href="class_nex_text.html#a7603acf98170cef152ccd028bc5abaf3">NexText::appendText</a> function added</p>
 <h1><a class="anchor" id="autotoc_md12"></a>
-Release v0.9.0</h1>
+Release v1.0.0</h1>
 <ul>
-<li>version: v0.9.0</li>
-<li>base: v0.7.0</li>
+<li>Added support for multiple nextion displays<ul>
+<li>Recommendation initialize nextion instance using <a class="el" href="class_nextion.html#a62bb107f9962bdf9c37507ae79270379">Nextion::GetInstance</a> command Harware and Software interfaces supported</li>
+<li><a class="el" href="class_nextion.html">Nextion</a> objects requires pointer to intance.</li>
+<li>Instance callback functiona must be initialized to instance object.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md13"></a>
-Brief</h2>
-<p>Support all components in <a class="el" href="class_nextion.html">Nextion</a> Editor v0.38.</p>
-<h2><a class="anchor" id="autotoc_md14"></a>
-Details</h2>
-<p>Added APIs of new attrubutes and components supported by <a class="el" href="class_nextion.html">Nextion</a> Editor v0.38.</p>
-<h1><a class="anchor" id="autotoc_md15"></a>
-Release v0.7.0</h1>
-<ul>
-<li>version: v0.7.0</li>
-<li>base: no base version</li>
-<li>author: Wu Pengfei <a href="#" onclick="location.href='mai'+'lto:'+'pen'+'gf'+'ei.'+'wu'+'@it'+'ea'+'d.c'+'c'; return false;">pengf<span style="display: none;">.nosp@m.</span>ei.w<span style="display: none;">.nosp@m.</span>u@ite<span style="display: none;">.nosp@m.</span>ad.c<span style="display: none;">.nosp@m.</span>c</a></li>
-<li>date: 8/20/2015 13:17:20</li>
+</li>
+<li>implementation divided to ./src ans ./include folders</li>
+<li>STD_SUPPORT define replased with platform ESP8266 define if other platforms suppors needed std functionality add platform define with or (||)</li>
+<li>TFT file upload added to behing of NEX_ENABLE_TFT_UPLOAD define</li>
+<li>Documentation updated.</li>
+<li>Examples updated.</li>
+<li>platformIO development platformio.ini and .library.json added</li>
+<li>Version numbering uses now Semantic Versioning 1.0.0 (<a href="https://semver.org/">https://semver.org/</a>) -Given a version number MAJOR.MINOR.PATCH, increment the: MAJOR version when you make incompatible API changes, MINOR version when you add functionality in a backwards compatible manner, and PATCH version when you make backwards compatible bug fixes. </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md16"></a>
-Brief</h2>
-<p>Support all components in <a class="el" href="class_nextion.html">Nextion</a> Editor v0.26.</p>
-<h2><a class="anchor" id="autotoc_md17"></a>
-Details</h2>
-<p>First release.</p>
-<hr  />
-<h1><a class="anchor" id="autotoc_md19"></a>
-The End!</h1>
-<hr  />
- </div></div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->

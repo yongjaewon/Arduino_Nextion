@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['touchcoordinatecallback_537',['touchCoordinateCallback',['../class_nextion.html#a951cde4126a1f70f7294d6126b096901',1,'Nextion']]],
-  ['toucheventinsleepmodecallback_538',['touchEventInSleepModeCallback',['../class_nextion.html#af557c4d26e864cdee80ff251a4ab7c25',1,'Nextion']]]
+  ['startsdupgradecallback_550',['startSdUpgradeCallback',['../class_nextion.html#ad93633330beffc17a6fc360d383f5cf6',1,'Nextion']]]
 ];

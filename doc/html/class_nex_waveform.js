@@ -1,8 +1,8 @@
 var class_nex_waveform =
 [
     [ "NexWaveform", "class_nex_waveform.html#a844acf4ad585a417d52d923de440aebf", null ],
-    [ "NexWaveform", "class_nex_waveform.html#ad4352e1a218635b29842f88b0601add7", null ],
-    [ "NexWaveform", "class_nex_waveform.html#affb5c74ffb532d3067c35f2949f555e2", null ],
+    [ "NexWaveform", "class_nex_waveform.html#a76a8b86c0559bde982a13f976da0cd75", null ],
+    [ "NexWaveform", "class_nex_waveform.html#af6a09cd5ec439d63ec5086dbf3cfc53b", null ],
     [ "addValue", "class_nex_waveform.html#ad70ab7ace95de034229770bb3af73e55", null ],
     [ "addValues", "class_nex_waveform.html#ad24ac8029249c5a4772bb9bb1ce3c618", null ],
     [ "Clear", "class_nex_waveform.html#a3b450578539dc9f77b14273f3d5f3bad", null ],

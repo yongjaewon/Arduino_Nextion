@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['startsdupgradecallback_536',['startSdUpgradeCallback',['../class_nextion.html#ad93633330beffc17a6fc360d383f5cf6',1,'Nextion']]]
+  ['nextionreadycallback_548',['nextionReadyCallback',['../class_nextion.html#a53917ee85316bdbb65a0b835953ce072',1,'Nextion']]],
+  ['nextionstartupcallback_549',['nextionStartupCallback',['../class_nextion.html#a3d753a2fb4365352720352570b890c44',1,'Nextion']]]
 ];

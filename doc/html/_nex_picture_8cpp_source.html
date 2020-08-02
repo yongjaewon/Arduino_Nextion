@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('_nex_picture_8cpp_source.html','');});
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_picture_8h.html">NexPicture.h</a>&quot;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_hardware_8h.html">NexHardware.h</a>&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_nex_picture.html#aea6e2330b6827e9aea48a5b77ad076f3">   23</a></span>&#160;<a class="code" href="class_nex_picture.html#a9ac49a7687ea8672664b84c6a85971a1">NexPicture::NexPicture</a>(<span class="keyword">const</span> <a class="code" href="class_nextion.html">Nextion</a> *nextion, uint8_t pid, uint8_t cid, <span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keyword">const</span> <a class="code" href="class_nex_object.html">NexObject</a>* page)</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_nex_picture.html#ad8888e4e7833943de26bf7b37b5dd045">   23</a></span>&#160;<a class="code" href="class_nex_picture.html#a9ac49a7687ea8672664b84c6a85971a1">NexPicture::NexPicture</a>(<a class="code" href="class_nextion.html">Nextion</a> *nextion, uint8_t pid, uint8_t cid, <span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keyword">const</span> <a class="code" href="class_nex_object.html">NexObject</a>* page)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    :<a class="code" href="class_nex_touch.html">NexTouch</a>(nextion, pid, cid, name, page)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
@@ -105,61 +105,57 @@ $(document).ready(function(){initNavTree('_nex_picture_8cpp_source.html','');});
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    String cmd = String(<span class="stringliteral">&quot;get &quot;</span>);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">getObjGlobalPageName</a>(cmd);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    cmd += <span class="stringliteral">&quot;.pic&quot;</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#ab4da94ce505c59b7141d61b8ac422112">recvRetNumber</a>(number);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">recvRetNumber</a>(number);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_nex_picture.html#a531e22f70dbf0dcaf6e114581364acea">   37</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_picture.html#a531e22f70dbf0dcaf6e114581364acea">NexPicture::Set_background_image_pic</a>(uint32_t number)</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    String cmd;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    utoa(number, buf, 10);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">getObjGlobalPageName</a>(cmd);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    cmd += <span class="stringliteral">&quot;.pic=&quot;</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    cmd += buf;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99ab85e6e6906752c95e85000fa412cf">recvRetCommandFinished</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_nex_picture.html#a11bd68ef9fe1d03d9e0d02ef1c7527e9">   51</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_picture.html#a11bd68ef9fe1d03d9e0d02ef1c7527e9">NexPicture::getPic</a>(uint32_t *number)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    String cmd = String(<span class="stringliteral">&quot;get &quot;</span>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">getObjGlobalPageName</a>(cmd);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    cmd += <span class="stringliteral">&quot;.pic&quot;</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#ab4da94ce505c59b7141d61b8ac422112">recvRetNumber</a>(number);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_nex_picture.html#ab1c6adff615d48261ce10c2095859abd">   60</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_picture.html#ab1c6adff615d48261ce10c2095859abd">NexPicture::setPic</a>(uint32_t number)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    String cmd;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    utoa(number, buf, 10);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">getObjGlobalPageName</a>(cmd);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    cmd += <span class="stringliteral">&quot;.pic=&quot;</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    cmd += buf;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99ab85e6e6906752c95e85000fa412cf">recvRetCommandFinished</a>();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    utoa(number, buf, 10);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">getObjGlobalPageName</a>(cmd);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    cmd += <span class="stringliteral">&quot;.pic=&quot;</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    cmd += buf;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_nex_picture.html#a11bd68ef9fe1d03d9e0d02ef1c7527e9">   49</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_picture.html#a11bd68ef9fe1d03d9e0d02ef1c7527e9">NexPicture::getPic</a>(uint32_t *number)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    String cmd = String(<span class="stringliteral">&quot;get &quot;</span>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">getObjGlobalPageName</a>(cmd);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    cmd += <span class="stringliteral">&quot;.pic&quot;</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">recvRetNumber</a>(number);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_nex_picture.html#ab1c6adff615d48261ce10c2095859abd">   58</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_picture.html#ab1c6adff615d48261ce10c2095859abd">NexPicture::setPic</a>(uint32_t number)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    String cmd;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    utoa(number, buf, 10);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">getObjGlobalPageName</a>(cmd);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    cmd += <span class="stringliteral">&quot;.pic=&quot;</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    cmd += buf;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_nextion_if_html_a99ab85e6e6906752c95e85000fa412cf"><div class="ttname"><a href="class_nextion_if.html#a99ab85e6e6906752c95e85000fa412cf">NextionIf::recvRetCommandFinished</a></div><div class="ttdeci">bool recvRetCommandFinished(uint32_t timeout=200) const final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00070">NextionIf.cpp:70</a></div></div>
+<div class="ttc" id="aclass_nextion_if_html_abd81ed645e43818c7fc90ba5a055cf52"><div class="ttname"><a href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">NextionIf::sendCommand</a></div><div class="ttdeci">void sendCommand(const char *cmd) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00043">NextionIf.cpp:43</a></div></div>
+<div class="ttc" id="aclass_nextion_if_html_a99b9325caee5f8beded1f0602eb0d28d"><div class="ttname"><a href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">NextionIf::recvRetNumber</a></div><div class="ttdeci">bool recvRetNumber(uint32_t *number, size_t timeout=100) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00023">NextionIf.cpp:23</a></div></div>
 <div class="ttc" id="aclass_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00055">NexTouch.h:55</a></div></div>
-<div class="ttc" id="aclass_nextion_html"><div class="ttname"><a href="class_nextion.html">Nextion</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8h_source.html#l00056">NexHardware.h:56</a></div></div>
-<div class="ttc" id="aclass_nex_picture_html_ab1c6adff615d48261ce10c2095859abd"><div class="ttname"><a href="class_nex_picture.html#ab1c6adff615d48261ce10c2095859abd">NexPicture::setPic</a></div><div class="ttdeci">bool setPic(uint32_t number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_picture_8cpp_source.html#l00060">NexPicture.cpp:60</a></div></div>
+<div class="ttc" id="aclass_nextion_if_html_afdc1e3f9a50ced4b85b14fa61b8411e4"><div class="ttname"><a href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">NextionIf::recvRetCommandFinished</a></div><div class="ttdeci">bool recvRetCommandFinished(size_t timeout=200) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00076">NextionIf.cpp:76</a></div></div>
+<div class="ttc" id="aclass_nextion_html"><div class="ttname"><a href="class_nextion.html">Nextion</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8h_source.html#l00061">NexHardware.h:61</a></div></div>
+<div class="ttc" id="aclass_nex_picture_html_ab1c6adff615d48261ce10c2095859abd"><div class="ttname"><a href="class_nex_picture.html#ab1c6adff615d48261ce10c2095859abd">NexPicture::setPic</a></div><div class="ttdeci">bool setPic(uint32_t number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_picture_8cpp_source.html#l00058">NexPicture.cpp:58</a></div></div>
 <div class="ttc" id="a_nex_picture_8h_html"><div class="ttname"><a href="_nex_picture_8h.html">NexPicture.h</a></div></div>
 <div class="ttc" id="aclass_nex_picture_html_a9ac49a7687ea8672664b84c6a85971a1"><div class="ttname"><a href="class_nex_picture.html#a9ac49a7687ea8672664b84c6a85971a1">NexPicture::NexPicture</a></div><div class="ttdeci">NexPicture()=delete</div></div>
 <div class="ttc" id="a_nex_hardware_8h_html"><div class="ttname"><a href="_nex_hardware_8h.html">NexHardware.h</a></div></div>
 <div class="ttc" id="aclass_nex_object_html"><div class="ttname"><a href="class_nex_object.html">NexObject</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_object_8h_source.html#l00041">NexObject.h:41</a></div></div>
 <div class="ttc" id="aclass_nex_object_html_af5d1ddf5b17c23532ed6aedaad98d2bd"><div class="ttname"><a href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">NexObject::getObjGlobalPageName</a></div><div class="ttdeci">void getObjGlobalPageName(String &amp;gName)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_object_8cpp_source.html#l00052">NexObject.cpp:52</a></div></div>
 <div class="ttc" id="aclass_nex_picture_html_a531e22f70dbf0dcaf6e114581364acea"><div class="ttname"><a href="class_nex_picture.html#a531e22f70dbf0dcaf6e114581364acea">NexPicture::Set_background_image_pic</a></div><div class="ttdeci">bool Set_background_image_pic(uint32_t number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_picture_8cpp_source.html#l00037">NexPicture.cpp:37</a></div></div>
-<div class="ttc" id="aclass_nextion_if_html_ab4da94ce505c59b7141d61b8ac422112"><div class="ttname"><a href="class_nextion_if.html#ab4da94ce505c59b7141d61b8ac422112">NextionIf::recvRetNumber</a></div><div class="ttdeci">bool recvRetNumber(uint32_t *number, uint32_t timeout=100) const final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00023">NextionIf.cpp:23</a></div></div>
-<div class="ttc" id="aclass_nextion_if_html_aa26378869ffffe33dd32bc2364adf408"><div class="ttname"><a href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">NextionIf::sendCommand</a></div><div class="ttdeci">void sendCommand(const char *cmd) const final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00043">NextionIf.cpp:43</a></div></div>
-<div class="ttc" id="aclass_nex_picture_html_a11bd68ef9fe1d03d9e0d02ef1c7527e9"><div class="ttname"><a href="class_nex_picture.html#a11bd68ef9fe1d03d9e0d02ef1c7527e9">NexPicture::getPic</a></div><div class="ttdeci">bool getPic(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_picture_8cpp_source.html#l00051">NexPicture.cpp:51</a></div></div>
+<div class="ttc" id="aclass_nex_picture_html_a11bd68ef9fe1d03d9e0d02ef1c7527e9"><div class="ttname"><a href="class_nex_picture.html#a11bd68ef9fe1d03d9e0d02ef1c7527e9">NexPicture::getPic</a></div><div class="ttdeci">bool getPic(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_picture_8cpp_source.html#l00049">NexPicture.cpp:49</a></div></div>
 <div class="ttc" id="aclass_nex_picture_html_a0297c4a9544df9b0c37db0ea894d699f"><div class="ttname"><a href="class_nex_picture.html#a0297c4a9544df9b0c37db0ea894d699f">NexPicture::Get_background_image_pic</a></div><div class="ttdeci">bool Get_background_image_pic(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_picture_8cpp_source.html#l00028">NexPicture.cpp:28</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

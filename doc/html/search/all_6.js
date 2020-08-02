@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['findbaud_34',['findBaud',['../class_nextion.html#ac77c90de85cf2c64dbf592c00291da4c',1,'Nextion']]]
+  ['findbaud_36',['findBaud',['../class_nextion.html#ac77c90de85cf2c64dbf592c00291da4c',1,'Nextion']]]
 ];

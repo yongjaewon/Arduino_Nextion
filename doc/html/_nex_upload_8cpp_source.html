@@ -92,130 +92,120 @@ $(document).ready(function(){initNavTree('_nex_upload_8cpp_source.html','');});
 </div><!--header-->
 <div class="contents">
 <a href="_nex_upload_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_config_8h.html">NexConfig.h</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_upload_8h.html">NexUpload.h</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nextion_if_8h.html">NextionIf.h</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_nex_upload.html#a26f03b7e13ab3cb1fe2e73ddc4ada92e">   24</a></span>&#160;<a class="code" href="class_nex_upload.html#ae8ccfaf116578c3862a3d34aeb609957">NexUpload::NexUpload</a>(<span class="keyword">const</span> <a class="code" href="class_nextion.html">Nextion</a> *nextion,File &amp;tftFile)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    :<a class="code" href="class_nextion_if.html">NextionIf</a>(nextion), m_tftFile{tftFile}</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_nex_upload.html#a26ccc2285435b6b573fa5c4b661c080a">   29</a></span>&#160;<a class="code" href="class_nex_upload.html#a26ccc2285435b6b573fa5c4b661c080a">NexUpload::~NexUpload</a>()</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_nex_upload.html#ab35a573065de655c76570cd0d6350864">   32</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_upload.html#ab35a573065de655c76570cd0d6350864">NexUpload::upload</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_nex_upload.html#af178ee7d49c69fd092fe04956d36971b">Reconnect</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="class_nex_upload.html#aa5b443931f23b4dccb94721a9153074b">InitUpload</a>())</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="group___configuration.html#ga7792c838c043fae9a630823f1c328a30">dbSerialPrintln</a>(<span class="stringliteral">&quot;Initialize upload error&quot;</span>);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="class_nex_upload.html#a38b0c65f0604af7bc549c2f01bf2ce37">_downloadTftFile</a>())</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="group___configuration.html#ga7792c838c043fae9a630823f1c328a30">dbSerialPrintln</a>(<span class="stringliteral">&quot;download file error&quot;</span>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="group___configuration.html#ga7792c838c043fae9a630823f1c328a30">dbSerialPrintln</a>(<span class="stringliteral">&quot;download ok\r\n&quot;</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_nex_upload.html#af178ee7d49c69fd092fe04956d36971b">   50</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_nex_upload.html#af178ee7d49c69fd092fe04956d36971b">NexUpload::Reconnect</a>()</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">sendCommand</a>(<span class="stringliteral">&quot;DRAKJHSUYDGBNCJHGJKSHBDN&quot;</span>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    delay(500);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">sendCommand</a>(<span class="stringliteral">&quot;connect&quot;</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    delay(50);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">sendCommand</a>(<span class="stringliteral">&quot;ÿÿconnect&quot;</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    delay(200);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_nex_upload.html#aa5b443931f23b4dccb94721a9153074b">   61</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_upload.html#aa5b443931f23b4dccb94721a9153074b">NexUpload::InitUpload</a>()</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    String <span class="keywordtype">string</span> = String(<span class="stringliteral">&quot;&quot;</span>); </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    String cmd = String(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    String filesize_str = String(<a class="code" href="class_nex_upload.html#ae547b0e558893fe81b744dcdd79cc61f">m_tftFile</a>.size(),10);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    String baudrate_str = String(<a class="code" href="class_nextion_if.html#a70e209dc0e58dc3b0c4cfacf77eedc8f">GetCurrentBaud</a>(),10);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    cmd = <span class="stringliteral">&quot;whmi-wri &quot;</span> + filesize_str + <span class="stringliteral">&quot;,&quot;</span> + baudrate_str + <span class="stringliteral">&quot;,0&quot;</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    delay(50);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="class_nextion_if.html#aa6e058dd780f6c9cba471ace6ecfff23">recvCommand</a>(0x05, 500))</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    { </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    } </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="class_nex_upload.html#a38b0c65f0604af7bc549c2f01bf2ce37">   79</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_upload.html#a38b0c65f0604af7bc549c2f01bf2ce37">NexUpload::_downloadTftFile</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    uint8_t c;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    uint16_t send_timer = 0;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    uint16_t last_send_num = 0;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    send_timer = <a class="code" href="class_nex_upload.html#ae547b0e558893fe81b744dcdd79cc61f">m_tftFile</a>.size() / 4096 + 1;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    last_send_num = <a class="code" href="class_nex_upload.html#ae547b0e558893fe81b744dcdd79cc61f">m_tftFile</a>.size() % 4096;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="class_nex_upload.html#ae547b0e558893fe81b744dcdd79cc61f">m_tftFile</a>.seek(0);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">while</span>(send_timer)</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span>(send_timer == 1)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;           <span class="keywordflow">for</span>(uint16_t j = 1; j &lt;= 4096; j++)</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">if</span>(j &lt;= last_send_num)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                    c = <a class="code" href="class_nex_upload.html#ae547b0e558893fe81b744dcdd79cc61f">m_tftFile</a>.read();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    <a class="code" href="class_nextion_if.html#ab0a5ca5f778d4079564f3633eb6054fa">sendRawByte</a>(c);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordflow">for</span>(uint16_t i = 1; i &lt;= 4096; i++)</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                c = <a class="code" href="class_nex_upload.html#ae547b0e558893fe81b744dcdd79cc61f">m_tftFile</a>.read();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <a class="code" href="class_nextion_if.html#ab0a5ca5f778d4079564f3633eb6054fa">sendRawByte</a>(c);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="class_nextion_if.html#aa6e058dd780f6c9cba471ace6ecfff23">recvCommand</a>(0x05, 500))</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;         --send_timer;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    } </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifdef NEX_ENABLE_TFT_UPLOAD</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_config_8h.html">NexConfig.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_upload_8h.html">NexUpload.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nextion_if_8h.html">NextionIf.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;NexUpload::NexUpload(<a class="code" href="class_nextion.html">Nextion</a> *nextion)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    :<a class="code" href="class_nextion_if.html">NextionIf</a>(nextion)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;NexUpload::~NexUpload()</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">bool</span> NexUpload::upload(File  &amp;tftFile)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    Reconnect();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span>(!InitUpload(tftFile))</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="group___configuration.html#ga7792c838c043fae9a630823f1c328a30">dbSerialPrintln</a>(<span class="stringliteral">&quot;Initialize upload error&quot;</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span>(!_downloadTftFile(tftFile))</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="group___configuration.html#ga7792c838c043fae9a630823f1c328a30">dbSerialPrintln</a>(<span class="stringliteral">&quot;download file error&quot;</span>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="group___configuration.html#ga7792c838c043fae9a630823f1c328a30">dbSerialPrintln</a>(<span class="stringliteral">&quot;download ok\r\n&quot;</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">void</span> NexUpload::Reconnect()</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    sendCommand(<span class="stringliteral">&quot;DRAKJHSUYDGBNCJHGJKSHBDN&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    delay(500);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    sendCommand(<span class="stringliteral">&quot;connect&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    delay(50);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    sendCommand(<span class="stringliteral">&quot;ÿÿconnect&quot;</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    delay(200);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keywordtype">bool</span> NexUpload::InitUpload(File  &amp;tftFile)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    String <span class="keywordtype">string</span> = String(<span class="stringliteral">&quot;&quot;</span>); </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    String cmd = String(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    String filesize_str = String(tftFile.size(),10);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    String baudrate_str = String(GetCurrentBaud(),10);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    cmd = <span class="stringliteral">&quot;whmi-wri &quot;</span> + filesize_str + <span class="stringliteral">&quot;,&quot;</span> + baudrate_str + <span class="stringliteral">&quot;,0&quot;</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    sendCommand(cmd.c_str());</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    delay(50);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span>(!recvCommand(0x05, 500))</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    { </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    } </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">bool</span> NexUpload::_downloadTftFile(File  &amp;tftFile)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    uint8_t c;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    uint16_t send_timer = 0;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    uint16_t last_send_num = 0;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    send_timer = tftFile.size() / 4096 + 1;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    last_send_num = tftFile.size() % 4096;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    tftFile.seek(0);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">while</span>(send_timer)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span>(send_timer == 1)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;           <span class="keywordflow">for</span>(uint16_t j = 1; j &lt;= 4096; j++)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="keywordflow">if</span>(j &lt;= last_send_num)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                    c = tftFile.read();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                    sendRawByte(c);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">for</span>(uint16_t i = 1; i &lt;= 4096; i++)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                c = tftFile.read();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                sendRawByte(c);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">if</span>(!recvCommand(0x05, 500))</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;         --send_timer;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    } </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_nextion_if_8h_html"><div class="ttname"><a href="_nextion_if_8h.html">NextionIf.h</a></div></div>
-<div class="ttc" id="aclass_nex_upload_html_a38b0c65f0604af7bc549c2f01bf2ce37"><div class="ttname"><a href="class_nex_upload.html#a38b0c65f0604af7bc549c2f01bf2ce37">NexUpload::_downloadTftFile</a></div><div class="ttdeci">bool _downloadTftFile(void)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_upload_8cpp_source.html#l00079">NexUpload.cpp:79</a></div></div>
-<div class="ttc" id="agroup___configuration_html_ga7792c838c043fae9a630823f1c328a30"><div class="ttname"><a href="group___configuration.html#ga7792c838c043fae9a630823f1c328a30">dbSerialPrintln</a></div><div class="ttdeci">#define dbSerialPrintln(a)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_config_8h_source.html#l00062">NexConfig.h:62</a></div></div>
-<div class="ttc" id="aclass_nex_upload_html_ae547b0e558893fe81b744dcdd79cc61f"><div class="ttname"><a href="class_nex_upload.html#ae547b0e558893fe81b744dcdd79cc61f">NexUpload::m_tftFile</a></div><div class="ttdeci">File m_tftFile</div><div class="ttdef"><b>Definition:</b> <a href="_nex_upload_8h_source.html#l00096">NexUpload.h:96</a></div></div>
-<div class="ttc" id="aclass_nex_upload_html_af178ee7d49c69fd092fe04956d36971b"><div class="ttname"><a href="class_nex_upload.html#af178ee7d49c69fd092fe04956d36971b">NexUpload::Reconnect</a></div><div class="ttdeci">void Reconnect()</div><div class="ttdef"><b>Definition:</b> <a href="_nex_upload_8cpp_source.html#l00050">NexUpload.cpp:50</a></div></div>
+<div class="ttc" id="agroup___configuration_html_ga7792c838c043fae9a630823f1c328a30"><div class="ttname"><a href="group___configuration.html#ga7792c838c043fae9a630823f1c328a30">dbSerialPrintln</a></div><div class="ttdeci">#define dbSerialPrintln(a)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_config_8h_source.html#l00084">NexConfig.h:84</a></div></div>
 <div class="ttc" id="aclass_nextion_if_html"><div class="ttname"><a href="class_nextion_if.html">NextionIf</a></div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8h_source.html#l00027">NextionIf.h:27</a></div></div>
-<div class="ttc" id="aclass_nextion_html"><div class="ttname"><a href="class_nextion.html">Nextion</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8h_source.html#l00056">NexHardware.h:56</a></div></div>
-<div class="ttc" id="aclass_nex_upload_html_ab35a573065de655c76570cd0d6350864"><div class="ttname"><a href="class_nex_upload.html#ab35a573065de655c76570cd0d6350864">NexUpload::upload</a></div><div class="ttdeci">bool upload()</div><div class="ttdef"><b>Definition:</b> <a href="_nex_upload_8cpp_source.html#l00032">NexUpload.cpp:32</a></div></div>
-<div class="ttc" id="aclass_nex_upload_html_a26ccc2285435b6b573fa5c4b661c080a"><div class="ttname"><a href="class_nex_upload.html#a26ccc2285435b6b573fa5c4b661c080a">NexUpload::~NexUpload</a></div><div class="ttdeci">~NexUpload()</div><div class="ttdef"><b>Definition:</b> <a href="_nex_upload_8cpp_source.html#l00029">NexUpload.cpp:29</a></div></div>
-<div class="ttc" id="aclass_nextion_if_html_a70e209dc0e58dc3b0c4cfacf77eedc8f"><div class="ttname"><a href="class_nextion_if.html#a70e209dc0e58dc3b0c4cfacf77eedc8f">NextionIf::GetCurrentBaud</a></div><div class="ttdeci">uint32_t GetCurrentBaud() const final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00085">NextionIf.cpp:85</a></div></div>
-<div class="ttc" id="aclass_nex_upload_html_ae8ccfaf116578c3862a3d34aeb609957"><div class="ttname"><a href="class_nex_upload.html#ae8ccfaf116578c3862a3d34aeb609957">NexUpload::NexUpload</a></div><div class="ttdeci">NexUpload()=delete</div></div>
-<div class="ttc" id="aclass_nex_upload_html_aa5b443931f23b4dccb94721a9153074b"><div class="ttname"><a href="class_nex_upload.html#aa5b443931f23b4dccb94721a9153074b">NexUpload::InitUpload</a></div><div class="ttdeci">bool InitUpload()</div><div class="ttdef"><b>Definition:</b> <a href="_nex_upload_8cpp_source.html#l00061">NexUpload.cpp:61</a></div></div>
+<div class="ttc" id="aclass_nextion_html"><div class="ttname"><a href="class_nextion.html">Nextion</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8h_source.html#l00061">NexHardware.h:61</a></div></div>
 <div class="ttc" id="a_nex_config_8h_html"><div class="ttname"><a href="_nex_config_8h.html">NexConfig.h</a></div></div>
-<div class="ttc" id="aclass_nextion_if_html_aa26378869ffffe33dd32bc2364adf408"><div class="ttname"><a href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">NextionIf::sendCommand</a></div><div class="ttdeci">void sendCommand(const char *cmd) const final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00043">NextionIf.cpp:43</a></div></div>
-<div class="ttc" id="aclass_nextion_if_html_aa6e058dd780f6c9cba471ace6ecfff23"><div class="ttname"><a href="class_nextion_if.html#aa6e058dd780f6c9cba471ace6ecfff23">NextionIf::recvCommand</a></div><div class="ttdeci">bool recvCommand(const uint8_t command, uint32_t timeout) const final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00065">NextionIf.cpp:65</a></div></div>
 <div class="ttc" id="a_nex_upload_8h_html"><div class="ttname"><a href="_nex_upload_8h.html">NexUpload.h</a></div></div>
-<div class="ttc" id="aclass_nextion_if_html_ab0a5ca5f778d4079564f3633eb6054fa"><div class="ttname"><a href="class_nextion_if.html#ab0a5ca5f778d4079564f3633eb6054fa">NextionIf::sendRawByte</a></div><div class="ttdeci">void sendRawByte(const uint8_t byte) const final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00060">NextionIf.cpp:60</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

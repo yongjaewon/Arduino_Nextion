@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "nexQueuedEvent", "structnex_queued_event.html", null ],
     [ "NextionInterface", "class_nextion_interface.html", [
       [ "Nextion", "class_nextion.html", null ],
       [ "NextionIf", "class_nextion_if.html", [
@@ -25,8 +26,7 @@ var hierarchy =
             [ "NexWaveform", "class_nex_waveform.html", null ]
           ] ]
         ] ],
-        [ "NexRtc", "class_nex_rtc.html", null ],
-        [ "NexUpload", "class_nex_upload.html", null ]
+        [ "NexRtc", "class_nex_rtc.html", null ]
       ] ]
     ] ]
 ];

@@ -95,8 +95,8 @@ $(document).ready(function(){initNavTree('_nex_page_8cpp_source.html','');});
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_page_8h.html">NexPage.h</a>&quot;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_hardware_8h.html">NexHardware.h</a>&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_nex_page.html#a34e4a00111353711c00009c0ec142d21">   23</a></span>&#160;<a class="code" href="class_nex_page.html#adcc75d98da1e3fe02f2b6c92766e14a7">NexPage::NexPage</a>(<span class="keyword">const</span> <a class="code" href="class_nextion.html">Nextion</a> *nextion, uint8_t pid, uint8_t cid, <span class="keyword">const</span> <span class="keywordtype">char</span> *name)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    :<a class="code" href="class_nex_touch.html">NexTouch</a>(nextion, pid, cid, name, nullptr)</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_nex_page.html#a04ae41ca9e2be5abcfd759416834142c">   23</a></span>&#160;<a class="code" href="class_nex_page.html#adcc75d98da1e3fe02f2b6c92766e14a7">NexPage::NexPage</a>(<a class="code" href="class_nextion.html">Nextion</a> *nextion, uint8_t pid, <span class="keyword">const</span> <span class="keywordtype">char</span> *name)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    :<a class="code" href="class_nex_touch.html">NexTouch</a>(nextion, pid, 0, name, nullptr)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
@@ -110,20 +110,37 @@ $(document).ready(function(){initNavTree('_nex_page_8cpp_source.html','');});
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    String cmd = String(<span class="stringliteral">&quot;page &quot;</span>);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    cmd += name;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99ab85e6e6906752c95e85000fa412cf">recvRetCommandFinished</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_nex_page.html#a673d110a8a3249ca3601088a459c3ab2">   42</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_page.html#a673d110a8a3249ca3601088a459c3ab2">NexPage::setVisibleAll</a>(<span class="keywordtype">bool</span> visible)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    String cmd = String(<span class="stringliteral">&quot;vis &quot;</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    cmd += <span class="stringliteral">&quot;255,&quot;</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span>(visible)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        cmd += <span class="stringliteral">&quot;1&quot;</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        cmd += <span class="stringliteral">&quot;0&quot;</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_nextion_if_html_a99ab85e6e6906752c95e85000fa412cf"><div class="ttname"><a href="class_nextion_if.html#a99ab85e6e6906752c95e85000fa412cf">NextionIf::recvRetCommandFinished</a></div><div class="ttdeci">bool recvRetCommandFinished(uint32_t timeout=200) const final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00070">NextionIf.cpp:70</a></div></div>
+<div class="ttc" id="aclass_nextion_if_html_abd81ed645e43818c7fc90ba5a055cf52"><div class="ttname"><a href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">NextionIf::sendCommand</a></div><div class="ttdeci">void sendCommand(const char *cmd) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00043">NextionIf.cpp:43</a></div></div>
+<div class="ttc" id="aclass_nex_page_html_a673d110a8a3249ca3601088a459c3ab2"><div class="ttname"><a href="class_nex_page.html#a673d110a8a3249ca3601088a459c3ab2">NexPage::setVisibleAll</a></div><div class="ttdeci">bool setVisibleAll(bool visible)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_page_8cpp_source.html#l00042">NexPage.cpp:42</a></div></div>
 <div class="ttc" id="aclass_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00055">NexTouch.h:55</a></div></div>
 <div class="ttc" id="aclass_nex_page_html_adcc75d98da1e3fe02f2b6c92766e14a7"><div class="ttname"><a href="class_nex_page.html#adcc75d98da1e3fe02f2b6c92766e14a7">NexPage::NexPage</a></div><div class="ttdeci">NexPage()=delete</div></div>
 <div class="ttc" id="aclass_nex_object_html_a58645a6bf065f9cc29044d40d7d90108"><div class="ttname"><a href="class_nex_object.html#a58645a6bf065f9cc29044d40d7d90108">NexObject::getObjName</a></div><div class="ttdeci">const char * getObjName(void) const</div><div class="ttdef"><b>Definition:</b> <a href="_nex_object_8cpp_source.html#l00038">NexObject.cpp:38</a></div></div>
-<div class="ttc" id="aclass_nextion_html"><div class="ttname"><a href="class_nextion.html">Nextion</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8h_source.html#l00056">NexHardware.h:56</a></div></div>
+<div class="ttc" id="aclass_nextion_if_html_afdc1e3f9a50ced4b85b14fa61b8411e4"><div class="ttname"><a href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">NextionIf::recvRetCommandFinished</a></div><div class="ttdeci">bool recvRetCommandFinished(size_t timeout=200) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00076">NextionIf.cpp:76</a></div></div>
+<div class="ttc" id="aclass_nextion_html"><div class="ttname"><a href="class_nextion.html">Nextion</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8h_source.html#l00061">NexHardware.h:61</a></div></div>
 <div class="ttc" id="aclass_nex_page_html_a5714e41d4528b991eda4bbe578005418"><div class="ttname"><a href="class_nex_page.html#a5714e41d4528b991eda4bbe578005418">NexPage::show</a></div><div class="ttdeci">bool show(void)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_page_8cpp_source.html#l00028">NexPage.cpp:28</a></div></div>
 <div class="ttc" id="a_nex_hardware_8h_html"><div class="ttname"><a href="_nex_hardware_8h.html">NexHardware.h</a></div></div>
-<div class="ttc" id="aclass_nextion_if_html_aa26378869ffffe33dd32bc2364adf408"><div class="ttname"><a href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">NextionIf::sendCommand</a></div><div class="ttdeci">void sendCommand(const char *cmd) const final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00043">NextionIf.cpp:43</a></div></div>
 <div class="ttc" id="a_nex_page_8h_html"><div class="ttname"><a href="_nex_page_8h.html">NexPage.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

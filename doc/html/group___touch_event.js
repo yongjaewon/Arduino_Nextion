@@ -2,7 +2,7 @@ var group___touch_event =
 [
     [ "NexTouch", "class_nex_touch.html", [
       [ "NexTouch", "class_nex_touch.html#a01fa6b5f13606f85befcf65ff0b64e8f", null ],
-      [ "NexTouch", "class_nex_touch.html#adbec41e834661339bef42988300a28ea", null ],
+      [ "NexTouch", "class_nex_touch.html#a89fdb413a624e4d3b55c348530a3ced5", null ],
       [ "attachPop", "class_nex_touch.html#a1fa1ebf87382713fccc3dc551c06dd1e", null ],
       [ "attachPush", "class_nex_touch.html#a31a97db91f2f710b53aec071b8065e8f", null ],
       [ "detachPop", "class_nex_touch.html#af656640c1078a553287a68bf792dd291", null ],

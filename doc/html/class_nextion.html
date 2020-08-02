@@ -116,8 +116,9 @@ Collaboration diagram for Nextion:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_nextion__coll__graph.png" border="0" usemap="#_nextion_coll__map" alt="Collaboration graph"/></div>
 <map name="_nextion_coll__map" id="_nextion_coll__map">
-<area shape="rect" title=" " alt="" coords="29,80,96,107"/>
+<area shape="rect" title=" " alt="" coords="75,95,141,121"/>
 <area shape="rect" href="class_nextion_interface.html" title=" " alt="" coords="5,5,120,32"/>
+<area shape="rect" href="structnex_queued_event.html" title=" " alt="" coords="144,5,264,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -129,34 +130,36 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adb8d29dad9179982fffbcc35d1b501a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5d22c4c61831c6f58e546f1eff95ae2"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#ad5d22c4c61831c6f58e546f1eff95ae2">~Nextion</a> ()</td></tr>
 <tr class="separator:ad5d22c4c61831c6f58e546f1eff95ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab90a0462b162cfe773cf670e9cba09a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#ab90a0462b162cfe773cf670e9cba09a3">recvRetNumber</a> (uint32_t *number, uint32_t timeout=100) const final</td></tr>
-<tr class="separator:ab90a0462b162cfe773cf670e9cba09a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b357b43491efa0830dc14d54a1e1ef9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a9b357b43491efa0830dc14d54a1e1ef9">recvRetNumber</a> (int32_t *number, uint32_t timeout=100) const final</td></tr>
-<tr class="separator:a9b357b43491efa0830dc14d54a1e1ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69596aef9e363b92a0210949180fb27e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a69596aef9e363b92a0210949180fb27e">recvRetString</a> (String &amp;str, uint32_t timeout=100) const final</td></tr>
-<tr class="separator:a69596aef9e363b92a0210949180fb27e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c354a9e3e7ad9d095fdba2eb342f1b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a1c354a9e3e7ad9d095fdba2eb342f1b2">recvRetString</a> (char *buffer, uint16_t &amp;len, uint32_t timeout=100) const final</td></tr>
-<tr class="separator:a1c354a9e3e7ad9d095fdba2eb342f1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef3f701010fd275b1034be238e392f73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#aef3f701010fd275b1034be238e392f73">sendCommand</a> (const char *cmd) const final</td></tr>
-<tr class="separator:aef3f701010fd275b1034be238e392f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a431cca1fc0892f33be2db4e2999b3a42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a431cca1fc0892f33be2db4e2999b3a42">sendRawData</a> (const uint8_t *buf, uint16_t len) const final</td></tr>
-<tr class="separator:a431cca1fc0892f33be2db4e2999b3a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f89c0c7dc323de9c539d7bf9af5556c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a1f89c0c7dc323de9c539d7bf9af5556c">sendRawByte</a> (const uint8_t byte) const final</td></tr>
-<tr class="separator:a1f89c0c7dc323de9c539d7bf9af5556c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac885132f695b6773b20b8853e924e37"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#aac885132f695b6773b20b8853e924e37">recvCommand</a> (const uint8_t command, uint32_t timeout) const final</td></tr>
-<tr class="separator:aac885132f695b6773b20b8853e924e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a290d2e855c9357da8d1455f1c75268d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a290d2e855c9357da8d1455f1c75268d6">recvRetCommandFinished</a> (uint32_t timeout=200) const final</td></tr>
-<tr class="separator:a290d2e855c9357da8d1455f1c75268d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24da11183c7577bc6b7913880edce7bc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a24da11183c7577bc6b7913880edce7bc">RecvTransparendDataModeReady</a> (uint32_t timeout=400) const final</td></tr>
-<tr class="separator:a24da11183c7577bc6b7913880edce7bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75d1c8a6f05dbd38fb29c23f81fbfd1d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a75d1c8a6f05dbd38fb29c23f81fbfd1d">RecvTransparendDataModeFinished</a> (uint32_t timeout=200) const final</td></tr>
-<tr class="separator:a75d1c8a6f05dbd38fb29c23f81fbfd1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09f91677e55d7eae09df46d4e9c10fa3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a09f91677e55d7eae09df46d4e9c10fa3">nexInit</a> (const uint32_t baud=9600)</td></tr>
-<tr class="separator:a09f91677e55d7eae09df46d4e9c10fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abda4327daa1285808caeea712e3706cb"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#abda4327daa1285808caeea712e3706cb">GetCurrentBaud</a> () const final</td></tr>
-<tr class="separator:abda4327daa1285808caeea712e3706cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a806323f1cb9c4d94d2468b69003634a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a806323f1cb9c4d94d2468b69003634a5">nexLoop</a> (<a class="el" href="class_nex_touch.html">NexTouch</a> *nex_listen_list[]) const</td></tr>
-<tr class="separator:a806323f1cb9c4d94d2468b69003634a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ef6d7397f8f5193402e43ebd9753359"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a8ef6d7397f8f5193402e43ebd9753359">recvRetNumber</a> (uint32_t *number, size_t timeout=<a class="el" href="group___configuration.html#ga5ae87f8c93cd3b2f119ea3708ca4f049">NEX_TIMEOUT_RETURN</a>) final</td></tr>
+<tr class="separator:a8ef6d7397f8f5193402e43ebd9753359"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a759c30b470af02ea60b3efd4f493cf7c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a759c30b470af02ea60b3efd4f493cf7c">recvRetNumber</a> (int32_t *number, size_t timeout=<a class="el" href="group___configuration.html#ga5ae87f8c93cd3b2f119ea3708ca4f049">NEX_TIMEOUT_RETURN</a>) final</td></tr>
+<tr class="separator:a759c30b470af02ea60b3efd4f493cf7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc1c53be7831ea7c772e7fa7edb4ce45"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#acc1c53be7831ea7c772e7fa7edb4ce45">recvRetString</a> (String &amp;str, size_t timeout=<a class="el" href="group___configuration.html#ga5ae87f8c93cd3b2f119ea3708ca4f049">NEX_TIMEOUT_RETURN</a>, bool start_flag=true) final</td></tr>
+<tr class="separator:acc1c53be7831ea7c772e7fa7edb4ce45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a798dd13e98f8dac415c6780370dc070a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a798dd13e98f8dac415c6780370dc070a">recvRetString</a> (char *buffer, uint16_t &amp;len, size_t timeout=<a class="el" href="group___configuration.html#ga5ae87f8c93cd3b2f119ea3708ca4f049">NEX_TIMEOUT_RETURN</a>, bool start_flag=true) final</td></tr>
+<tr class="separator:a798dd13e98f8dac415c6780370dc070a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74f093cbd5c93b108bf921642778cb44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a74f093cbd5c93b108bf921642778cb44">sendCommand</a> (const char *cmd) final</td></tr>
+<tr class="separator:a74f093cbd5c93b108bf921642778cb44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58ae3fb343145ef8c3f648a756c85e76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a58ae3fb343145ef8c3f648a756c85e76">sendRawData</a> (const uint8_t *buf, uint16_t len) final</td></tr>
+<tr class="separator:a58ae3fb343145ef8c3f648a756c85e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f7adcaa988489c206a46a2555e36bcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a5f7adcaa988489c206a46a2555e36bcf">sendRawByte</a> (const uint8_t byte) final</td></tr>
+<tr class="separator:a5f7adcaa988489c206a46a2555e36bcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75f5b4069e1945d9d03974ddbcd43cb4"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a75f5b4069e1945d9d03974ddbcd43cb4">readBytes</a> (uint8_t *buffer, size_t size, size_t timeout=<a class="el" href="group___configuration.html#ga5ae87f8c93cd3b2f119ea3708ca4f049">NEX_TIMEOUT_RETURN</a>) final</td></tr>
+<tr class="separator:a75f5b4069e1945d9d03974ddbcd43cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc6c106cb3d5f7a065c0ad1ea9fe1905"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#afc6c106cb3d5f7a065c0ad1ea9fe1905">recvCommand</a> (const uint8_t command, size_t timeout=<a class="el" href="group___configuration.html#gab669a035a97723735f7a2003f7839f81">NEX_TIMEOUT_COMMAND</a>) final</td></tr>
+<tr class="separator:afc6c106cb3d5f7a065c0ad1ea9fe1905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3fa2fef8029415b0c1df2685a1be24a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#ab3fa2fef8029415b0c1df2685a1be24a">recvRetCommandFinished</a> (size_t timeout=<a class="el" href="group___configuration.html#gab669a035a97723735f7a2003f7839f81">NEX_TIMEOUT_COMMAND</a>) final</td></tr>
+<tr class="separator:ab3fa2fef8029415b0c1df2685a1be24a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a508bab9c4524d22c7b4c74e4cd938466"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a508bab9c4524d22c7b4c74e4cd938466">RecvTransparendDataModeReady</a> (size_t timeout=<a class="el" href="group___configuration.html#ga2c6a26713ffadd18a4d56a3f8ea357ed">NEX_TIMEOUT_TRANSPARENT_DATA_MODE</a>) final</td></tr>
+<tr class="separator:a508bab9c4524d22c7b4c74e4cd938466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39834c36ff6fd870d41864a9b65c2ae5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a39834c36ff6fd870d41864a9b65c2ae5">RecvTransparendDataModeFinished</a> (size_t timeout=<a class="el" href="group___configuration.html#gab669a035a97723735f7a2003f7839f81">NEX_TIMEOUT_COMMAND</a>) final</td></tr>
+<tr class="separator:a39834c36ff6fd870d41864a9b65c2ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac44fce0438c1f80e6cf70a8d19772132"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#ac44fce0438c1f80e6cf70a8d19772132">nexInit</a> (const uint32_t baud=<a class="el" href="group___configuration.html#ga0d9afe49b80c7a5c460c0fd86f3c10ff">NEX_SERIAL_DEFAULT_BAUD</a>)</td></tr>
+<tr class="separator:ac44fce0438c1f80e6cf70a8d19772132"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59c6f37fa29847ff3e87b740ef031257"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a59c6f37fa29847ff3e87b740ef031257">GetCurrentBaud</a> () final</td></tr>
+<tr class="separator:a59c6f37fa29847ff3e87b740ef031257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa47c92213071cf8ae36fd2ca8cbfa841"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#aa47c92213071cf8ae36fd2ca8cbfa841">nexLoop</a> (<a class="el" href="class_nex_touch.html">NexTouch</a> *nex_listen_list[])</td></tr>
+<tr class="separator:aa47c92213071cf8ae36fd2ca8cbfa841"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_nextion_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_nextion_interface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_nextion_interface.html">NextionInterface</a></td></tr>
 <tr class="memitem:a71a5caf3fe010525993590d28051050f inherit pub_methods_class_nextion_interface"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion_interface.html#a71a5caf3fe010525993590d28051050f">NextionInterface</a> ()</td></tr>
 <tr class="separator:a71a5caf3fe010525993590d28051050f inherit pub_methods_class_nextion_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,7 +195,8 @@ Public Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
 <tr class="memitem:a8890e51464c5c6f93e05d4a2420217dc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a8890e51464c5c6f93e05d4a2420217dc">serialType</a> { <a class="el" href="class_nextion.html#a8890e51464c5c6f93e05d4a2420217dca04244d887124f84916bbfbd103ac4142">HW</a>, 
-<a class="el" href="class_nextion.html#a8890e51464c5c6f93e05d4a2420217dcaa89fb2490712a9b062a108a550115b6d">SW</a>
+<a class="el" href="class_nextion.html#a8890e51464c5c6f93e05d4a2420217dcaa89fb2490712a9b062a108a550115b6d">SW</a>, 
+<a class="el" href="class_nextion.html#a8890e51464c5c6f93e05d4a2420217dca94960f4e33135b23dd13b15b9315c163">HW_USBCON</a>
  }</td></tr>
 <tr class="separator:a8890e51464c5c6f93e05d4a2420217dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -204,6 +208,10 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:adb719a398efe8ff3dcf25b66b6de0c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac77c90de85cf2c64dbf592c00291da4c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#ac77c90de85cf2c64dbf592c00291da4c">findBaud</a> (uint32_t &amp;baud)</td></tr>
 <tr class="separator:ac77c90de85cf2c64dbf592c00291da4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26a8c373cb16057704f2ea307aaf281a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a26a8c373cb16057704f2ea307aaf281a">ReadQueuedEvents</a> ()</td></tr>
+<tr class="separator:a26a8c373cb16057704f2ea307aaf281a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf194c0e9ddf3d91a900da3c8ba12065"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnex_queued_event.html">nexQueuedEvent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#abf194c0e9ddf3d91a900da3c8ba12065">GetQueuedEvent</a> ()</td></tr>
+<tr class="separator:abf194c0e9ddf3d91a900da3c8ba12065"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -213,6 +221,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a232d60b4debad98eec88d746dfb14ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f12313a0009e0663eac56e31e082c88"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#a5f12313a0009e0663eac56e31e082c88">m_baud</a></td></tr>
 <tr class="separator:a5f12313a0009e0663eac56e31e082c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5dda6ac89808556735f5fb1e250ddfa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnex_queued_event.html">nexQueuedEvent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nextion.html#aa5dda6ac89808556735f5fb1e250ddfa">m_queuedEvents</a> {nullptr}</td></tr>
+<tr class="separator:aa5dda6ac89808556735f5fb1e250ddfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -224,7 +234,7 @@ Static Private Attributes</h2></td></tr>
 <p>Provides <a class="el" href="class_nextion.html">Nextion</a> connection instance either for harware serial or software serial Harware serial can be disable/eabled using NEX_ENABLE_HW_SERIAL define software serial can be disable/eabled using NEX_ENABLE_SW_SERIAL define</p>
 <p>Note: NodeMcu board pin numbers not match with Esp8266 pin numbers use NodeMcu Pin number definitions (pins_arduino.h) </p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00056">56</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00061">61</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a8890e51464c5c6f93e05d4a2420217dc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8890e51464c5c6f93e05d4a2420217dc">&#9670;&nbsp;</a></span>serialType</h2>
@@ -248,9 +258,10 @@ Static Private Attributes</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8890e51464c5c6f93e05d4a2420217dca04244d887124f84916bbfbd103ac4142"></a>HW&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a8890e51464c5c6f93e05d4a2420217dcaa89fb2490712a9b062a108a550115b6d"></a>SW&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8890e51464c5c6f93e05d4a2420217dca94960f4e33135b23dd13b15b9315c163"></a>HW_USBCON&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00080">80</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00085">85</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
 
 </div>
 </div>
@@ -354,7 +365,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00097">97</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00182">182</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
 
 </div>
 </div>
@@ -384,7 +395,7 @@ Static Private Attributes</h2></td></tr>
 <p>test connection to nextion</p>
 <dl class="section return"><dt>Returns</dt><dd>true if success, false for failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00101">101</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00186">186</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
 
 </div>
 </div>
@@ -420,12 +431,12 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if success, false for failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00114">114</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00201">201</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
 
 </div>
 </div>
-<a id="abda4327daa1285808caeea712e3706cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abda4327daa1285808caeea712e3706cb">&#9670;&nbsp;</a></span>GetCurrentBaud()</h2>
+<a id="a59c6f37fa29847ff3e87b740ef031257"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59c6f37fa29847ff3e87b740ef031257">&#9670;&nbsp;</a></span>GetCurrentBaud()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -437,7 +448,7 @@ Static Private Attributes</h2></td></tr>
           <td class="memname">uint32_t Nextion::GetCurrentBaud </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -449,9 +460,9 @@ Static Private Attributes</h2></td></tr>
 <p>current baud value</p>
 <dl class="section return"><dt>Returns</dt><dd>current baud value </dd></dl>
 
-<p>Implements <a class="el" href="class_nextion_interface.html#aaf94d6c3c053b4833fea28be993ce5ea">NextionInterface</a>.</p>
+<p>Implements <a class="el" href="class_nextion_interface.html#aed0e7876a55d3ef2a12723467406f11b">NextionInterface</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00494">494</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00620">620</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
 
 </div>
 </div>
@@ -535,8 +546,42 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a09f91677e55d7eae09df46d4e9c10fa3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09f91677e55d7eae09df46d4e9c10fa3">&#9670;&nbsp;</a></span>nexInit()</h2>
+<a id="abf194c0e9ddf3d91a900da3c8ba12065"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf194c0e9ddf3d91a900da3c8ba12065">&#9670;&nbsp;</a></span>GetQueuedEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structnex_queued_event.html">nexQueuedEvent</a> * Nextion::GetQueuedEvent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get Queued event from the message queue</p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">nullptr</td><td>if no queued events to handle </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00115">115</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac44fce0438c1f80e6cf70a8d19772132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac44fce0438c1f80e6cf70a8d19772132">&#9670;&nbsp;</a></span>nexInit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -545,7 +590,7 @@ Static Private Attributes</h2></td></tr>
           <td class="memname">bool Nextion::nexInit </td>
           <td>(</td>
           <td class="paramtype">const uint32_t&#160;</td>
-          <td class="paramname"><em>baud</em> = <code>9600</code></td><td>)</td>
+          <td class="paramname"><em>baud</em> = <code><a class="el" href="group___configuration.html#ga0d9afe49b80c7a5c460c0fd86f3c10ff">NEX_SERIAL_DEFAULT_BAUD</a></code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -559,12 +604,12 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if success, false for failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00432">432</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00552">552</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a806323f1cb9c4d94d2468b69003634a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a806323f1cb9c4d94d2468b69003634a5">&#9670;&nbsp;</a></span>nexLoop()</h2>
+<a id="aa47c92213071cf8ae36fd2ca8cbfa841"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa47c92213071cf8ae36fd2ca8cbfa841">&#9670;&nbsp;</a></span>nexLoop()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -574,7 +619,7 @@ Static Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_nex_touch.html">NexTouch</a> *&#160;</td>
           <td class="paramname"><em>nex_listen_list</em>[]</td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -589,12 +634,92 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>none.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>This function must be called repeatedly to response touch events from <a class="el" href="class_nextion.html">Nextion</a> touch panel. Actually, you should place it in your loop function. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00499">499</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00625">625</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aac885132f695b6773b20b8853e924e37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac885132f695b6773b20b8853e924e37">&#9670;&nbsp;</a></span>recvCommand()</h2>
+<a id="a75f5b4069e1945d9d03974ddbcd43cb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75f5b4069e1945d9d03974ddbcd43cb4">&#9670;&nbsp;</a></span>readBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Nextion::readBytes </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code><a class="el" href="group___configuration.html#ga5ae87f8c93cd3b2f119ea3708ca4f049">NEX_TIMEOUT_RETURN</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_nextion_interface.html#ae5a69671ce28fc30188e1d4c76f1e576">NextionInterface</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00458">458</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a26a8c373cb16057704f2ea307aaf281a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26a8c373cb16057704f2ea307aaf281a">&#9670;&nbsp;</a></span>ReadQueuedEvents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Nextion::ReadQueuedEvents </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Read Queued event in the message queue</p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">none</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00076">76</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afc6c106cb3d5f7a065c0ad1ea9fe1905"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc6c106cb3d5f7a065c0ad1ea9fe1905">&#9670;&nbsp;</a></span>recvCommand()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -611,13 +736,13 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>timeout</em>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code><a class="el" href="group___configuration.html#gab669a035a97723735f7a2003f7839f81">NEX_TIMEOUT_COMMAND</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -627,14 +752,14 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_nextion_interface.html#a3cdd310bf2c17d5e33ee3d56d9eb5f52">NextionInterface</a>.</p>
+<p>Implements <a class="el" href="class_nextion_interface.html#a3ad8b3db5251be5305129dbe1bbaf0e1">NextionInterface</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00359">359</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00478">478</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a290d2e855c9357da8d1455f1c75268d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a290d2e855c9357da8d1455f1c75268d6">&#9670;&nbsp;</a></span>recvRetCommandFinished()</h2>
+<a id="ab3fa2fef8029415b0c1df2685a1be24a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3fa2fef8029415b0c1df2685a1be24a">&#9670;&nbsp;</a></span>recvRetCommandFinished()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -645,9 +770,9 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">bool Nextion::recvRetCommandFinished </td>
           <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>timeout</em> = <code>200</code></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code><a class="el" href="group___configuration.html#gab669a035a97723735f7a2003f7839f81">NEX_TIMEOUT_COMMAND</a></code></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -657,14 +782,14 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_nextion_interface.html#ab10b4d527df27118998649981e7a50e4">NextionInterface</a>.</p>
+<p>Implements <a class="el" href="class_nextion_interface.html#a1d7c729f014f7435f065585cc7ad4c5c">NextionInterface</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00389">389</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00509">509</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a9b357b43491efa0830dc14d54a1e1ef9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b357b43491efa0830dc14d54a1e1ef9">&#9670;&nbsp;</a></span>recvRetNumber() <span class="overload">[1/2]</span></h2>
+<a id="a759c30b470af02ea60b3efd4f493cf7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a759c30b470af02ea60b3efd4f493cf7c">&#9670;&nbsp;</a></span>recvRetNumber() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -681,13 +806,13 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>timeout</em> = <code>100</code>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code><a class="el" href="group___configuration.html#ga5ae87f8c93cd3b2f119ea3708ca4f049">NEX_TIMEOUT_RETURN</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -697,14 +822,14 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_nextion_interface.html#ad710c5d1f0bd05df4096d82233087c6c">NextionInterface</a>.</p>
+<p>Implements <a class="el" href="class_nextion_interface.html#a94d2a2b731361933d343ed4dc8b55662">NextionInterface</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00201">201</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00294">294</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ab90a0462b162cfe773cf670e9cba09a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab90a0462b162cfe773cf670e9cba09a3">&#9670;&nbsp;</a></span>recvRetNumber() <span class="overload">[2/2]</span></h2>
+<a id="a8ef6d7397f8f5193402e43ebd9753359"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ef6d7397f8f5193402e43ebd9753359">&#9670;&nbsp;</a></span>recvRetNumber() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -721,13 +846,13 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>timeout</em> = <code>100</code>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code><a class="el" href="group___configuration.html#ga5ae87f8c93cd3b2f119ea3708ca4f049">NEX_TIMEOUT_RETURN</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -737,14 +862,14 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_nextion_interface.html#a0d0a14a767b850e19e05f5d92fe6bdd5">NextionInterface</a>.</p>
+<p>Implements <a class="el" href="class_nextion_interface.html#a0471b58fa293fcb236d82c3d903d91d4">NextionInterface</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00150">150</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00243">243</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a1c354a9e3e7ad9d095fdba2eb342f1b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c354a9e3e7ad9d095fdba2eb342f1b2">&#9670;&nbsp;</a></span>recvRetString() <span class="overload">[1/2]</span></h2>
+<a id="a798dd13e98f8dac415c6780370dc070a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a798dd13e98f8dac415c6780370dc070a">&#9670;&nbsp;</a></span>recvRetString() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -767,13 +892,19 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>timeout</em> = <code>100</code>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code><a class="el" href="group___configuration.html#ga5ae87f8c93cd3b2f119ea3708ca4f049">NEX_TIMEOUT_RETURN</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>start_flag</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -783,14 +914,14 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_nextion_interface.html#aefb4981828443038902fabb8bcb47db2">NextionInterface</a>.</p>
+<p>Implements <a class="el" href="class_nextion_interface.html#afc67bfd3851004ed7a0c192339bc6190">NextionInterface</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00310">310</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00408">408</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a69596aef9e363b92a0210949180fb27e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69596aef9e363b92a0210949180fb27e">&#9670;&nbsp;</a></span>recvRetString() <span class="overload">[2/2]</span></h2>
+<a id="acc1c53be7831ea7c772e7fa7edb4ce45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc1c53be7831ea7c772e7fa7edb4ce45">&#9670;&nbsp;</a></span>recvRetString() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -807,13 +938,19 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>timeout</em> = <code>100</code>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code><a class="el" href="group___configuration.html#ga5ae87f8c93cd3b2f119ea3708ca4f049">NEX_TIMEOUT_RETURN</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>start_flag</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -823,14 +960,14 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_nextion_interface.html#abbd25ed5a00e81a0aea7096a8cdf7d27">NextionInterface</a>.</p>
+<p>Implements <a class="el" href="class_nextion_interface.html#a819c48ccca49d2a1aa44e46a0bf9f64d">NextionInterface</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00252">252</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00346">346</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a75d1c8a6f05dbd38fb29c23f81fbfd1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75d1c8a6f05dbd38fb29c23f81fbfd1d">&#9670;&nbsp;</a></span>RecvTransparendDataModeFinished()</h2>
+<a id="a39834c36ff6fd870d41864a9b65c2ae5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39834c36ff6fd870d41864a9b65c2ae5">&#9670;&nbsp;</a></span>RecvTransparendDataModeFinished()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -841,9 +978,9 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">bool Nextion::RecvTransparendDataModeFinished </td>
           <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>timeout</em> = <code>200</code></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code><a class="el" href="group___configuration.html#gab669a035a97723735f7a2003f7839f81">NEX_TIMEOUT_COMMAND</a></code></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -853,14 +990,14 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_nextion_interface.html#af2112c27c170ac19d79c81bd0eec04be">NextionInterface</a>.</p>
+<p>Implements <a class="el" href="class_nextion_interface.html#a51fbdfaf2a7b61b78aa560be9b591cc0">NextionInterface</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00418">418</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00538">538</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a24da11183c7577bc6b7913880edce7bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24da11183c7577bc6b7913880edce7bc">&#9670;&nbsp;</a></span>RecvTransparendDataModeReady()</h2>
+<a id="a508bab9c4524d22c7b4c74e4cd938466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a508bab9c4524d22c7b4c74e4cd938466">&#9670;&nbsp;</a></span>RecvTransparendDataModeReady()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -871,9 +1008,9 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">bool Nextion::RecvTransparendDataModeReady </td>
           <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>timeout</em> = <code>400</code></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code><a class="el" href="group___configuration.html#ga2c6a26713ffadd18a4d56a3f8ea357ed">NEX_TIMEOUT_TRANSPARENT_DATA_MODE</a></code></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -883,14 +1020,14 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_nextion_interface.html#a933cb5e605b39cbb7ca33ad4feb6a774">NextionInterface</a>.</p>
+<p>Implements <a class="el" href="class_nextion_interface.html#a6b7a51df607099cc028df175d17cf820">NextionInterface</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00403">403</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00523">523</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aef3f701010fd275b1034be238e392f73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef3f701010fd275b1034be238e392f73">&#9670;&nbsp;</a></span>sendCommand()</h2>
+<a id="a74f093cbd5c93b108bf921642778cb44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74f093cbd5c93b108bf921642778cb44">&#9670;&nbsp;</a></span>sendCommand()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -903,7 +1040,7 @@ Static Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>cmd</em></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -913,14 +1050,14 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_nextion_interface.html#a3dfba81dcbba9b636c4c20e98142f37c">NextionInterface</a>.</p>
+<p>Implements <a class="el" href="class_nextion_interface.html#a4b9a0834cdebee03aea139f6bc790d4d">NextionInterface</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00328">328</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00426">426</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a1f89c0c7dc323de9c539d7bf9af5556c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f89c0c7dc323de9c539d7bf9af5556c">&#9670;&nbsp;</a></span>sendRawByte()</h2>
+<a id="a5f7adcaa988489c206a46a2555e36bcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f7adcaa988489c206a46a2555e36bcf">&#9670;&nbsp;</a></span>sendRawByte()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -933,7 +1070,7 @@ Static Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const uint8_t&#160;</td>
           <td class="paramname"><em>byte</em></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -943,14 +1080,14 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_nextion_interface.html#abc966f951fb0eb26687950abc95c43bd">NextionInterface</a>.</p>
+<p>Implements <a class="el" href="class_nextion_interface.html#a92b2af84c33db66bbf35385c299501cf">NextionInterface</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00354">354</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00453">453</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a431cca1fc0892f33be2db4e2999b3a42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a431cca1fc0892f33be2db4e2999b3a42">&#9670;&nbsp;</a></span>sendRawData()</h2>
+<a id="a58ae3fb343145ef8c3f648a756c85e76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58ae3fb343145ef8c3f648a756c85e76">&#9670;&nbsp;</a></span>sendRawData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -973,7 +1110,7 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -983,9 +1120,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_nextion_interface.html#a113a8fb688d0d5ff65484bf8bc8336da">NextionInterface</a>.</p>
+<p>Implements <a class="el" href="class_nextion_interface.html#a7f22083248dcc76156a90ff6813f429a">NextionInterface</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00349">349</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00448">448</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
 
 </div>
 </div>
@@ -1003,7 +1140,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Device automatically enters into sleep mode callback function Only when the device automatically enters into sleep mode will return this data. If execute serial command “sleep = 1” to enter into sleep mode, it will not return this data. </p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00183">183</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00225">225</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
 
 </div>
 </div>
@@ -1020,7 +1157,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Device automatically wake up callback function Only when the device automatically wake up will return this data. If execute serial command “sleep=0” to wake up, it will not return this data. </p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00191">191</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00233">233</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
 
 </div>
 </div>
@@ -1044,7 +1181,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00060">60</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00065">65</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
 
 </div>
 </div>
@@ -1062,7 +1199,7 @@ Static Private Attributes</h2></td></tr>
 <p>Current Page ID callback function The device returns this data after receiving “sendme” instruction)</p>
 <p>uint8_t pageId </p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00149">149</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00191">191</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
 
 </div>
 </div>
@@ -1086,7 +1223,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00084">84</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00089">89</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
 
 </div>
 </div>
@@ -1110,7 +1247,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00083">83</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00088">88</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
 
 </div>
 </div>
@@ -1134,7 +1271,31 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00082">82</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00087">87</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
+
+</div>
+</div>
+<a id="aa5dda6ac89808556735f5fb1e250ddfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5dda6ac89808556735f5fb1e250ddfa">&#9670;&nbsp;</a></span>m_queuedEvents</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structnex_queued_event.html">nexQueuedEvent</a>* Nextion::m_queuedEvents {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00091">91</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
 
 </div>
 </div>
@@ -1151,7 +1312,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p><a class="el" href="class_nextion.html">Nextion</a> Ready callback function Returned when <a class="el" href="class_nextion.html">Nextion</a> has powered up and is now initialized successfully </p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00198">198</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00240">240</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
 
 </div>
 </div>
@@ -1168,7 +1329,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p><a class="el" href="class_nextion.html">Nextion</a> Startup callback function Returned when <a class="el" href="class_nextion.html">Nextion</a> has started or reset </p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00139">139</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00181">181</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
 
 </div>
 </div>
@@ -1185,7 +1346,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Start SD card upgrade callback function This data is sent after the device power on and detect SD card, and then enter upgrade interface </p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00205">205</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00247">247</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
 
 </div>
 </div>
@@ -1204,7 +1365,7 @@ Static Private Attributes</h2></td></tr>
 <p>uint16_t x uint16_t y uint8_t TouchEvent</p>
 <p>Definition of TouchEvent: Press Event 0x01, Release Event 0X00 </p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00162">162</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00204">204</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
 
 </div>
 </div>
@@ -1223,7 +1384,7 @@ Static Private Attributes</h2></td></tr>
 <p>uint16_t x uint16_t y uint8_t TouchEvent</p>
 <p>Definition of TouchEvent: Press Event 0x01, Release Event 0X00 </p>
 
-<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00175">175</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8h_source.html#l00217">217</a> of file <a class="el" href="_nex_hardware_8h_source.html">NexHardware.h</a>.</p>
 
 </div>
 </div>

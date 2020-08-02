@@ -31,5 +31,6 @@ var _nex_hardware_8cpp =
     [ "NEX_RET_STRING_HEAD", "_nex_hardware_8cpp.html#ad393b486073a63b083b94e0926ce755b", null ],
     [ "Nex_RET_TRANSPARENT_DATA_FINISHED", "_nex_hardware_8cpp.html#af15fc3d9ad03e6184b6f0fa326743f1c", null ],
     [ "Nex_RET_TRANSPARENT_DATA_READY", "_nex_hardware_8cpp.html#a17fa60dd08b88a0e9c44bffaa2523071", null ],
-    [ "NEX_RET_VARIABLE_NAME_TOO_LONG", "_nex_hardware_8cpp.html#a832fc6be6addbb59d71684f0dd365fba", null ]
+    [ "NEX_RET_VARIABLE_NAME_TOO_LONG", "_nex_hardware_8cpp.html#a832fc6be6addbb59d71684f0dd365fba", null ],
+    [ "_nextion_queued_events", "_nex_hardware_8cpp.html#ae2556900edb319b895ccc96abf170321", null ]
 ];

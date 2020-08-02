@@ -88,7 +88,8 @@ $(document).ready(function(){initNavTree('_nex_hardware_8cpp.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">NexHardware.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -182,6 +183,11 @@ Macros</h2></td></tr>
 <tr class="separator:a832fc6be6addbb59d71684f0dd365fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53cc230caba66701b8bed4205a836914"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_nex_hardware_8cpp.html#a53cc230caba66701b8bed4205a836914">NEX_RET_SERIAL_BUFFER_OVERFLOW</a>&#160;&#160;&#160;(0x24)</td></tr>
 <tr class="separator:a53cc230caba66701b8bed4205a836914"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ae2556900edb319b895ccc96abf170321"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_nex_hardware_8cpp.html#ae2556900edb319b895ccc96abf170321">_nextion_queued_events</a> [][2]</td></tr>
+<tr class="separator:ae2556900edb319b895ccc96abf170321"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The implementation of base API for using <a class="el" href="class_nextion.html">Nextion</a>.</p>
@@ -707,8 +713,55 @@ This program is free software; you can redistribute it and/or modify it under th
 
 </div>
 </div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ae2556900edb319b895ccc96abf170321"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2556900edb319b895ccc96abf170321">&#9670;&nbsp;</a></span>_nextion_queued_events</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t _nextion_queued_events[][2]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">{</div>
+<div class="line">    {<a class="code" href="_nex_hardware_8cpp.html#a160b243a9ddd789648ce1db1e91b7fe0">NEX_RET_EVENT_NEXTION_STARTUP</a>,     6},</div>
+<div class="line">    {<a class="code" href="_nex_hardware_8cpp.html#a35fd18c4bac38480ee0245b52ee4ea77">NEX_RET_EVENT_TOUCH_HEAD</a>,          7},</div>
+<div class="line">    {<a class="code" href="_nex_hardware_8cpp.html#a8ecaa6008b80a4bbed8be6a523508814">NEX_RET_CURRENT_PAGE_ID_HEAD</a>,      5},</div>
+<div class="line">    {<a class="code" href="_nex_hardware_8cpp.html#a3bee97cbefe18e5722460ad3a956efe3">NEX_RET_EVENT_POSITION_HEAD</a>,       9},</div>
+<div class="line">    {<a class="code" href="_nex_hardware_8cpp.html#ad71409f4588b5daebfb34e1c9f5f5f27">NEX_RET_EVENT_SLEEP_POSITION_HEAD</a>, 9},</div>
+<div class="line">    {<a class="code" href="_nex_hardware_8cpp.html#ac0fd17890492fb4226bd6572c4a0933a">NEX_RET_AUTOMATIC_SLEEP</a>,           4},</div>
+<div class="line">    {<a class="code" href="_nex_hardware_8cpp.html#ac8aeb4dd2f7a0ff60f7237f49322fed5">NEX_RET_AUTOMATIC_WAKE_UP</a>,         4},</div>
+<div class="line">    {<a class="code" href="_nex_hardware_8cpp.html#ab0efecbfa42c6106b57878c33a489e3c">NEX_RET_EVENT_NEXTION_READY</a>,       1},</div>
+<div class="line">    {<a class="code" href="_nex_hardware_8cpp.html#aaf9e2832ce1432241141fb1351901e78">NEX_RET_START_SD_UPGRADE</a>,          1},</div>
+<div class="line">    {0xFF,                              0}  </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_nex_hardware_8cpp_source.html#l00062">62</a> of file <a class="el" href="_nex_hardware_8cpp_source.html">NexHardware.cpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="a_nex_hardware_8cpp_html_a160b243a9ddd789648ce1db1e91b7fe0"><div class="ttname"><a href="_nex_hardware_8cpp.html#a160b243a9ddd789648ce1db1e91b7fe0">NEX_RET_EVENT_NEXTION_STARTUP</a></div><div class="ttdeci">#define NEX_RET_EVENT_NEXTION_STARTUP</div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00025">NexHardware.cpp:25</a></div></div>
+<div class="ttc" id="a_nex_hardware_8cpp_html_a35fd18c4bac38480ee0245b52ee4ea77"><div class="ttname"><a href="_nex_hardware_8cpp.html#a35fd18c4bac38480ee0245b52ee4ea77">NEX_RET_EVENT_TOUCH_HEAD</a></div><div class="ttdeci">#define NEX_RET_EVENT_TOUCH_HEAD</div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00026">NexHardware.cpp:26</a></div></div>
+<div class="ttc" id="a_nex_hardware_8cpp_html_a8ecaa6008b80a4bbed8be6a523508814"><div class="ttname"><a href="_nex_hardware_8cpp.html#a8ecaa6008b80a4bbed8be6a523508814">NEX_RET_CURRENT_PAGE_ID_HEAD</a></div><div class="ttdeci">#define NEX_RET_CURRENT_PAGE_ID_HEAD</div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00027">NexHardware.cpp:27</a></div></div>
+<div class="ttc" id="a_nex_hardware_8cpp_html_aaf9e2832ce1432241141fb1351901e78"><div class="ttname"><a href="_nex_hardware_8cpp.html#aaf9e2832ce1432241141fb1351901e78">NEX_RET_START_SD_UPGRADE</a></div><div class="ttdeci">#define NEX_RET_START_SD_UPGRADE</div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00035">NexHardware.cpp:35</a></div></div>
+<div class="ttc" id="a_nex_hardware_8cpp_html_ab0efecbfa42c6106b57878c33a489e3c"><div class="ttname"><a href="_nex_hardware_8cpp.html#ab0efecbfa42c6106b57878c33a489e3c">NEX_RET_EVENT_NEXTION_READY</a></div><div class="ttdeci">#define NEX_RET_EVENT_NEXTION_READY</div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00034">NexHardware.cpp:34</a></div></div>
+<div class="ttc" id="a_nex_hardware_8cpp_html_ad71409f4588b5daebfb34e1c9f5f5f27"><div class="ttname"><a href="_nex_hardware_8cpp.html#ad71409f4588b5daebfb34e1c9f5f5f27">NEX_RET_EVENT_SLEEP_POSITION_HEAD</a></div><div class="ttdeci">#define NEX_RET_EVENT_SLEEP_POSITION_HEAD</div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00029">NexHardware.cpp:29</a></div></div>
+<div class="ttc" id="a_nex_hardware_8cpp_html_a3bee97cbefe18e5722460ad3a956efe3"><div class="ttname"><a href="_nex_hardware_8cpp.html#a3bee97cbefe18e5722460ad3a956efe3">NEX_RET_EVENT_POSITION_HEAD</a></div><div class="ttdeci">#define NEX_RET_EVENT_POSITION_HEAD</div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00028">NexHardware.cpp:28</a></div></div>
+<div class="ttc" id="a_nex_hardware_8cpp_html_ac8aeb4dd2f7a0ff60f7237f49322fed5"><div class="ttname"><a href="_nex_hardware_8cpp.html#ac8aeb4dd2f7a0ff60f7237f49322fed5">NEX_RET_AUTOMATIC_WAKE_UP</a></div><div class="ttdeci">#define NEX_RET_AUTOMATIC_WAKE_UP</div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00033">NexHardware.cpp:33</a></div></div>
+<div class="ttc" id="a_nex_hardware_8cpp_html_ac0fd17890492fb4226bd6572c4a0933a"><div class="ttname"><a href="_nex_hardware_8cpp.html#ac0fd17890492fb4226bd6572c4a0933a">NEX_RET_AUTOMATIC_SLEEP</a></div><div class="ttdeci">#define NEX_RET_AUTOMATIC_SLEEP</div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8cpp_source.html#l00032">NexHardware.cpp:32</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -1,7 +1,7 @@
 var class_nex_rtc =
 [
     [ "NexRtc", "class_nex_rtc.html#a5423a420d265fb73280ef20c2dce5ef9", null ],
-    [ "NexRtc", "class_nex_rtc.html#a9e3c673139329b320f4cf4241d88d988", null ],
+    [ "NexRtc", "class_nex_rtc.html#a2544dd5042923fd138ee4c8e05cf9156", null ],
     [ "~NexRtc", "class_nex_rtc.html#ab85e54b21dfb4fe04760e3b5eefa6604", null ],
     [ "read_rtc_time", "class_nex_rtc.html#a5907833b8cef6ef2623e720a7fe9501d", null ],
     [ "read_rtc_time", "class_nex_rtc.html#aa2c23ac9b3a9e8155fb1c9fec496ff70", null ],

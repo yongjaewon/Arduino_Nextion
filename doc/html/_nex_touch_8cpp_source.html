@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('_nex_touch_8cpp_source.html','');});
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_touch_8h.html">NexTouch.h</a>&quot;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_hardware_8h.html">NexHardware.h</a>&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_nex_touch.html#adbec41e834661339bef42988300a28ea">   23</a></span>&#160;<a class="code" href="class_nex_touch.html#a01fa6b5f13606f85befcf65ff0b64e8f">NexTouch::NexTouch</a>(<span class="keyword">const</span> <a class="code" href="class_nextion.html">Nextion</a> *nextion, uint8_t pid, uint8_t cid, <span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keyword">const</span> <a class="code" href="class_nex_object.html">NexObject</a>* page)</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_nex_touch.html#a89fdb413a624e4d3b55c348530a3ced5">   23</a></span>&#160;<a class="code" href="class_nex_touch.html#a01fa6b5f13606f85befcf65ff0b64e8f">NexTouch::NexTouch</a>(<a class="code" href="class_nextion.html">Nextion</a> *nextion, uint8_t pid, uint8_t cid, <span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keyword">const</span> <a class="code" href="class_nex_object.html">NexObject</a>* page)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    :<a class="code" href="class_nex_object.html">NexObject</a>(nextion, pid, cid, name, page)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    this-&gt;<a class="code" href="class_nex_touch.html#a1b7ef40ed31b4a4a4f33f828f1b96fae">__cb_push</a> = <span class="keyword">nullptr</span>;</div>
@@ -151,28 +151,37 @@ $(document).ready(function(){initNavTree('_nex_touch_8cpp_source.html','');});
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == list)</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">for</span>(i = 0; (e = list[i]) != <span class="keyword">nullptr</span>; i++)</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span> (e-&gt;<a class="code" href="class_nex_object.html#a67621e5d7bcfb50c1a1bbc4ad1020352">getObjPid</a>() == pid &amp;&amp; e-&gt;<a class="code" href="class_nex_object.html#a8139b294806c1684fc95b635a33b1b15">getObjCid</a>() == cid)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            e-&gt;<a class="code" href="class_nex_object.html#abeff0c61474e8b3ce6bac76771820b64">printObjInfo</a>();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="group___touch_event.html#ga748c37a9bbe04ddc680fe1686154fefb">NEX_EVENT_PUSH</a> == event)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                e-&gt;<a class="code" href="class_nex_touch.html#ae808be665ae930e2ffdf3aff88bd3206">push</a>();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="group___touch_event.html#ga5db3d99f88ac878875ca47713b7a54b6">NEX_EVENT_POP</a> == event)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                e-&gt;<a class="code" href="class_nex_touch.html#a1d103432845b45a625869b5cd9bec505">pop</a>();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="group___configuration.html#ga7792c838c043fae9a630823f1c328a30">dbSerialPrintln</a>(<span class="stringliteral">&quot;Nex Touch events not registered/listed&quot;</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">bool</span> found{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span>(i = 0; (e = list[i]) != <span class="keyword">nullptr</span>; i++)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">if</span> (e-&gt;<a class="code" href="class_nex_object.html#a67621e5d7bcfb50c1a1bbc4ad1020352">getObjPid</a>() == pid &amp;&amp; e-&gt;<a class="code" href="class_nex_object.html#a8139b294806c1684fc95b635a33b1b15">getObjCid</a>() == cid)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            e-&gt;<a class="code" href="class_nex_object.html#abeff0c61474e8b3ce6bac76771820b64">printObjInfo</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="group___touch_event.html#ga748c37a9bbe04ddc680fe1686154fefb">NEX_EVENT_PUSH</a> == event)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                e-&gt;<a class="code" href="class_nex_touch.html#ae808be665ae930e2ffdf3aff88bd3206">push</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                found = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="group___touch_event.html#ga5db3d99f88ac878875ca47713b7a54b6">NEX_EVENT_POP</a> == event)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                e-&gt;<a class="code" href="class_nex_touch.html#a1d103432845b45a625869b5cd9bec505">pop</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                found = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span>(!found)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;       <a class="code" href="group___configuration.html#gaf018322c574c0f39d5feb76995cdf2d6">dbSerialPrint</a>(<span class="stringliteral">&quot;Nex Touch events not registered Pid: &quot;</span>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;       <a class="code" href="group___configuration.html#gaf018322c574c0f39d5feb76995cdf2d6">dbSerialPrint</a>(pid);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;       <a class="code" href="group___configuration.html#gaf018322c574c0f39d5feb76995cdf2d6">dbSerialPrint</a>(<span class="stringliteral">&quot; Cid: &quot;</span>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;       <a class="code" href="group___configuration.html#ga7792c838c043fae9a630823f1c328a30">dbSerialPrintln</a>(cid);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_nex_object_html_abeff0c61474e8b3ce6bac76771820b64"><div class="ttname"><a href="class_nex_object.html#abeff0c61474e8b3ce6bac76771820b64">NexObject::printObjInfo</a></div><div class="ttdeci">void printObjInfo(void)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_object_8cpp_source.html#l00082">NexObject.cpp:82</a></div></div>
@@ -180,10 +189,11 @@ $(document).ready(function(){initNavTree('_nex_touch_8cpp_source.html','');});
 <div class="ttc" id="aclass_nex_touch_html_ae808be665ae930e2ffdf3aff88bd3206"><div class="ttname"><a href="class_nex_touch.html#ae808be665ae930e2ffdf3aff88bd3206">NexTouch::push</a></div><div class="ttdeci">void push(void)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00056">NexTouch.cpp:56</a></div></div>
 <div class="ttc" id="aclass_nex_touch_html_a1d103432845b45a625869b5cd9bec505"><div class="ttname"><a href="class_nex_touch.html#a1d103432845b45a625869b5cd9bec505">NexTouch::pop</a></div><div class="ttdeci">void pop(void)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00064">NexTouch.cpp:64</a></div></div>
 <div class="ttc" id="aclass_nex_touch_html_a31a97db91f2f710b53aec071b8065e8f"><div class="ttname"><a href="class_nex_touch.html#a31a97db91f2f710b53aec071b8065e8f">NexTouch::attachPush</a></div><div class="ttdeci">virtual void attachPush(NexTouchEventCb push, void *ptr=nullptr)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00032">NexTouch.cpp:32</a></div></div>
+<div class="ttc" id="agroup___configuration_html_ga7792c838c043fae9a630823f1c328a30"><div class="ttname"><a href="group___configuration.html#ga7792c838c043fae9a630823f1c328a30">dbSerialPrintln</a></div><div class="ttdeci">#define dbSerialPrintln(a)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_config_8h_source.html#l00084">NexConfig.h:84</a></div></div>
 <div class="ttc" id="aclass_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00055">NexTouch.h:55</a></div></div>
 <div class="ttc" id="aclass_nex_touch_html_a2bc36096119534344c2bcd8021b93289"><div class="ttname"><a href="class_nex_touch.html#a2bc36096119534344c2bcd8021b93289">NexTouch::detachPush</a></div><div class="ttdeci">void detachPush(void)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00038">NexTouch.cpp:38</a></div></div>
 <div class="ttc" id="aclass_nex_touch_html_a8659ca660ba516e76a82ff1a2755dfae"><div class="ttname"><a href="class_nex_touch.html#a8659ca660ba516e76a82ff1a2755dfae">NexTouch::__cbpop_ptr</a></div><div class="ttdeci">void * __cbpop_ptr</div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00114">NexTouch.h:114</a></div></div>
-<div class="ttc" id="aclass_nextion_html"><div class="ttname"><a href="class_nextion.html">Nextion</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8h_source.html#l00056">NexHardware.h:56</a></div></div>
+<div class="ttc" id="aclass_nextion_html"><div class="ttname"><a href="class_nextion.html">Nextion</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8h_source.html#l00061">NexHardware.h:61</a></div></div>
 <div class="ttc" id="aclass_nex_touch_html_a7f7e40dfad5a67a317781a7098c857d0"><div class="ttname"><a href="class_nex_touch.html#a7f7e40dfad5a67a317781a7098c857d0">NexTouch::iterate</a></div><div class="ttdeci">static void iterate(NexTouch **list, uint8_t pid, uint8_t cid, uint8_t event)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00072">NexTouch.cpp:72</a></div></div>
 <div class="ttc" id="aclass_nex_touch_html_a01fa6b5f13606f85befcf65ff0b64e8f"><div class="ttname"><a href="class_nex_touch.html#a01fa6b5f13606f85befcf65ff0b64e8f">NexTouch::NexTouch</a></div><div class="ttdeci">NexTouch()=delete</div></div>
 <div class="ttc" id="aclass_nex_touch_html_a1b7ef40ed31b4a4a4f33f828f1b96fae"><div class="ttname"><a href="class_nex_touch.html#a1b7ef40ed31b4a4a4f33f828f1b96fae">NexTouch::__cb_push</a></div><div class="ttdeci">NexTouchEventCb __cb_push</div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00111">NexTouch.h:111</a></div></div>
@@ -193,6 +203,7 @@ $(document).ready(function(){initNavTree('_nex_touch_8cpp_source.html','');});
 <div class="ttc" id="aclass_nex_touch_html_a1fa1ebf87382713fccc3dc551c06dd1e"><div class="ttname"><a href="class_nex_touch.html#a1fa1ebf87382713fccc3dc551c06dd1e">NexTouch::attachPop</a></div><div class="ttdeci">void attachPop(NexTouchEventCb pop, void *ptr=nullptr)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8cpp_source.html#l00044">NexTouch.cpp:44</a></div></div>
 <div class="ttc" id="aclass_nex_object_html_a8139b294806c1684fc95b635a33b1b15"><div class="ttname"><a href="class_nex_object.html#a8139b294806c1684fc95b635a33b1b15">NexObject::getObjCid</a></div><div class="ttdeci">uint8_t getObjCid(void)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_object_8cpp_source.html#l00033">NexObject.cpp:33</a></div></div>
 <div class="ttc" id="aclass_nex_object_html_a67621e5d7bcfb50c1a1bbc4ad1020352"><div class="ttname"><a href="class_nex_object.html#a67621e5d7bcfb50c1a1bbc4ad1020352">NexObject::getObjPid</a></div><div class="ttdeci">uint8_t getObjPid(void)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_object_8cpp_source.html#l00028">NexObject.cpp:28</a></div></div>
+<div class="ttc" id="agroup___configuration_html_gaf018322c574c0f39d5feb76995cdf2d6"><div class="ttname"><a href="group___configuration.html#gaf018322c574c0f39d5feb76995cdf2d6">dbSerialPrint</a></div><div class="ttdeci">#define dbSerialPrint(a)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_config_8h_source.html#l00083">NexConfig.h:83</a></div></div>
 <div class="ttc" id="agroup___touch_event_html_ga5db3d99f88ac878875ca47713b7a54b6"><div class="ttname"><a href="group___touch_event.html#ga5db3d99f88ac878875ca47713b7a54b6">NEX_EVENT_POP</a></div><div class="ttdeci">#define NEX_EVENT_POP</div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00039">NexTouch.h:39</a></div></div>
 <div class="ttc" id="aclass_nex_touch_html_af8bc134be86e2f33e6278f491b9c6522"><div class="ttname"><a href="class_nex_touch.html#af8bc134be86e2f33e6278f491b9c6522">NexTouch::__cb_pop</a></div><div class="ttdeci">NexTouchEventCb __cb_pop</div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00113">NexTouch.h:113</a></div></div>
 <div class="ttc" id="agroup___touch_event_html_ga748c37a9bbe04ddc680fe1686154fefb"><div class="ttname"><a href="group___touch_event.html#ga748c37a9bbe04ddc680fe1686154fefb">NEX_EVENT_PUSH</a></div><div class="ttdeci">#define NEX_EVENT_PUSH</div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00035">NexTouch.h:35</a></div></div>

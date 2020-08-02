@@ -93,67 +93,67 @@ $(document).ready(function(){initNavTree('_nex_upload_8h_source.html','');});
 <div class="contents">
 <a href="_nex_upload_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;FS.h&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;WString.h&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nextion_if_8h.html">NextionIf.h</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">class </span><a class="code" href="class_nextion.html">Nextion</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_nex_upload.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_nex_upload.html">NexUpload</a>:<span class="keyword">public</span> <a class="code" href="class_nextion_if.html">NextionIf</a></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="class_nex_upload.html#ae8ccfaf116578c3862a3d34aeb609957">NexUpload</a>()=<span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">public</span>: <span class="comment">/* methods */</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="class_nex_upload.html#ae8ccfaf116578c3862a3d34aeb609957">NexUpload</a>(<span class="keyword">const</span> <a class="code" href="class_nextion.html">Nextion</a> *nextion, File &amp;tftFile);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="class_nex_upload.html#a26ccc2285435b6b573fa5c4b661c080a">~NexUpload</a>();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">     * start download.</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">     *</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">     *  * @return true if success, false for failure. </span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_nex_upload.html#ab35a573065de655c76570cd0d6350864">upload</a>();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">private</span>: <span class="comment">/* methods */</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">     * Re-initialize connection</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">     * Ensure that Nextion is in passive mode:</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">     * https://nextion.tech/2017/12/08/nextion-hmi-upload-protocol-v1-1/</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">     * </span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_nex_upload.html#af178ee7d49c69fd092fe04956d36971b">Reconnect</a>();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">     * Initialize upload.</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">     *</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">     * @return true if success, false for failure. </span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_nex_upload.html#aa5b443931f23b4dccb94721a9153074b">InitUpload</a>();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_nex_upload.html#a38b0c65f0604af7bc549c2f01bf2ce37">_downloadTftFile</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">private</span>: <span class="comment">/* data */</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="class_nex_upload.html#ae547b0e558893fe81b744dcdd79cc61f">   96</a></span>&#160;    File <a class="code" href="class_nex_upload.html#ae547b0e558893fe81b744dcdd79cc61f">m_tftFile</a>; <span class="comment">/*nextion ftf file*/</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifdef NEX_ENABLE_TFT_UPLOAD</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifdef ESP8266</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//#include &lt;SD.h&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;FS.h&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;SdFat.h&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;WString.h&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nextion_if_8h.html">NextionIf.h</a>&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">class </span><a class="code" href="class_nextion.html">Nextion</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">class </span>NexUpload:<span class="keyword">public</span> <a class="code" href="class_nextion_if.html">NextionIf</a></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    NexUpload()=<span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">public</span>: <span class="comment">/* methods */</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    NexUpload(<a class="code" href="class_nextion.html">Nextion</a> *nextion);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    ~NexUpload();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">     * start download.</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">     * </span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">     * @param tftFile - tft file.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">     *</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">     *  * @return true if success, false for failure. </span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">bool</span> upload(File  &amp;tftFile);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">private</span>: <span class="comment">/* methods */</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">     * Re-initialize connection</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">     * </span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">     * Ensure that Nextion is in passive mode:</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">     * https://nextion.tech/2017/12/08/nextion-hmi-upload-protocol-v1-1/</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">     * </span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> Reconnect();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">     * Initialize upload.</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">     * </span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">     * @param tftFile - tft file.</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">     *</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">     * @return true if success, false for failure. </span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">bool</span> InitUpload(File  &amp;tftFile);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">bool</span> _downloadTftFile(File  &amp;tftFile);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_nextion_if_8h_html"><div class="ttname"><a href="_nextion_if_8h.html">NextionIf.h</a></div></div>
-<div class="ttc" id="aclass_nex_upload_html_a38b0c65f0604af7bc549c2f01bf2ce37"><div class="ttname"><a href="class_nex_upload.html#a38b0c65f0604af7bc549c2f01bf2ce37">NexUpload::_downloadTftFile</a></div><div class="ttdeci">bool _downloadTftFile(void)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_upload_8cpp_source.html#l00079">NexUpload.cpp:79</a></div></div>
-<div class="ttc" id="aclass_nex_upload_html_ae547b0e558893fe81b744dcdd79cc61f"><div class="ttname"><a href="class_nex_upload.html#ae547b0e558893fe81b744dcdd79cc61f">NexUpload::m_tftFile</a></div><div class="ttdeci">File m_tftFile</div><div class="ttdef"><b>Definition:</b> <a href="_nex_upload_8h_source.html#l00096">NexUpload.h:96</a></div></div>
-<div class="ttc" id="aclass_nex_upload_html_af178ee7d49c69fd092fe04956d36971b"><div class="ttname"><a href="class_nex_upload.html#af178ee7d49c69fd092fe04956d36971b">NexUpload::Reconnect</a></div><div class="ttdeci">void Reconnect()</div><div class="ttdef"><b>Definition:</b> <a href="_nex_upload_8cpp_source.html#l00050">NexUpload.cpp:50</a></div></div>
 <div class="ttc" id="aclass_nextion_if_html"><div class="ttname"><a href="class_nextion_if.html">NextionIf</a></div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8h_source.html#l00027">NextionIf.h:27</a></div></div>
-<div class="ttc" id="aclass_nextion_html"><div class="ttname"><a href="class_nextion.html">Nextion</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8h_source.html#l00056">NexHardware.h:56</a></div></div>
-<div class="ttc" id="aclass_nex_upload_html"><div class="ttname"><a href="class_nex_upload.html">NexUpload</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_upload_8h_source.html#l00043">NexUpload.h:43</a></div></div>
-<div class="ttc" id="aclass_nex_upload_html_ab35a573065de655c76570cd0d6350864"><div class="ttname"><a href="class_nex_upload.html#ab35a573065de655c76570cd0d6350864">NexUpload::upload</a></div><div class="ttdeci">bool upload()</div><div class="ttdef"><b>Definition:</b> <a href="_nex_upload_8cpp_source.html#l00032">NexUpload.cpp:32</a></div></div>
-<div class="ttc" id="aclass_nex_upload_html_a26ccc2285435b6b573fa5c4b661c080a"><div class="ttname"><a href="class_nex_upload.html#a26ccc2285435b6b573fa5c4b661c080a">NexUpload::~NexUpload</a></div><div class="ttdeci">~NexUpload()</div><div class="ttdef"><b>Definition:</b> <a href="_nex_upload_8cpp_source.html#l00029">NexUpload.cpp:29</a></div></div>
-<div class="ttc" id="aclass_nex_upload_html_ae8ccfaf116578c3862a3d34aeb609957"><div class="ttname"><a href="class_nex_upload.html#ae8ccfaf116578c3862a3d34aeb609957">NexUpload::NexUpload</a></div><div class="ttdeci">NexUpload()=delete</div></div>
-<div class="ttc" id="aclass_nex_upload_html_aa5b443931f23b4dccb94721a9153074b"><div class="ttname"><a href="class_nex_upload.html#aa5b443931f23b4dccb94721a9153074b">NexUpload::InitUpload</a></div><div class="ttdeci">bool InitUpload()</div><div class="ttdef"><b>Definition:</b> <a href="_nex_upload_8cpp_source.html#l00061">NexUpload.cpp:61</a></div></div>
+<div class="ttc" id="aclass_nextion_html"><div class="ttname"><a href="class_nextion.html">Nextion</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8h_source.html#l00061">NexHardware.h:61</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

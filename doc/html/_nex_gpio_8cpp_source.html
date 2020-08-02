@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('_nex_gpio_8cpp_source.html','');});
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_nex_hardware_8h.html">NexHardware.h</a>&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_nex_gpio.html#a736776dc473abac0dc8c4cfb72ca918c">   23</a></span>&#160;<a class="code" href="class_nex_gpio.html#a5fb739a9d792d33549820bfe029ae836">NexGpio::NexGpio</a>(<span class="keyword">const</span> <a class="code" href="class_nextion.html">Nextion</a> *nextion):<a class="code" href="class_nextion_if.html">NextionIf</a>(nextion)</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_nex_gpio.html#a6883fa55059a84bed7d3c0a340bc9a6c">   23</a></span>&#160;<a class="code" href="class_nex_gpio.html#a5fb739a9d792d33549820bfe029ae836">NexGpio::NexGpio</a>(<a class="code" href="class_nextion.html">Nextion</a> *nextion):<a class="code" href="class_nextion_if.html">NextionIf</a>(nextion)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{}</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_nex_gpio.html#a8cc9d0a3a41fdede80e63478f9f99413">   26</a></span>&#160;<a class="code" href="class_nex_gpio.html#a8cc9d0a3a41fdede80e63478f9f99413">NexGpio::~NexGpio</a>()</div>
@@ -118,8 +118,8 @@ $(document).ready(function(){initNavTree('_nex_gpio_8cpp_source.html','');});
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    buf = control_id = <span class="charliteral">&#39;0&#39;</span>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    cmd += buf;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99ab85e6e6906752c95e85000fa412cf">recvRetCommandFinished</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
@@ -134,81 +134,76 @@ $(document).ready(function(){initNavTree('_nex_gpio_8cpp_source.html','');});
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    cmd += <span class="charliteral">&#39;=&#39;</span>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    buf = value + <span class="charliteral">&#39;0&#39;</span>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    cmd += buf;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99ab85e6e6906752c95e85000fa412cf">recvRetCommandFinished</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_nex_gpio.html#a36386b97898f0960abda51c6010378eb">   66</a></span>&#160;uint32_t <a class="code" href="class_nex_gpio.html#a36386b97898f0960abda51c6010378eb">NexGpio::digital_read</a>(uint32_t port)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    uint32_t number;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">char</span> buf;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    String cmd = String(<span class="stringliteral">&quot;get &quot;</span>);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    cmd += <span class="stringliteral">&quot;pio&quot;</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    buf = port + <span class="charliteral">&#39;0&#39;</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    cmd += buf;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="class_nextion_if.html#ab4da94ce505c59b7141d61b8ac422112">recvRetNumber</a>(&amp;number);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> number;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="class_nex_gpio.html#af21eb91b041d149193bc716202d4a462">   81</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_gpio.html#af21eb91b041d149193bc716202d4a462">NexGpio::analog_write</a>(uint32_t port,uint32_t value)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">char</span> c;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    String cmd;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    utoa(value, buf, 10);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    cmd += <span class="stringliteral">&quot;pwm&quot;</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    c = port + <span class="charliteral">&#39;0&#39;</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    cmd += c;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    cmd += <span class="charliteral">&#39;=&#39;</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    cmd += buf;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    Serial.print(cmd);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99ab85e6e6906752c95e85000fa412cf">recvRetCommandFinished</a>();   </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_nex_gpio.html#a62c2cb633e321ef2273eb3a7af6a5b47">   99</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_gpio.html#a62c2cb633e321ef2273eb3a7af6a5b47">NexGpio::set_pwmfreq</a>(uint32_t value)</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    String cmd;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    utoa(value, buf, 10);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    cmd += <span class="stringliteral">&quot;pwmf&quot;</span>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    cmd += <span class="charliteral">&#39;=&#39;</span>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    cmd += buf;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99ab85e6e6906752c95e85000fa412cf">recvRetCommandFinished</a>();   </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="class_nex_gpio.html#a8fca87ac0cdfbc8a62dec807b949c36d">  113</a></span>&#160;uint32_t <a class="code" href="class_nex_gpio.html#a8fca87ac0cdfbc8a62dec807b949c36d">NexGpio::get_pwmfreq</a>(uint32_t *number)</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    String cmd = String(<span class="stringliteral">&quot;get pwmf&quot;</span>);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#ab4da94ce505c59b7141d61b8ac422112">recvRetNumber</a>(number);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_nex_gpio.html#a36386b97898f0960abda51c6010378eb">   65</a></span>&#160;uint32_t <a class="code" href="class_nex_gpio.html#a36386b97898f0960abda51c6010378eb">NexGpio::digital_read</a>(uint32_t port)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    uint32_t number{0xffffffff};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">char</span> buf;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    String cmd = String(<span class="stringliteral">&quot;get &quot;</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    cmd += <span class="stringliteral">&quot;pio&quot;</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    buf = port + <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    cmd += buf;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">recvRetNumber</a>(&amp;number);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> number;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="class_nex_gpio.html#af21eb91b041d149193bc716202d4a462">   79</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_gpio.html#af21eb91b041d149193bc716202d4a462">NexGpio::analog_write</a>(uint32_t port,uint32_t value)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">char</span> c;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    String cmd;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    utoa(value, buf, 10);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    cmd += <span class="stringliteral">&quot;pwm&quot;</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    c = port + <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    cmd += c;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    cmd += <span class="charliteral">&#39;=&#39;</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    cmd += buf;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    Serial.print(cmd);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();   </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="class_nex_gpio.html#a62c2cb633e321ef2273eb3a7af6a5b47">   96</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_gpio.html#a62c2cb633e321ef2273eb3a7af6a5b47">NexGpio::set_pwmfreq</a>(uint32_t value)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">char</span> buf[10] = {0};</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    String cmd;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    utoa(value, buf, 10);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    cmd += <span class="stringliteral">&quot;pwmf&quot;</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    cmd += <span class="charliteral">&#39;=&#39;</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    cmd += buf;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();   </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="class_nex_gpio.html#a4f170e57df7a90f6f6bc67e970c8d06b">  108</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_gpio.html#a4f170e57df7a90f6f6bc67e970c8d06b">NexGpio::get_pwmfreq</a>(uint32_t *number)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    String cmd = String(<span class="stringliteral">&quot;get pwmf&quot;</span>);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">recvRetNumber</a>(number);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_nex_gpio_html_a8cc9d0a3a41fdede80e63478f9f99413"><div class="ttname"><a href="class_nex_gpio.html#a8cc9d0a3a41fdede80e63478f9f99413">NexGpio::~NexGpio</a></div><div class="ttdeci">~NexGpio()</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gpio_8cpp_source.html#l00026">NexGpio.cpp:26</a></div></div>
-<div class="ttc" id="aclass_nex_gpio_html_a36386b97898f0960abda51c6010378eb"><div class="ttname"><a href="class_nex_gpio.html#a36386b97898f0960abda51c6010378eb">NexGpio::digital_read</a></div><div class="ttdeci">uint32_t digital_read(uint32_t port)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gpio_8cpp_source.html#l00066">NexGpio.cpp:66</a></div></div>
+<div class="ttc" id="aclass_nextion_if_html_abd81ed645e43818c7fc90ba5a055cf52"><div class="ttname"><a href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">NextionIf::sendCommand</a></div><div class="ttdeci">void sendCommand(const char *cmd) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00043">NextionIf.cpp:43</a></div></div>
+<div class="ttc" id="aclass_nex_gpio_html_a36386b97898f0960abda51c6010378eb"><div class="ttname"><a href="class_nex_gpio.html#a36386b97898f0960abda51c6010378eb">NexGpio::digital_read</a></div><div class="ttdeci">uint32_t digital_read(uint32_t port)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gpio_8cpp_source.html#l00065">NexGpio.cpp:65</a></div></div>
 <div class="ttc" id="a_nex_gpio_8h_html"><div class="ttname"><a href="_nex_gpio_8h.html">NexGpio.h</a></div></div>
-<div class="ttc" id="aclass_nextion_if_html_a99ab85e6e6906752c95e85000fa412cf"><div class="ttname"><a href="class_nextion_if.html#a99ab85e6e6906752c95e85000fa412cf">NextionIf::recvRetCommandFinished</a></div><div class="ttdeci">bool recvRetCommandFinished(uint32_t timeout=200) const final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00070">NextionIf.cpp:70</a></div></div>
 <div class="ttc" id="aclass_nex_gpio_html_aaea4cb428fa0a2e26927073c20ed64ac"><div class="ttname"><a href="class_nex_gpio.html#aaea4cb428fa0a2e26927073c20ed64ac">NexGpio::digital_write</a></div><div class="ttdeci">bool digital_write(uint32_t port, uint32_t value)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gpio_8cpp_source.html#l00050">NexGpio.cpp:50</a></div></div>
+<div class="ttc" id="aclass_nex_gpio_html_a4f170e57df7a90f6f6bc67e970c8d06b"><div class="ttname"><a href="class_nex_gpio.html#a4f170e57df7a90f6f6bc67e970c8d06b">NexGpio::get_pwmfreq</a></div><div class="ttdeci">bool get_pwmfreq(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gpio_8cpp_source.html#l00108">NexGpio.cpp:108</a></div></div>
+<div class="ttc" id="aclass_nextion_if_html_a99b9325caee5f8beded1f0602eb0d28d"><div class="ttname"><a href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">NextionIf::recvRetNumber</a></div><div class="ttdeci">bool recvRetNumber(uint32_t *number, size_t timeout=100) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00023">NextionIf.cpp:23</a></div></div>
 <div class="ttc" id="aclass_nextion_if_html"><div class="ttname"><a href="class_nextion_if.html">NextionIf</a></div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8h_source.html#l00027">NextionIf.h:27</a></div></div>
-<div class="ttc" id="aclass_nextion_html"><div class="ttname"><a href="class_nextion.html">Nextion</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8h_source.html#l00056">NexHardware.h:56</a></div></div>
-<div class="ttc" id="aclass_nex_gpio_html_a62c2cb633e321ef2273eb3a7af6a5b47"><div class="ttname"><a href="class_nex_gpio.html#a62c2cb633e321ef2273eb3a7af6a5b47">NexGpio::set_pwmfreq</a></div><div class="ttdeci">bool set_pwmfreq(uint32_t value)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gpio_8cpp_source.html#l00099">NexGpio.cpp:99</a></div></div>
+<div class="ttc" id="aclass_nextion_if_html_afdc1e3f9a50ced4b85b14fa61b8411e4"><div class="ttname"><a href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">NextionIf::recvRetCommandFinished</a></div><div class="ttdeci">bool recvRetCommandFinished(size_t timeout=200) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00076">NextionIf.cpp:76</a></div></div>
+<div class="ttc" id="aclass_nextion_html"><div class="ttname"><a href="class_nextion.html">Nextion</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8h_source.html#l00061">NexHardware.h:61</a></div></div>
+<div class="ttc" id="aclass_nex_gpio_html_a62c2cb633e321ef2273eb3a7af6a5b47"><div class="ttname"><a href="class_nex_gpio.html#a62c2cb633e321ef2273eb3a7af6a5b47">NexGpio::set_pwmfreq</a></div><div class="ttdeci">bool set_pwmfreq(uint32_t value)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gpio_8cpp_source.html#l00096">NexGpio.cpp:96</a></div></div>
 <div class="ttc" id="a_nex_hardware_8h_html"><div class="ttname"><a href="_nex_hardware_8h.html">NexHardware.h</a></div></div>
 <div class="ttc" id="aclass_nex_gpio_html_adbe08eb11827d75c6b2e9c935d9da19a"><div class="ttname"><a href="class_nex_gpio.html#adbe08eb11827d75c6b2e9c935d9da19a">NexGpio::pin_mode</a></div><div class="ttdeci">bool pin_mode(uint32_t port, uint32_t mode, uint32_t control_id)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gpio_8cpp_source.html#l00030">NexGpio.cpp:30</a></div></div>
-<div class="ttc" id="aclass_nex_gpio_html_a8fca87ac0cdfbc8a62dec807b949c36d"><div class="ttname"><a href="class_nex_gpio.html#a8fca87ac0cdfbc8a62dec807b949c36d">NexGpio::get_pwmfreq</a></div><div class="ttdeci">uint32_t get_pwmfreq(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gpio_8cpp_source.html#l00113">NexGpio.cpp:113</a></div></div>
 <div class="ttc" id="aclass_nex_gpio_html_a5fb739a9d792d33549820bfe029ae836"><div class="ttname"><a href="class_nex_gpio.html#a5fb739a9d792d33549820bfe029ae836">NexGpio::NexGpio</a></div><div class="ttdeci">NexGpio()=delete</div></div>
-<div class="ttc" id="aclass_nextion_if_html_ab4da94ce505c59b7141d61b8ac422112"><div class="ttname"><a href="class_nextion_if.html#ab4da94ce505c59b7141d61b8ac422112">NextionIf::recvRetNumber</a></div><div class="ttdeci">bool recvRetNumber(uint32_t *number, uint32_t timeout=100) const final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00023">NextionIf.cpp:23</a></div></div>
-<div class="ttc" id="aclass_nextion_if_html_aa26378869ffffe33dd32bc2364adf408"><div class="ttname"><a href="class_nextion_if.html#aa26378869ffffe33dd32bc2364adf408">NextionIf::sendCommand</a></div><div class="ttdeci">void sendCommand(const char *cmd) const final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00043">NextionIf.cpp:43</a></div></div>
-<div class="ttc" id="aclass_nex_gpio_html_af21eb91b041d149193bc716202d4a462"><div class="ttname"><a href="class_nex_gpio.html#af21eb91b041d149193bc716202d4a462">NexGpio::analog_write</a></div><div class="ttdeci">bool analog_write(uint32_t port, uint32_t value)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gpio_8cpp_source.html#l00081">NexGpio.cpp:81</a></div></div>
+<div class="ttc" id="aclass_nex_gpio_html_af21eb91b041d149193bc716202d4a462"><div class="ttname"><a href="class_nex_gpio.html#af21eb91b041d149193bc716202d4a462">NexGpio::analog_write</a></div><div class="ttdeci">bool analog_write(uint32_t port, uint32_t value)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gpio_8cpp_source.html#l00079">NexGpio.cpp:79</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

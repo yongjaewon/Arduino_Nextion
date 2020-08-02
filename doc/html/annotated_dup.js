@@ -12,6 +12,7 @@ var annotated_dup =
     [ "NexPage", "class_nex_page.html", "class_nex_page" ],
     [ "NexPicture", "class_nex_picture.html", "class_nex_picture" ],
     [ "NexProgressBar", "class_nex_progress_bar.html", "class_nex_progress_bar" ],
+    [ "nexQueuedEvent", "structnex_queued_event.html", "structnex_queued_event" ],
     [ "NexRadio", "class_nex_radio.html", "class_nex_radio" ],
     [ "NexRtc", "class_nex_rtc.html", "class_nex_rtc" ],
     [ "NexScrolltext", "class_nex_scrolltext.html", "class_nex_scrolltext" ],
@@ -22,7 +23,6 @@ var annotated_dup =
     [ "NextionIf", "class_nextion_if.html", "class_nextion_if" ],
     [ "NextionInterface", "class_nextion_interface.html", "class_nextion_interface" ],
     [ "NexTouch", "class_nex_touch.html", "class_nex_touch" ],
-    [ "NexUpload", "class_nex_upload.html", "class_nex_upload" ],
     [ "NexVariable", "class_nex_variable.html", "class_nex_variable" ],
     [ "NexWaveform", "class_nex_waveform.html", "class_nex_waveform" ]
 ];

@@ -7,7 +7,9 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "NexDualStateButton.h", "_nex_dual_state_button_8h.html", null ],
     [ "NexGauge.h", "_nex_gauge_8h.html", null ],
     [ "NexGpio.h", "_nex_gpio_8h.html", null ],
-    [ "NexHardware.h", "_nex_hardware_8h.html", null ],
+    [ "NexHardware.h", "_nex_hardware_8h.html", [
+      [ "nexQueuedEvent", "structnex_queued_event.html", "structnex_queued_event" ]
+    ] ],
     [ "NexHardwareInterface.h", "_nex_hardware_interface_8h.html", null ],
     [ "NexHotspot.h", "_nex_hotspot_8h.html", null ],
     [ "NexNumber.h", "_nex_number_8h.html", null ],
