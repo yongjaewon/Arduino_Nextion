@@ -6,7 +6,7 @@
 Jyrki Berg 8/2/2019 (https://github.com/jyberg)
 - Function return values corrected
 - component refresh removed bacause automatic in case of component variable value change
-- NexSlider bacround image and crop image functions
+- NexSlider backround image and crop image functions
 - NexObject refresh function
 
 Jyrki Berg 7/24/2019
