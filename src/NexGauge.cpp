@@ -20,7 +20,7 @@
 #include "NexGauge.h"
 #include "NexHardware.h"
 
-NexGauge::NexGauge(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
+NexGauge::NexGauge(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
     :NexObject(nextion, pid, cid, name, page)
 {
 }
@@ -38,17 +38,15 @@ bool NexGauge::setValue(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".val=";
     cmd += buf;
-
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexGauge::Get_background_color_bco(uint32_t *number)
+bool NexGauge::Get_background_color_bco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -62,21 +60,16 @@ bool NexGauge::Set_background_color_bco(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".bco=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd="";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
+
     return recvRetCommandFinished();
 }
 
-uint32_t NexGauge::Get_font_color_pco(uint32_t *number)
+bool NexGauge::Get_font_color_pco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -90,21 +83,15 @@ bool NexGauge::Set_font_color_pco(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".pco=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexGauge::Get_pointer_thickness_wid(uint32_t *number)
+bool NexGauge::Get_pointer_thickness_wid(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -118,21 +105,15 @@ bool NexGauge::Set_pointer_thickness_wid(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".wid=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexGauge::Get_background_cropi_picc(uint32_t *number)
+bool NexGauge::Get_background_cropi_picc(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -146,16 +127,10 @@ bool NexGauge::Set_background_crop_picc(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".picc=";
     cmd += buf;
-    sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }

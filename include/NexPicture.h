@@ -41,7 +41,7 @@ public: /* methods */
     /**
      * @copydoc NexObject::NexObject(const Nextion*,uint8_t,uint8_t,const char*,const NexObject*);
      */
-    NexPicture(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
+    NexPicture(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
     
     /**
      * Get picture's number.

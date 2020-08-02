@@ -23,12 +23,12 @@ void NexVariable::attachPush(NexTouchEventCb push, void *ptr)
 {}
 
 
-NexVariable::NexVariable(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
+NexVariable::NexVariable(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
     :NexTouch(nextion, pid, cid, name, page)
 {
 }
 
-uint32_t NexVariable::getValue(int32_t *number)
+bool NexVariable::getValue(int32_t *number)
 {
     String cmd = String("get ");
     getObjGlobalPageName(cmd);

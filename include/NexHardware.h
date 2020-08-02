@@ -24,6 +24,7 @@
 
 #include <Arduino.h>
 
+
 #include "NexConfig.h"
 #include "NexHardwareInterface.h"
 
@@ -35,6 +36,12 @@
 
 class NexTouch;
 
+
+struct nexQueuedEvent
+{
+    uint8_t event_data[10];
+    nexQueuedEvent *m_next{nullptr};
+};
 
 /**
  * @addtogroup CoreAPI 
@@ -69,7 +76,7 @@ bool connect();
 /**
  * resolve baud
  * 
-* @param baud - resolved baud rate
+ * @param baud - resolved baud rate
  * 
  * @return true if success, false for failure. 
  */
@@ -80,6 +87,22 @@ enum serialType {HW, SW, HW_USBCON};
     const serialType m_nexSerialType; 
     Stream *m_nexSerial;
     uint32_t m_baud;
+
+    nexQueuedEvent *m_queuedEvents{nullptr};
+
+/**
+ * Read Queued event in the message queue
+ * 
+ * @retval none
+ */
+void ReadQueuedEvents();
+
+/**
+ * Get Queued event from the message queue
+ * 
+ * @retval nullptr if no queued events to handle
+ */
+nexQueuedEvent* GetQueuedEvent();
 
 public:
 
@@ -232,7 +255,7 @@ virtual ~Nextion();
 * @retval true - success.
 * @retval false - failed. 
 */
-bool recvRetNumber(uint32_t *number, size_t timeout = NEX_TIMEOUT_RETURN) const final;
+bool recvRetNumber(uint32_t *number, size_t timeout = NEX_TIMEOUT_RETURN) final;
 
 /* Receive signed number
 *
@@ -242,7 +265,7 @@ bool recvRetNumber(uint32_t *number, size_t timeout = NEX_TIMEOUT_RETURN) const 
 * @retval true - success.
 * @retval false - failed. 
 */
-bool recvRetNumber(int32_t *number, size_t timeout = NEX_TIMEOUT_RETURN) const final;
+bool recvRetNumber(int32_t *number, size_t timeout = NEX_TIMEOUT_RETURN) final;
 
 /* Receive string
 *
@@ -253,7 +276,7 @@ bool recvRetNumber(int32_t *number, size_t timeout = NEX_TIMEOUT_RETURN) const f
 * @retval true - success.
 * @retval false - failed. 
 */
-bool recvRetString(String &str, size_t timeout = NEX_TIMEOUT_RETURN, bool start_flag = true) const final;
+bool recvRetString(String &str, size_t timeout = NEX_TIMEOUT_RETURN, bool start_flag = true) final;
 
 /* Receive string
 *
@@ -265,20 +288,20 @@ bool recvRetString(String &str, size_t timeout = NEX_TIMEOUT_RETURN, bool start_
 * @retval true - success.
 * @retval false - failed. 
 */
-bool recvRetString(char *buffer, uint16_t &len, size_t timeout = NEX_TIMEOUT_RETURN, bool start_flag = true) const final;
+bool recvRetString(char *buffer, uint16_t &len, size_t timeout = NEX_TIMEOUT_RETURN, bool start_flag = true) final;
 
 /* Send Command to device
 *
 *  @param cmd - command string
 */
-void sendCommand(const char* cmd) const final;
+void sendCommand(const char* cmd) final;
 
 /* Send Raw data to device
 *
 *  @param data - raw data buffer
 */
 #ifdef ESP8266
-void sendRawData(const std::vector<uint8_t> &data) const final;
+void sendRawData(const std::vector<uint8_t> &data) final;
 #endif
 
 /* Send Raw data to device
@@ -286,14 +309,14 @@ void sendRawData(const std::vector<uint8_t> &data) const final;
 * @param buf - raw data buffer poiter
 * @param len - raw data buffer pointer
 */
-void sendRawData(const uint8_t *buf, uint16_t len) const final;
+void sendRawData(const uint8_t *buf, uint16_t len) final;
 
 
 /* Send Raw byte to device
 *
 * @param byte - raw byte
 */
-void sendRawByte(const uint8_t byte) const final;
+void sendRawByte(const uint8_t byte) final;
 
 
 /* read Bytes from device
@@ -304,7 +327,7 @@ void sendRawByte(const uint8_t byte) const final;
  * @param timeout  timeout ms
  * @return size_t read bytes can be less that size (timeout case) 
  */
-size_t readBytes(uint8_t* buffer, size_t size, size_t timeout = NEX_TIMEOUT_RETURN) const final;
+size_t readBytes(uint8_t* buffer, size_t size, size_t timeout = NEX_TIMEOUT_RETURN) final;
 
 /* Receive command
 *
@@ -314,7 +337,7 @@ size_t readBytes(uint8_t* buffer, size_t size, size_t timeout = NEX_TIMEOUT_RETU
 * @retval true - success.
 * @retval false - failed. 
 */
-bool recvCommand(const uint8_t command, size_t timeout = NEX_TIMEOUT_COMMAND) const  final;
+bool recvCommand(const uint8_t command, size_t timeout = NEX_TIMEOUT_COMMAND) final;
 
 /*
  * Command is executed successfully. 
@@ -325,7 +348,7 @@ bool recvCommand(const uint8_t command, size_t timeout = NEX_TIMEOUT_COMMAND) co
  * @retval false - failed. 
  *
  */
-bool recvRetCommandFinished(size_t timeout = NEX_TIMEOUT_COMMAND) const final;
+bool recvRetCommandFinished(size_t timeout = NEX_TIMEOUT_COMMAND) final;
 
 /*
  * Transpared data mode setup successfully 
@@ -336,7 +359,7 @@ bool recvRetCommandFinished(size_t timeout = NEX_TIMEOUT_COMMAND) const final;
  * @retval false - failed. 
  *
  */
-bool RecvTransparendDataModeReady(size_t timeout = NEX_TIMEOUT_TRANSPARENT_DATA_MODE) const final;
+bool RecvTransparendDataModeReady(size_t timeout = NEX_TIMEOUT_TRANSPARENT_DATA_MODE) final;
 
 /*
  * Transpared data mode finished 
@@ -347,7 +370,7 @@ bool RecvTransparendDataModeReady(size_t timeout = NEX_TIMEOUT_TRANSPARENT_DATA_
  * @retval false - failed. 
  *
  */
-bool RecvTransparendDataModeFinished(size_t timeout = NEX_TIMEOUT_COMMAND) const final;
+bool RecvTransparendDataModeFinished(size_t timeout = NEX_TIMEOUT_COMMAND) final;
 
 /**
  * Init Nextion connection.
@@ -364,7 +387,7 @@ bool nexInit(const uint32_t baud = NEX_SERIAL_DEFAULT_BAUD);
  * 
  * @return current baud value
  */
-uint32_t GetCurrentBaud() const final;
+uint32_t GetCurrentBaud() final;
 
 /**
  * Listen touch event and calling callbacks attached before.
@@ -377,7 +400,7 @@ uint32_t GetCurrentBaud() const final;
  * @warning This function must be called repeatedly to response touch events
  *  from Nextion touch panel. Actually, you should place it in your loop function. 
  */
-void nexLoop(NexTouch *nex_listen_list[]) const;
+void nexLoop(NexTouch *nex_listen_list[]);
 };
 
 /**

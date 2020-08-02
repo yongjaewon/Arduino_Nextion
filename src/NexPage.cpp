@@ -20,7 +20,7 @@
 #include "NexPage.h"
 #include "NexHardware.h"
 
-NexPage::NexPage(const Nextion *nextion, uint8_t pid, const char *name)
+NexPage::NexPage(Nextion *nextion, uint8_t pid, const char *name)
     :NexTouch(nextion, pid, 0, name, nullptr)
 {
 }

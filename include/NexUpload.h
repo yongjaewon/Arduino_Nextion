@@ -57,7 +57,7 @@ public: /* methods */
      * 
      * @param nextion - nextion iterface
      */
-    NexUpload(const Nextion *nextion);
+    NexUpload(Nextion *nextion);
     
     /**
      * destructor. 

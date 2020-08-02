@@ -58,6 +58,73 @@
 
 const uint32_t Nextion::baudRates[]{2400, 4800, 9600, 19200, 31250, 38400, 57600, 115200, 230400, 250000, 256000, 512000, 921600};
 
+// queued events and size
+static uint8_t _nextion_queued_events[][2] =
+{
+    {NEX_RET_EVENT_NEXTION_STARTUP,     6},
+    {NEX_RET_EVENT_TOUCH_HEAD,          7},
+    {NEX_RET_CURRENT_PAGE_ID_HEAD,      5},
+    {NEX_RET_EVENT_POSITION_HEAD,       9},
+    {NEX_RET_EVENT_SLEEP_POSITION_HEAD, 9},
+    {NEX_RET_AUTOMATIC_SLEEP,           4},
+    {NEX_RET_AUTOMATIC_WAKE_UP,         4},
+    {NEX_RET_EVENT_NEXTION_READY,       1},
+    {NEX_RET_START_SD_UPGRADE,          1},
+    {0xFF,                              0}  // end of list
+};
+
+void Nextion::ReadQueuedEvents()
+{
+    for(int c=m_nexSerial->peek(); c!=-1; c=m_nexSerial->peek())
+    {
+        int i{0};
+        for(; _nextion_queued_events[i][1]; ++i)
+        {
+            if(c==_nextion_queued_events[i][0])
+            {
+                nexQueuedEvent *event = new nexQueuedEvent();
+                if(readBytes(&event->event_data[0],_nextion_queued_events[i][1],20)!= _nextion_queued_events[i][1])
+                {
+                    delete event;
+                    return;
+                }
+                if(!m_queuedEvents)
+                {
+                    m_queuedEvents = event;
+                }
+                else
+                {
+                    nexQueuedEvent *last = m_queuedEvents->m_next;
+                    while( last->m_next)
+                    {
+                        last = last->m_next;
+                    }
+                    last->m_next=event;
+                }
+                yield();
+            }
+        }
+        if(!_nextion_queued_events[i][1])
+        {
+            return;
+        }
+    }
+    return;
+}
+
+nexQueuedEvent* Nextion::GetQueuedEvent()
+{
+    nexQueuedEvent *tmp{m_queuedEvents};
+    if(tmp)
+    {
+        m_queuedEvents = m_queuedEvents->m_next;
+        tmp->m_next=0;
+    }
+    return tmp;
+}
+
+
+
 
 #ifdef NEX_ENABLE_HW_SERIAL
 Nextion::Nextion(HardwareSerial &nexSerial):m_nexSerialType{HW},m_nexSerial{&nexSerial},
@@ -173,7 +240,7 @@ bool Nextion::findBaud(uint32_t &baud)
  * @retval false - failed.
  *
  */
-bool Nextion::recvRetNumber(uint32_t *number, size_t timeout) const
+bool Nextion::recvRetNumber(uint32_t *number, size_t timeout)
 {
     bool ret = false;
     uint8_t temp[8] = {0};
@@ -183,8 +250,8 @@ bool Nextion::recvRetNumber(uint32_t *number, size_t timeout) const
         goto __return;
     }
 
-    m_nexSerial->setTimeout(timeout);
-    if (sizeof(temp) != m_nexSerial->readBytes((char *)temp, sizeof(temp)))
+    ReadQueuedEvents();
+    if (sizeof(temp) != readBytes(temp, sizeof(temp),timeout))
     {
         goto __return;
     }
@@ -203,7 +270,7 @@ __return:
 
     if (ret) 
     {
-        dbSerialPrint("recvRetNumber :");
+        dbSerialPrint("recvRetNumber: ");
         dbSerialPrintln(*number);
     }
     else
@@ -224,7 +291,7 @@ __return:
  * @retval false - failed.
  *
  */
-bool Nextion::recvRetNumber(int32_t *number, size_t timeout) const
+bool Nextion::recvRetNumber(int32_t *number, size_t timeout)
 {
     bool ret = false;
     uint8_t temp[8] = {0};
@@ -233,8 +300,9 @@ bool Nextion::recvRetNumber(int32_t *number, size_t timeout) const
     {
         goto __return;
     }
-    
-    if (sizeof(temp) != m_nexSerial->readBytes((char *)temp, sizeof(temp)))
+
+    ReadQueuedEvents();
+    if (sizeof(temp) != readBytes(temp, sizeof(temp), timeout))
     {
         goto __return;
     }
@@ -275,13 +343,14 @@ __return:
  * @retval false - failed.
  *
  */
-bool Nextion::recvRetString(String &str, size_t timeout, bool start_flag) const
+bool Nextion::recvRetString(String &str, size_t timeout, bool start_flag)
 {
     str = "";
     bool ret{false};
     bool str_start_flag {!start_flag};
     uint8_t cnt_0xff = 0;
     uint8_t c = 0;
+    ReadQueuedEvents();
     uint32_t start{millis()};
 //    size_t avail{(size_t)m_nexSerial->available()};
     while(ret == false && (millis()-start)<timeout)
@@ -336,7 +405,7 @@ bool Nextion::recvRetString(String &str, size_t timeout, bool start_flag) const
  * @retval false - failed.  
  *
  */
-bool Nextion::recvRetString(char *buffer, uint16_t &len, size_t timeout, bool start_flag) const
+bool Nextion::recvRetString(char *buffer, uint16_t &len, size_t timeout, bool start_flag)
 {
     String temp;
     bool ret = recvRetString(temp,timeout, start_flag);
@@ -354,8 +423,9 @@ bool Nextion::recvRetString(char *buffer, uint16_t &len, size_t timeout, bool st
  *
  * @param cmd - the string of command.
  */
-void Nextion::sendCommand(const char* cmd) const
+void Nextion::sendCommand(const char* cmd)
 {
+    ReadQueuedEvents();
     // empty in buffer for clean responce
     while (m_nexSerial->available())
     {
@@ -369,23 +439,23 @@ void Nextion::sendCommand(const char* cmd) const
 }
 
 #ifdef ESP8266
-void Nextion::sendRawData(const std::vector<uint8_t> &data) const
+void Nextion::sendRawData(const std::vector<uint8_t> &data)
 {
     m_nexSerial->write(data.data(),data.size());
 }
 #endif
 
-void Nextion::sendRawData(const uint8_t *buf, uint16_t len) const
+void Nextion::sendRawData(const uint8_t *buf, uint16_t len)
 {
     m_nexSerial->write(buf, len);
 }
 
-void Nextion::sendRawByte(const uint8_t byte) const
+void Nextion::sendRawByte(const uint8_t byte)
 {
     m_nexSerial->write(&byte, 1);
 }
 
-size_t Nextion::readBytes(uint8_t* buffer, size_t size, size_t timeout) const
+size_t Nextion::readBytes(uint8_t* buffer, size_t size, size_t timeout)
 {
     uint32_t start{millis()};
     size_t avail{(size_t)m_nexSerial->available()};
@@ -395,6 +465,7 @@ size_t Nextion::readBytes(uint8_t* buffer, size_t size, size_t timeout) const
         yield();
         avail=m_nexSerial->available();
     }
+    
     size_t read=min(size,avail);
     for(size_t i{read}; i;--i)
     {
@@ -404,10 +475,11 @@ size_t Nextion::readBytes(uint8_t* buffer, size_t size, size_t timeout) const
     return read;
 }
 
-bool Nextion::recvCommand(const uint8_t command, size_t timeout) const
+bool Nextion::recvCommand(const uint8_t command, size_t timeout)
 {
     bool ret = false;
     uint8_t temp[4] = {0};
+    ReadQueuedEvents();
     size_t bytesRead = readBytes((uint8_t *)temp, sizeof(temp), timeout);
     if (sizeof(temp) != bytesRead)
     {
@@ -434,7 +506,7 @@ bool Nextion::recvCommand(const uint8_t command, size_t timeout) const
     return ret;
 }
 
-bool Nextion::recvRetCommandFinished(size_t timeout) const
+bool Nextion::recvRetCommandFinished(size_t timeout)
 {
     bool ret = recvCommand(NEX_RET_CMD_FINISHED_OK, timeout);
     if (ret) 
@@ -448,7 +520,7 @@ bool Nextion::recvRetCommandFinished(size_t timeout) const
     return ret;
 }
 
-bool Nextion::RecvTransparendDataModeReady(size_t timeout) const
+bool Nextion::RecvTransparendDataModeReady(size_t timeout)
 {
     dbSerialPrintln("RecvTransparendDataModeReady requested");
     bool ret = recvCommand(Nex_RET_TRANSPARENT_DATA_READY, timeout);
@@ -463,7 +535,7 @@ bool Nextion::RecvTransparendDataModeReady(size_t timeout) const
     return ret;
 }
 
-bool Nextion::RecvTransparendDataModeFinished(size_t timeout) const
+bool Nextion::RecvTransparendDataModeFinished(size_t timeout)
 {
     bool ret = recvCommand(Nex_RET_TRANSPARENT_DATA_FINISHED, timeout);
     if (ret) 
@@ -545,55 +617,46 @@ bool Nextion::nexInit(const uint32_t baud)
     return ret;
 }
 
-uint32_t Nextion::GetCurrentBaud() const
+uint32_t Nextion::GetCurrentBaud()
 {
     return m_baud;
 }
 
-void Nextion::nexLoop(NexTouch *nex_listen_list[]) const
+void Nextion::nexLoop(NexTouch *nex_listen_list[])
 {
-    static uint8_t __buffer[10];
-    
-    while (m_nexSerial->available())
+    ReadQueuedEvents();
+    for(nexQueuedEvent* queued = GetQueuedEvent(); queued; queued = GetQueuedEvent())
     {
-        __buffer[0] = m_nexSerial->read();
+        uint8_t *__buffer{queued->event_data};
+
         switch(__buffer[0])
         {
             case NEX_RET_EVENT_NEXTION_STARTUP:
             {
-                if(5==readBytes(&__buffer[1],5))
+                if (0x00 == __buffer[1] && 0x00 == __buffer[2] && 0xFF == __buffer[3] && 0xFF == __buffer[4] && 0xFF == __buffer[5])
                 {
-                    if (0x00 == __buffer[1] && 0x00 == __buffer[2] && 0xFF == __buffer[3] && 0xFF == __buffer[4] && 0xFF == __buffer[5])
+                    if(nextionStartupCallback!=nullptr)
                     {
-                        if(nextionStartupCallback!=nullptr)
-                        {
-                            nextionStartupCallback();
-                        }
+                        nextionStartupCallback();
                     }
                 }
                 break;
             }
             case NEX_RET_EVENT_TOUCH_HEAD:
             {
-                if(6==readBytes(&__buffer[1],6))
+                if (0xFF == __buffer[4] && 0xFF == __buffer[5] && 0xFF == __buffer[6])
                 {
-                    if (0xFF == __buffer[4] && 0xFF == __buffer[5] && 0xFF == __buffer[6])
-                    {
-                        NexTouch::iterate(nex_listen_list, __buffer[1], __buffer[2], __buffer[3]);
-                    }
+                    NexTouch::iterate(nex_listen_list, __buffer[1], __buffer[2], __buffer[3]);
                 }
                 break;
             }
             case NEX_RET_CURRENT_PAGE_ID_HEAD:
             {
-                if(4==readBytes(&__buffer[1],4))
+                if (0xFF == __buffer[2] && 0xFF == __buffer[3] && 0xFF == __buffer[4])
                 {
-                    if (0xFF == __buffer[2] && 0xFF == __buffer[3] && 0xFF == __buffer[4])
+                    if(currentPageIdCallback!=nullptr)
                     {
-                        if(currentPageIdCallback!=nullptr)
-                        {
-                            currentPageIdCallback(__buffer[1]);
-                        }
+                        currentPageIdCallback(__buffer[1]);
                     }
                 }
                 break;
@@ -601,20 +664,17 @@ void Nextion::nexLoop(NexTouch *nex_listen_list[]) const
             case NEX_RET_EVENT_POSITION_HEAD:
             case NEX_RET_EVENT_SLEEP_POSITION_HEAD:
             {
-                if(8==readBytes(&__buffer[1],8,200))
-                {                  
-                    if (0xFF == __buffer[6] && 0xFF == __buffer[7] && 0xFF == __buffer[8])
+                if (0xFF == __buffer[6] && 0xFF == __buffer[7] && 0xFF == __buffer[8])
+                {
+                    if(__buffer[0] == NEX_RET_EVENT_POSITION_HEAD && touchCoordinateCallback!=nullptr)
                     {
-                        if(__buffer[0] == NEX_RET_EVENT_POSITION_HEAD && touchCoordinateCallback!=nullptr)
-                        {
-                                
-                            touchCoordinateCallback(((int16_t)__buffer[2] << 8) | (__buffer[1]), ((int16_t)__buffer[4] << 8) | (__buffer[3]),__buffer[5]);
-                        }
-                        else if(__buffer[0] == NEX_RET_EVENT_SLEEP_POSITION_HEAD && touchCoordinateCallback!=nullptr)
-                        {
-                                
-                            touchEventInSleepModeCallback(((int16_t)__buffer[2] << 8) | (__buffer[1]), ((int16_t)__buffer[4] << 8) | (__buffer[3]),__buffer[5]);
-                        }
+                            
+                        touchCoordinateCallback(((int16_t)__buffer[2] << 8) | (__buffer[1]), ((int16_t)__buffer[4] << 8) | (__buffer[3]),__buffer[5]);
+                    }
+                    else if(__buffer[0] == NEX_RET_EVENT_SLEEP_POSITION_HEAD && touchCoordinateCallback!=nullptr)
+                    {
+                            
+                        touchEventInSleepModeCallback(((int16_t)__buffer[2] << 8) | (__buffer[1]), ((int16_t)__buffer[4] << 8) | (__buffer[3]),__buffer[5]);
                     }
                 }
                 break;
@@ -622,18 +682,15 @@ void Nextion::nexLoop(NexTouch *nex_listen_list[]) const
             case NEX_RET_AUTOMATIC_SLEEP:
             case NEX_RET_AUTOMATIC_WAKE_UP:
             {
-                if(3==readBytes(&__buffer[1],3,200))
+                if (0xFF == __buffer[1] && 0xFF == __buffer[2] && 0xFF == __buffer[3])
                 {
-                    if (0xFF == __buffer[1] && 0xFF == __buffer[2] && 0xFF == __buffer[3])
+                    if(__buffer[0]==NEX_RET_AUTOMATIC_SLEEP && automaticSleepCallback!=nullptr)
                     {
-                        if(__buffer[0]==NEX_RET_AUTOMATIC_SLEEP && automaticSleepCallback!=nullptr)
-                        {
-                            automaticSleepCallback();
-                        }
-                        else if(__buffer[0]==NEX_RET_AUTOMATIC_WAKE_UP && automaticWakeUpCallback!=nullptr)
-                        {
-                            automaticWakeUpCallback();
-                        }
+                        automaticSleepCallback();
+                    }
+                    else if(__buffer[0]==NEX_RET_AUTOMATIC_WAKE_UP && automaticWakeUpCallback!=nullptr)
+                    {
+                        automaticWakeUpCallback();
                     }
                 }
                 break;
@@ -656,17 +713,29 @@ void Nextion::nexLoop(NexTouch *nex_listen_list[]) const
             }
             default:
             {
-                // unnoun data clean buffer.
-                dbSerialPrint("Unexpected data received hex: ");
-                while (m_nexSerial->available())
-                {
-                    dbSerialPrint(__buffer[0]);
-                    __buffer[0]=m_nexSerial->read();
-                    yield();
-                }
-                dbSerialPrintln(__buffer[0]);
                 break;              
             }
-        };      
+        }; 
+        delete queued;
+        ReadQueuedEvents();    
     }
+
+    if(m_nexSerial->available())
+    {
+        ReadQueuedEvents();
+        if(!m_queuedEvents)
+        {
+            // unnoun data clean buffer.
+            uint8_t c = m_nexSerial->read();
+            dbSerialPrint("Unexpected data received hex: ");
+            while (m_nexSerial->available())
+            {
+                dbSerialPrint(c);
+                dbSerialPrint(',');
+                c=m_nexSerial->read();
+                yield();
+            }
+            dbSerialPrintln(c);
+        }
+    } 
 }

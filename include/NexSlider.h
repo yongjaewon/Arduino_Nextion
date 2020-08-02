@@ -41,7 +41,7 @@ public: /* methods */
     /**
      * @copydoc NexObject::NexObject(const Nextion*,uint8_t,uint8_t,const char*,const NexObject*);
      */
-    NexSlider(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
+    NexSlider(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
 
     /**
      * Get the value of slider. 
@@ -64,10 +64,10 @@ public: /* methods */
     /**
      * Get bco attribute of component
      *
-     * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @param number - buffer storing data return
+     * @return true if success, false for failure 
      */
-    uint32_t Get_background_color_bco(uint32_t *number);
+    bool Get_background_color_bco(uint32_t *number);
 	
     /**
      * Set bco attribute of component
@@ -80,10 +80,10 @@ public: /* methods */
     /**
      * Get pco attribute of component
      *
-     * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @param number - buffer storing data return
+     * @return true if success, false for failure 
      */
-    uint32_t Get_font_color_pco(uint32_t *number);		
+    bool Get_font_color_pco(uint32_t *number);		
 	
     /**
      * Set pco attribute of component
@@ -96,10 +96,10 @@ public: /* methods */
     /**
      * Get wid attribute of component
      *
-     * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @param number - buffer storing data return
+     * @return true if success, false for failure 
      */
-    uint32_t Get_pointer_thickness_wid(uint32_t *number);	
+    bool Get_pointer_thickness_wid(uint32_t *number);	
 
     /**
      * Set wid attribute of component
@@ -112,10 +112,10 @@ public: /* methods */
     /**
      * Get hig attribute of component
      *
-     * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @param number - buffer storing data return
+     * @return true if success, false for failure 
      */
-    uint32_t Get_cursor_height_hig(uint32_t *number);	
+    bool Get_cursor_height_hig(uint32_t *number);	
 
     /**
      * Set hig attribute of component
@@ -128,10 +128,10 @@ public: /* methods */
     /**
      * Get maxval attribute of component
      *
-     * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @param number - buffer storing data return
+     * @return true if success, false for failure 
      */
-    uint32_t getMaxval(uint32_t *number);	
+    bool getMaxval(uint32_t *number);	
 	
     /**
      * Set maxval attribute of component
@@ -145,9 +145,9 @@ public: /* methods */
      * Get minval attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t getMinval(uint32_t *number);	
+    bool getMinval(uint32_t *number);	
 	
     /**
      * Set minval attribute of component
@@ -155,7 +155,39 @@ public: /* methods */
      * @param number - To set up the data
      * @return true if success, false for failure
      */
-    bool setMinval(uint32_t number);		
+    bool setMinval(uint32_t number);
+
+    /**
+     * Get pic attribute of component
+     *
+     * @param number - buffer storing data return
+     * @return true if success, false for failure
+     */
+    bool Get_background_image_pic(uint32_t *number);	
+
+    /**
+     * Set pic attribute of component
+     *
+     * @param number - To set up the data
+     * @return true if success, false for failure
+     */
+    bool Set_background_image_pic(uint32_t number);
+
+    /**
+     * Get crop image picc attribute of component
+     *
+     * @param number - buffer storing data return
+     * @return true if success, false for failure
+     */
+    bool Get_background_image_picc(uint32_t *number);	
+
+    /**
+     * Set crop image picc attribute of component
+     *
+     * @param number - To set up the data
+     * @return true if success, false for failure
+     */
+    bool Set_background_image_picc(uint32_t number);
 };
 /**
  * @}

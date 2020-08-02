@@ -45,7 +45,7 @@ public: /* methods */
     /**
      * @copydoc NexObject::NexObject(const Nextion*,uint8_t,uint8_t,const char*,const NexObject*);
      */
-    NexWaveform(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
+    NexWaveform(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
 
      /**
      * Constructor with value scaling parameters, Scales added value to set Waveform scale 
@@ -59,7 +59,7 @@ public: /* methods */
      * @param hight - componetn hight
      * @param page - pointer to global page information (can be nullptr in case local object)
      */
-    NexWaveform(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, 
+    NexWaveform(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, 
         float minVal, float maxVal, uint8_t hight,
         const NexObject* page=nullptr);
 

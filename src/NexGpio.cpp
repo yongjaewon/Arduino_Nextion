@@ -20,7 +20,7 @@
 
 #include "NexHardware.h"
 
-NexGpio::NexGpio(const Nextion *nextion):NextionIf(nextion)
+NexGpio::NexGpio(Nextion *nextion):NextionIf(nextion)
 {}
 
 NexGpio::~NexGpio()
@@ -58,16 +58,14 @@ bool NexGpio::digital_write(uint32_t port,uint32_t value)
     cmd += '=';
     buf = value + '0';
     cmd += buf;
-    
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
 uint32_t NexGpio::digital_read(uint32_t port)
 {
-    uint32_t number;
+    uint32_t number{0xffffffff};
     char buf;
-    
     String cmd = String("get ");
     cmd += "pio";
     buf = port + '0';
@@ -83,7 +81,6 @@ bool NexGpio::analog_write(uint32_t port,uint32_t value)
     char buf[10] = {0};
     char c;
     String cmd;
-    
     utoa(value, buf, 10);
     cmd += "pwm";
     c = port + '0';
@@ -100,17 +97,15 @@ bool NexGpio::set_pwmfreq(uint32_t value)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(value, buf, 10);
     cmd += "pwmf";
     cmd += '=';
     cmd += buf;
-    
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();   
 }
 
-uint32_t NexGpio::get_pwmfreq(uint32_t *number)
+bool NexGpio::get_pwmfreq(uint32_t *number)
 {
     String cmd = String("get pwmf");
     sendCommand(cmd.c_str());

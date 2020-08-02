@@ -53,7 +53,7 @@ public: /* methods */
      * @param name - pointer to an unique name in range of all components.
      * @param page - pointer to global page information (can be nullptr in case local object)
      */
-    NexObject(const Nextion *nextion, uint8_t pid, uint8_t cid, const char* name, const NexObject* page);
+    NexObject(Nextion *nextion, uint8_t pid, uint8_t cid, const char* name, const NexObject* page);
 
     /**
      * Get object width
@@ -85,6 +85,13 @@ public: /* methods */
      * @return true if success, false for failure
      */
     bool setVisible(bool visible);
+    
+    /**
+     * Refresh componen on current page
+     *
+     * @return true if success, false for failure
+     */
+    bool refresh();
 
 protected: /* methods */
 

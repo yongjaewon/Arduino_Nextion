@@ -19,7 +19,7 @@
 #include "NexNumber.h"
 #include "NexHardware.h"
 
-NexNumber::NexNumber(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
+NexNumber::NexNumber(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
     :NexTouch(nextion, pid, cid, name, page)
 {
 }
@@ -47,7 +47,7 @@ bool NexNumber::setValue(uint32_t number)
     return recvRetCommandFinished();
 }
 
-uint32_t NexNumber::Get_background_color_bco(uint32_t *number)
+bool NexNumber::Get_background_color_bco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -61,21 +61,15 @@ bool NexNumber::Set_background_color_bco(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".bco=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd="";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexNumber::Get_font_color_pco(uint32_t *number)
+bool NexNumber::Get_font_color_pco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -95,15 +89,10 @@ bool NexNumber::Set_font_color_pco(uint32_t number)
     cmd += ".pco=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexNumber::Get_place_xcen(uint32_t *number)
+bool NexNumber::Get_place_xcen(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -117,21 +106,15 @@ bool NexNumber::Set_place_xcen(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".xcen=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexNumber::Get_place_ycen(uint32_t *number)
+bool NexNumber::Get_place_ycen(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -145,21 +128,15 @@ bool NexNumber::Set_place_ycen(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".ycen=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexNumber::getFont(uint32_t *number)
+bool NexNumber::getFont(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -179,15 +156,10 @@ bool NexNumber::setFont(uint32_t number)
     cmd += ".font=";
     cmd += buf;
     sendCommand(cmd.c_str());
-
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexNumber::Get_number_lenth(uint32_t *number)
+bool NexNumber::Get_number_lenth(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -201,21 +173,15 @@ bool NexNumber::Set_number_lenth(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".lenth=";
     cmd += buf;
     sendCommand(cmd.c_str());
-
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexNumber::Get_background_crop_picc(uint32_t *number)
+bool NexNumber::Get_background_crop_picc(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -229,21 +195,15 @@ bool NexNumber::Set_background_crop_picc(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".picc=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexNumber::Get_background_image_pic(uint32_t *number)
+bool NexNumber::Get_background_image_pic(uint32_t *number)
 {
     String cmd = String("get ");
     getObjGlobalPageName(cmd);
@@ -256,16 +216,10 @@ bool NexNumber::Set_background_image_pic(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".pic=";
     cmd += buf;
-    sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }

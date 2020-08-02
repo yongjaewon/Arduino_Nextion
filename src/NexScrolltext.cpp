@@ -19,7 +19,7 @@
 #include "NexScrolltext.h"
 #include "NexHardware.h"
 
-NexScrolltext::NexScrolltext(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
+NexScrolltext::NexScrolltext(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
     :NexTouch(nextion, pid, cid, name, page)
 {
 }
@@ -56,7 +56,7 @@ bool NexScrolltext::setText(const char *buffer)
     return recvRetCommandFinished();    
 }
 
-uint32_t NexScrolltext::Get_background_color_bco(uint32_t *number)
+bool NexScrolltext::Get_background_color_bco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -70,21 +70,16 @@ bool NexScrolltext::Set_background_color_bco(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".bco=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd="";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
+
     return recvRetCommandFinished();
 }
 
-uint32_t NexScrolltext::Get_font_color_pco(uint32_t *number)
+bool NexScrolltext::Get_font_color_pco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -98,21 +93,15 @@ bool NexScrolltext::Set_font_color_pco(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".pco=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexScrolltext::Get_place_xcen(uint32_t *number)
+bool NexScrolltext::Get_place_xcen(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -126,21 +115,15 @@ bool NexScrolltext::Set_place_xcen(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".xcen=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexScrolltext::Get_place_ycen(uint32_t *number)
+bool NexScrolltext::Get_place_ycen(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -154,21 +137,15 @@ bool NexScrolltext::Set_place_ycen(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".ycen=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexScrolltext::getFont(uint32_t *number)
+bool NexScrolltext::getFont(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -182,21 +159,15 @@ bool NexScrolltext::setFont(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".font=";
     cmd += buf;
     sendCommand(cmd.c_str());
-
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexScrolltext::Get_background_crop_picc(uint32_t *number)
+bool NexScrolltext::Get_background_crop_picc(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -210,21 +181,15 @@ bool NexScrolltext::Set_background_crop_picc(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".picc=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexScrolltext::Get_background_image_pic(uint32_t *number)
+bool NexScrolltext::Get_background_image_pic(uint32_t *number)
 {
     String cmd = String("get ");
     getObjGlobalPageName(cmd);
@@ -237,21 +202,15 @@ bool NexScrolltext::Set_background_image_pic(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".pic=";
     cmd += buf;
 	sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexScrolltext::Get_scroll_dir(uint32_t *number)
+bool NexScrolltext::Get_scroll_dir(uint32_t *number)
 {
     String cmd = String("get ");
     getObjGlobalPageName(cmd);
@@ -264,21 +223,15 @@ bool NexScrolltext::Set_scroll_dir(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".dir=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexScrolltext::Get_scroll_distance(uint32_t *number)
+bool NexScrolltext::Get_scroll_distance(uint32_t *number)
 {
     String cmd = String("get ");
     getObjGlobalPageName(cmd);
@@ -301,15 +254,10 @@ bool NexScrolltext::Set_scroll_distance(uint32_t number)
     cmd += ".dis=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexScrolltext::Get_cycle_tim(uint32_t *number)
+bool NexScrolltext::Get_cycle_tim(uint32_t *number)
 {
     String cmd = String("get ");
     getObjGlobalPageName(cmd);
@@ -331,11 +279,6 @@ bool NexScrolltext::Set_cycle_tim(uint32_t number)
     cmd += ".tim=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
@@ -348,7 +291,6 @@ bool NexScrolltext::enable(void)
     getObjGlobalPageName(cmd);
     cmd += ".en=";
     cmd += buf;
-
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -361,7 +303,6 @@ bool NexScrolltext::disable(void)
     getObjGlobalPageName(cmd);
     cmd += ".en=";
     cmd += buf;
-
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }

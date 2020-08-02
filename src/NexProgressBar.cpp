@@ -20,7 +20,7 @@
 #include "NexProgressBar.h"
 #include "NexHardware.h"
 
-NexProgressBar::NexProgressBar(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
+NexProgressBar::NexProgressBar(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
     :NexObject(nextion, pid, cid, name, page)
 {
 }
@@ -37,8 +37,7 @@ bool NexProgressBar::getValue(uint32_t *number)
 bool NexProgressBar::setValue(uint32_t number)
 {
     char buf[10] = {0};
-    String cmd;
-    
+    String cmd;  
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".val=";
@@ -48,7 +47,7 @@ bool NexProgressBar::setValue(uint32_t number)
     return recvRetCommandFinished();
 }
  
-uint32_t NexProgressBar::Get_background_color_bco(uint32_t *number)
+bool NexProgressBar::Get_background_color_bco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -62,21 +61,16 @@ bool NexProgressBar::Set_background_color_bco(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".bco=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd="";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
+
     return recvRetCommandFinished();
 }
 
-uint32_t NexProgressBar::Get_font_color_pco(uint32_t *number)
+bool NexProgressBar::Get_font_color_pco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -90,16 +84,10 @@ bool NexProgressBar::Set_font_color_pco(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".pco=";
     cmd += buf;
-    sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 } 

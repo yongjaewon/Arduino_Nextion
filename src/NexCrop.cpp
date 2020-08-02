@@ -20,7 +20,7 @@
 #include "NexCrop.h"
 #include "NexHardware.h"
 
-NexCrop::NexCrop(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
+NexCrop::NexCrop(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
     :NexTouch(nextion, pid, cid, name, page)
 {
 }
@@ -38,12 +38,10 @@ bool NexCrop::Set_background_crop_picc(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".picc=";
     cmd += buf;
-
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -61,12 +59,10 @@ bool NexCrop::setPic(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".picc=";
     cmd += buf;
-
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }

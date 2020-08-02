@@ -23,12 +23,12 @@
 #include <type_traits>
 #endif
 
-NexWaveform::NexWaveform(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page):
+NexWaveform::NexWaveform(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page):
         NexTouch(nextion, pid, cid, name, page), m_minVal{0},m_maxVal{255},m_scale{1.0},m_hight{255}
 {
 }
 
-NexWaveform::NexWaveform(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, 
+NexWaveform::NexWaveform(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, 
     float minVal, float maxVal, uint8_t hight,
     const NexObject* page):NexWaveform(nextion, pid, cid, name, page)
 {
@@ -60,11 +60,7 @@ bool NexWaveform::Set_background_color_bco(uint32_t number)
     cmd += ".bco=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd="";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
+
     return recvRetCommandFinished();
 }
 
@@ -87,11 +83,6 @@ bool NexWaveform::Set_grid_color_gdc(uint32_t number)
     getObjGlobalPageName(cmd);
     cmd += ".gdc=";
     cmd += buf;
-    sendCommand(cmd.c_str());
-	
-    cmd="";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -116,11 +107,6 @@ bool NexWaveform::Set_grid_width_gdw(uint32_t number)
     cmd += ".gdw=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd="";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
@@ -143,11 +129,6 @@ bool NexWaveform::Set_grid_height_gdh(uint32_t number)
     getObjGlobalPageName(cmd);
     cmd += ".gdh=";
     cmd += buf;
-    sendCommand(cmd.c_str());
-	
-    cmd="";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -178,11 +159,6 @@ bool NexWaveform::Set_channel_color(uint8_t ch, uint32_t number)
     cmd += "=";
     utoa(number, buf, 10);
     cmd += buf;
-    sendCommand(cmd.c_str());
-	
-    cmd="";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }

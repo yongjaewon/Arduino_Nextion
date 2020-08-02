@@ -43,7 +43,7 @@ class NexRtc : public NextionIf
      *
      * @param nextion - nextion interface
      */
-    NexRtc(const Nextion *nextion);
+    NexRtc(Nextion *nextion);
 
     ~NexRtc();
 

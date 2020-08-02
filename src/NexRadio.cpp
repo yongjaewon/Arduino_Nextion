@@ -23,12 +23,12 @@
 void NexRadio::attachPush(NexTouchEventCb push, void *ptr)
 {}
 
-NexRadio::NexRadio(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
+NexRadio::NexRadio(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
     :NexTouch(nextion, pid, cid, name, page)
 {
 }
 
-uint32_t NexRadio::getValue(uint32_t *number)
+bool NexRadio::getValue(uint32_t *number)
 {
     String cmd = String("get ");
     getObjGlobalPageName(cmd);
@@ -46,12 +46,11 @@ bool NexRadio::setValue(uint32_t number)
     getObjGlobalPageName(cmd);
     cmd += ".val=";
     cmd += buf;
-
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexRadio::Get_background_color_bco(uint32_t *number)
+bool NexRadio::Get_background_color_bco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -71,15 +70,10 @@ bool NexRadio::Set_background_color_bco(uint32_t number)
     cmd += ".bco=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd="";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexRadio::Get_font_color_pco(uint32_t *number)
+bool NexRadio::Get_font_color_pco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -93,16 +87,10 @@ bool NexRadio::Set_font_color_pco(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".pco=";
     cmd += buf;
-    sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }

@@ -54,7 +54,7 @@ public: /* methods */
     /**
      * @copydoc NexObject::NexObject(const Nextion*,uint8_t,uint8_t,const char*,const NexObject*)
      */
-    NexButton(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
+    NexButton(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
 
     /*
     * Get text attribute of component. 
@@ -91,9 +91,9 @@ public: /* methods */
      * Get bco attribute of component
      *
      * @param number - buffer storing data return
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_background_color_bco(uint32_t *number);
+    bool Get_background_color_bco(uint32_t *number);
 	
     /**
      * Set bco attribute of component
@@ -107,9 +107,9 @@ public: /* methods */
      * Get bco2 attribute of component
      *
      * @param number - buffer storing data return
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_press_background_color_bco2(uint32_t *number);	
+    bool Get_press_background_color_bco2(uint32_t *number);	
 
     /**
      * Set bco2 attribute of component
@@ -123,9 +123,9 @@ public: /* methods */
      * Get pco attribute of component
      *
      * @param number - buffer storing data return
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_font_color_pco(uint32_t *number);		
+    bool Get_font_color_pco(uint32_t *number);		
 	
     /**
      * Set pco attribute of component
@@ -139,9 +139,9 @@ public: /* methods */
      * Get pco2 attribute of component
      *
      * @param number - buffer storing data return
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_press_font_color_pco2(uint32_t *number);		
+    bool Get_press_font_color_pco2(uint32_t *number);		
 	
     /**
      * Set pco2 attribute of component
@@ -155,9 +155,9 @@ public: /* methods */
      * Get xcen attribute of component
      *
      * @param number - buffer storing data return
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_place_xcen(uint32_t *number);		
+    bool Get_place_xcen(uint32_t *number);		
 	
     /**
      * Set xcen attribute of component
@@ -171,9 +171,9 @@ public: /* methods */
      * Get ycen attribute of component
      *
      * @param number - buffer storing data return
-     * @return the length of the data 
+     * @return true if success, false for failure
      */
-    uint32_t Get_place_ycen(uint32_t *number);	
+    bool Get_place_ycen(uint32_t *number);	
 
     /**
      * Set ycen attribute of component
@@ -187,9 +187,9 @@ public: /* methods */
      * Get font attribute of component
      *
      * @param number - buffer storing data return
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t getFont(uint32_t *number);		
+    bool getFont(uint32_t *number);		
 	
     /**
      * Set font attribute of component
@@ -203,9 +203,9 @@ public: /* methods */
      * Get picc attribute of component
      *
      * @param number - buffer storing data return
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_background_cropi_picc(uint32_t *number);	
+    bool Get_background_cropi_picc(uint32_t *number);	
 
     /**
      * Set picc attribute of component
@@ -219,9 +219,9 @@ public: /* methods */
      * Get picc2 attribute of component
      *
      * @param number - buffer storing data return
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_press_background_crop_picc2(uint32_t *number);	
+    bool Get_press_background_crop_picc2(uint32_t *number);	
 	
     /**
      * Set picc2 attribute of component
@@ -235,9 +235,9 @@ public: /* methods */
      * Get pic attribute of component
      *
      * @param number - buffer storing data return
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_background_image_pic(uint32_t *number);	
+    bool Get_background_image_pic(uint32_t *number);	
 
     /**
      * Set pic attribute of component
@@ -251,9 +251,9 @@ public: /* methods */
      * Get pic2 attribute of component
      *
      * @param number - buffer storing data return
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */	
-    uint32_t Get_press_background_image_pic2(uint32_t *number);	
+    bool Get_press_background_image_pic2(uint32_t *number);	
 
     /**
      * Set pic2 attribute of component

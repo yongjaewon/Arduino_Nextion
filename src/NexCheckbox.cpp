@@ -24,12 +24,12 @@ void NexCheckbox::attachPush(NexTouchEventCb push, void *ptr)
 {}
 
 
-NexCheckbox::NexCheckbox(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
+NexCheckbox::NexCheckbox(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
     :NexTouch(nextion, pid, cid, name, page)
 {
 }
 
-uint32_t NexCheckbox::getValue(uint32_t *number)
+bool NexCheckbox::getValue(uint32_t *number)
 {
     String cmd = String("get ");
     getObjGlobalPageName(cmd);
@@ -47,12 +47,11 @@ bool NexCheckbox::setValue(uint32_t number)
     getObjGlobalPageName(cmd);
     cmd += ".val=";
     cmd += buf;
-
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexCheckbox::Get_background_color_bco(uint32_t *number)
+bool NexCheckbox::Get_background_color_bco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -66,21 +65,15 @@ bool NexCheckbox::Set_background_color_bco(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".bco=";
     cmd += buf;
     sendCommand(cmd.c_str());
-	
-    cmd="";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
-    sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexCheckbox::Get_font_color_pco(uint32_t *number)
+bool NexCheckbox::Get_font_color_pco(uint32_t *number)
 {
     String cmd;
     cmd += "get ";
@@ -94,16 +87,10 @@ bool NexCheckbox::Set_font_color_pco(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".pco=";
     cmd += buf;
-    sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }

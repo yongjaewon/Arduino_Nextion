@@ -20,7 +20,7 @@
 #include "NexPicture.h"
 #include "NexHardware.h"
 
-NexPicture::NexPicture(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
+NexPicture::NexPicture(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
     :NexTouch(nextion, pid, cid, name, page)
 {
 }
@@ -38,12 +38,10 @@ bool NexPicture::Set_background_image_pic(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".pic=";
     cmd += buf;
-
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -61,12 +59,10 @@ bool NexPicture::setPic(uint32_t number)
 {
     char buf[10] = {0};
     String cmd;
-    
     utoa(number, buf, 10);
     getObjGlobalPageName(cmd);
     cmd += ".pic=";
     cmd += buf;
-
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }

@@ -21,6 +21,7 @@
  * @copyright 2020 Jyrki Berg
  * 
  */
+
 #include <SoftwareSerial.h>
 
 #include "Nextion.h"
@@ -45,7 +46,7 @@ Nextion *next = Nextion::GetInstance(mySerial); // software serial
 NexPage p0(next, 0, "page0");
 
 /*
- * Declare a button object [nextion instance, page id:0,component id:1, component name: "b0", optional page]. 
+ * Declare a button object [nextion instance, page id:0,component id:1, component name: "b0", pointer to page object: &p0]. 
  */
 NexButton b0( next, 0, 1, "b0", &p0);
 
@@ -57,7 +58,7 @@ NexButton b0( next, 0, 1, "b0", &p0);
 NexTouch *nex_listen_list[] = 
 {
     &b0,
-    NULL
+    nullptr
 };
 
 char buffer[100] = {0};

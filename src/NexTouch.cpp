@@ -20,7 +20,7 @@
 #include "NexTouch.h"
 #include "NexHardware.h"
 
-NexTouch::NexTouch(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
+NexTouch::NexTouch(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
     :NexObject(nextion, pid, cid, name, page)
 {
     this->__cb_push = nullptr;
@@ -76,9 +76,10 @@ void NexTouch::iterate(NexTouch **list, uint8_t pid, uint8_t cid, uint8_t event)
 
     if (nullptr == list)
     {
+        dbSerialPrintln("Nex Touch events not registered/listed");
         return;
     }
-    
+    bool found{false};
     for(i = 0; (e = list[i]) != nullptr; i++)
     {
         if (e->getObjPid() == pid && e->getObjCid() == cid)
@@ -87,14 +88,22 @@ void NexTouch::iterate(NexTouch **list, uint8_t pid, uint8_t cid, uint8_t event)
             if (NEX_EVENT_PUSH == event)
             {
                 e->push();
+                found = true;
             }
             else if (NEX_EVENT_POP == event)
             {
                 e->pop();
+                found = true;
             }
-            
             break;
         }
+    }
+    if(!found)
+    {
+       dbSerialPrint("Nex Touch events not registered Pid: ");
+       dbSerialPrint(pid);
+       dbSerialPrint(" Cid: ");
+       dbSerialPrintln(cid);
     }
 }
 

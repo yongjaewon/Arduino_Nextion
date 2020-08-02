@@ -40,7 +40,7 @@ public: /* methods */
     /**
      * @copydoc NexObject::NexObject(const Nextion*,uint8_t,uint8_t,const char*,const NexObject*);
      */
-    NexProgressBar(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
+    NexProgressBar(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
     
     /**
      * Get the value of progress bar. 
@@ -64,9 +64,9 @@ public: /* methods */
      * Get bco attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_background_color_bco(uint32_t *number);
+    bool Get_background_color_bco(uint32_t *number);
 	
     /**
      * Set bco attribute of component
@@ -80,9 +80,9 @@ public: /* methods */
      * Get pco attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_font_color_pco(uint32_t *number);		
+    bool Get_font_color_pco(uint32_t *number);		
 	
     /**
      * Set pco attribute of component

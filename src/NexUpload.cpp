@@ -23,7 +23,7 @@
 #include "NexUpload.h"
 #include "NextionIf.h"
 
-NexUpload::NexUpload(const Nextion *nextion)
+NexUpload::NexUpload(Nextion *nextion)
     :NextionIf(nextion)
 {
 }

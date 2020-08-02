@@ -46,7 +46,7 @@ public: /* methods */
     /**
      * @copydoc NexObject::NexObject(const Nextion*,uint8_t,uint8_t,const char*,const NexObject*);
      */
-    NexTimer(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
+    NexTimer(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
 
     /**
      * Attach an callback function of timer respond event. 
@@ -104,9 +104,9 @@ public: /* methods */
      * Get tim attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_cycle_tim(uint32_t *number);
+    bool Get_cycle_tim(uint32_t *number);
 
     /**
      * Set tim attribute of component

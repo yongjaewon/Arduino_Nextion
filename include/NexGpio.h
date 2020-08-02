@@ -44,7 +44,7 @@ public:
      *
      * @param nextion - nextion interface
      */
-    NexGpio(const Nextion *nextion);
+    NexGpio(Nextion *nextion);
 
     ~NexGpio();
 
@@ -108,7 +108,7 @@ public:
      * @return true if success, false for failure
      */
     
-    uint32_t get_pwmfreq(uint32_t *number);
+    bool get_pwmfreq(uint32_t *number);
      
 };
     

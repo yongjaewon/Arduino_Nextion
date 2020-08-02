@@ -19,7 +19,7 @@
 #include "NexObject.h"
 #include "NexHardware.h"
 
-NexObject::NexObject(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page):
+NexObject::NexObject(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page):
 NextionIf(nextion),
 _pid{pid},_cid{cid},_name{name}, _page{page}
 {
@@ -121,6 +121,14 @@ bool NexObject::setVisible(bool visible)
     {
         cmd += "0";
     }
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
+}
+
+bool NexObject::refresh()
+{
+    String cmd = String("ref ");
+    cmd += _name;
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }

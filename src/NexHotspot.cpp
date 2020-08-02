@@ -20,7 +20,7 @@
 #include "NexHotspot.h"
 #include "NexHardware.h"
 
-NexHotspot::NexHotspot(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
+NexHotspot::NexHotspot(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
     :NexTouch(nextion, pid, cid, name, page)
 {
 }

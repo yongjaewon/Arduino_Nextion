@@ -1,6 +1,10 @@
 # Release Notes
 
 --------------------------------------------------------------------------------
+# Release v1.2.0
+- component refresh removed as it is now automatic in variable change
+- functions return values corrected
+
 # Release v1.1.0
 -NexText::appendText function added
 

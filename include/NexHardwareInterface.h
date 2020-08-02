@@ -43,7 +43,7 @@ public:
 * @retval true - success.
 * @retval false - failed. 
 */
-virtual bool recvRetNumber(uint32_t *number, size_t timeout) const =0;
+virtual bool recvRetNumber(uint32_t *number, size_t timeout) =0;
 
 /* Receive signed number
 *
@@ -53,7 +53,7 @@ virtual bool recvRetNumber(uint32_t *number, size_t timeout) const =0;
 * @retval true - success.
 * @retval false - failed. 
 */
-virtual bool recvRetNumber(int32_t *number, size_t timeout) const =0;
+virtual bool recvRetNumber(int32_t *number, size_t timeout) =0;
 
 /* Receive string
 *
@@ -64,7 +64,7 @@ virtual bool recvRetNumber(int32_t *number, size_t timeout) const =0;
 * @retval true - success.
 * @retval false - failed. 
 */
-virtual bool recvRetString(String &str, size_t timeout, bool start_flag) const =0;
+virtual bool recvRetString(String &str, size_t timeout, bool start_flag) =0;
 
 /* Receive string
 *
@@ -76,20 +76,20 @@ virtual bool recvRetString(String &str, size_t timeout, bool start_flag) const =
 * @retval true - success.
 * @retval false - failed. 
 */
-virtual bool recvRetString(char *buffer, uint16_t &len, size_t timeout, bool start_flag) const =0;
+virtual bool recvRetString(char *buffer, uint16_t &len, size_t timeout, bool start_flag) =0;
 
 /* Send Command to device
 *
 * parameter command string
 */
-virtual void sendCommand(const char* cmd) const =0;
+virtual void sendCommand(const char* cmd) =0;
 
 /* Send Raw data to device
 *
 * parameter raw data buffer
 */
 #ifdef ESP8266
-virtual void sendRawData(const std::vector<uint8_t> &data) const =0;
+virtual void sendRawData(const std::vector<uint8_t> &data) =0;
 #endif
 
 /* Send Raw data to device
@@ -97,14 +97,14 @@ virtual void sendRawData(const std::vector<uint8_t> &data) const =0;
 * @param buf - raw data buffer poiter
 * @param len - raw data buffer pointer
 */
-virtual void sendRawData(const uint8_t *buf, uint16_t len) const =0;
+virtual void sendRawData(const uint8_t *buf, uint16_t len) =0;
 
 
 /* Send Raw byte to device
 *
 * parameter raw byte
 */
-virtual void sendRawByte(const uint8_t byte) const =0;
+virtual void sendRawByte(const uint8_t byte) =0;
 
 /* read Bytes from device
  * @brief 
@@ -114,7 +114,7 @@ virtual void sendRawByte(const uint8_t byte) const =0;
  * @param timeout  timeout ms
  * @return size_t read bytes can be less that size (timeout case) 
  */
-virtual size_t readBytes(uint8_t* buffer, size_t size, size_t timeout) const =0;
+virtual size_t readBytes(uint8_t* buffer, size_t size, size_t timeout) =0;
 
 /* Receive command
 *
@@ -124,7 +124,7 @@ virtual size_t readBytes(uint8_t* buffer, size_t size, size_t timeout) const =0;
 * @retval true - success.
 * @retval false - failed. 
 */
-virtual bool recvCommand(const uint8_t command, size_t timeout) const =0;
+virtual bool recvCommand(const uint8_t command, size_t timeout) =0;
 
 /*
  * Command is executed successfully. 
@@ -135,7 +135,7 @@ virtual bool recvCommand(const uint8_t command, size_t timeout) const =0;
  * @retval false - failed. 
  *
  */
-virtual bool recvRetCommandFinished(size_t timeout) const =0;
+virtual bool recvRetCommandFinished(size_t timeout) =0;
 
 /*
  * Transpared data mode setup successfully 
@@ -146,7 +146,7 @@ virtual bool recvRetCommandFinished(size_t timeout) const =0;
  * @retval false - failed. 
  *
  */
-virtual bool RecvTransparendDataModeReady(size_t timeout) const =0;
+virtual bool RecvTransparendDataModeReady(size_t timeout) =0;
 
 /*
  * Transpared data mode finished 
@@ -157,7 +157,7 @@ virtual bool RecvTransparendDataModeReady(size_t timeout) const =0;
  * @retval false - failed. 
  *
  */
-virtual bool RecvTransparendDataModeFinished(size_t timeout) const =0;
+virtual bool RecvTransparendDataModeFinished(size_t timeout) =0;
 
 /**
  * current baud value
@@ -165,7 +165,7 @@ virtual bool RecvTransparendDataModeFinished(size_t timeout) const =0;
  * 
  * @return current baud value
  */
-virtual uint32_t GetCurrentBaud() const =0;
+virtual uint32_t GetCurrentBaud() =0;
 
 };
 

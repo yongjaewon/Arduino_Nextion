@@ -41,7 +41,7 @@ public: /* methods */
     /**
      * @copydoc NexObject::NexObject(const Nextion*,uint8_t,uint8_t,const char*,const NexObject*);
      */
-    NexScrolltext(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
+    NexScrolltext(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
     
     /*
     * Get text attribute of component. 
@@ -77,9 +77,9 @@ public: /* methods */
      * Get bco attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_background_color_bco(uint32_t *number);   
+    bool Get_background_color_bco(uint32_t *number);   
     	
     /**
      * Set bco attribute of component
@@ -93,9 +93,9 @@ public: /* methods */
      * Get pco attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */	
-    uint32_t Get_font_color_pco(uint32_t *number);     
+    bool Get_font_color_pco(uint32_t *number);     
 
     /**
      * Set pco attribute of component
@@ -109,9 +109,9 @@ public: /* methods */
      * Get xcen attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_place_xcen(uint32_t *number);		
+    bool Get_place_xcen(uint32_t *number);		
 	
     /**
      * Set xcen attribute of component
@@ -125,9 +125,9 @@ public: /* methods */
      * Get ycen attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_place_ycen(uint32_t *number);		
+    bool Get_place_ycen(uint32_t *number);		
 	
     /**
      * Set ycen attribute of component
@@ -141,9 +141,9 @@ public: /* methods */
      * Get font attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t getFont(uint32_t *number);	
+    bool getFont(uint32_t *number);	
 
     /**
      * Set font attribute of component
@@ -157,9 +157,9 @@ public: /* methods */
      * Get picc attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_background_crop_picc(uint32_t *number);	
+    bool Get_background_crop_picc(uint32_t *number);	
 
     /**
      * Set picc attribute of component
@@ -173,9 +173,9 @@ public: /* methods */
      * Get pic attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_background_image_pic(uint32_t *number);	
+    bool Get_background_image_pic(uint32_t *number);	
 
     /**
      * Set pic attribute of component
@@ -189,9 +189,9 @@ public: /* methods */
      * Get dir attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_scroll_dir(uint32_t *number);		
+    bool Get_scroll_dir(uint32_t *number);		
 	
     /**
      * Set dir attribute of component
@@ -205,9 +205,9 @@ public: /* methods */
      * Get dis attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_scroll_distance(uint32_t *number);	
+    bool Get_scroll_distance(uint32_t *number);	
 
     /**
      * Set dis attribute of component
@@ -221,9 +221,9 @@ public: /* methods */
      * Get tim attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t Get_cycle_tim(uint32_t *number);
+    bool Get_cycle_tim(uint32_t *number);
 
     /**
      * Set tim attribute of component

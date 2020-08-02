@@ -19,7 +19,7 @@
 #include "NexRtc.h"
 #include "NexHardware.h"
 
-NexRtc::NexRtc(const Nextion *nextion):NextionIf(nextion)
+NexRtc::NexRtc(Nextion *nextion):NextionIf(nextion)
 {}
 
 NexRtc::~NexRtc()

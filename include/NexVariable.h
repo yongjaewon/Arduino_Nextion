@@ -54,7 +54,7 @@ public: /* methods */
     /**
      * @copydoc NexObject::NexObject(const Nextion*,uint8_t,uint8_t,const char*,const NexObject*);
      */
-    NexVariable(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
+    NexVariable(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
 
     /*
     * Get text attribute of component. 
@@ -90,9 +90,9 @@ public: /* methods */
      * Get val attribute of component
      *
      * @param number - buffer storing data retur
-     * @return the length of the data 
+     * @return true if success, false for failure 
      */
-    uint32_t getValue(int32_t *number);
+    bool getValue(int32_t *number);
 	
     /**
      * Set val attribute of component

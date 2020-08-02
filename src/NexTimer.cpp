@@ -20,7 +20,7 @@
 #include "NexTimer.h"
 #include "NexHardware.h"
 
-NexTimer::NexTimer(const Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
+NexTimer::NexTimer(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
     :NexTouch(nextion, pid, cid, name, page)
 {
 }
@@ -56,7 +56,6 @@ bool NexTimer::setCycle(uint32_t number)
     getObjGlobalPageName(cmd);
     cmd += ".tim=";
     cmd += buf;
-
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -70,7 +69,6 @@ bool NexTimer::enable(void)
     getObjGlobalPageName(cmd);
     cmd += ".en=";
     cmd += buf;
-
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
@@ -83,12 +81,11 @@ bool NexTimer::disable(void)
     getObjGlobalPageName(cmd);
     cmd += ".en=";
     cmd += buf;
-
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
 
-uint32_t NexTimer::Get_cycle_tim(uint32_t *number)
+bool NexTimer::Get_cycle_tim(uint32_t *number)
 {
     String cmd = String("get ");
     getObjGlobalPageName(cmd);
@@ -109,11 +106,6 @@ bool NexTimer::Set_cycle_tim(uint32_t number)
     getObjGlobalPageName(cmd);
     cmd += ".tim=";
     cmd += buf;
-    sendCommand(cmd.c_str());
-	
-    cmd = "";
-    cmd += "ref ";
-    getObjGlobalPageName(cmd);
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
