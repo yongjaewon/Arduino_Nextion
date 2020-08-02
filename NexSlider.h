@@ -151,6 +151,22 @@ public: /* methods */
      * @return true if success, false for failure
      */
     bool setMinval(uint32_t number);		
+	
+    /**
+     * Get pic attribute of component
+     *
+     * @param number - buffer storing data return
+     * @return the length of the data 
+     */
+    uint32_t Get_background_image_pic(uint32_t *number);	
+
+    /**
+     * Set pic attribute of component
+     *
+     * @param number - To set up the data
+     * @return true if success, false for failure
+     */
+    bool Set_background_image_pic(uint32_t number);		
 };
 /**
  * @}
