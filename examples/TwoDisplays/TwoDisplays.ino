@@ -1,10 +1,10 @@
 /**
- * @example CompWaveform.ino
+ * @example TwoDisplays.ino
  *
  * @par How to Use
- * Show how to use API of class NexWaveform with auto scaling.  
+ * Show how to use API for two displays.
  *
- * @author Jyrki Berg 8/2/2020 (https://github.com/jyberg)
+ * @author Jyrki Berg 3/8/2020 (https://github.com/jyberg)
  * 
  * @copyright 2020 Jyrki Berg
  * 
@@ -18,17 +18,20 @@
 // esp8266 / NodeMCU software serial ports
 SoftwareSerial mySerial_D1(D2, D1); // RX, TX
 SoftwareSerial mySerial_D2(D4, D3); // RX, TX
+#define _DEBUG_HW_SERIAL
 #else
+// Esure that used board support multiple serial communication ports simultaneusly, especially if software serial is used for multiple displays.
 SoftwareSerial mySerial_D1(3,2); // RX, TX
-SoftwareSerial mySerial_D2(5,4); // RX, TX
+//SoftwareSerial mySerial_D2(5,4); // RX, TX
+#define mySerial_D2 Serial // HW serial posrt used Nextion lig DEBUG_SERIAL_ENABLE cant be anabled wit default debug serial definition as Serial port used.
 #endif
 
 
 /*
 * Declare Nextion instance
 */
-Nextion *ND1 = Nextion::GetInstance(mySerial_D1); // software serial
-Nextion *ND2 = Nextion::GetInstance(mySerial_D2); // software serial
+Nextion *ND1 = Nextion::GetInstance(mySerial_D1);
+Nextion *ND2 = Nextion::GetInstance(mySerial_D2);
 
 
 /*
@@ -93,22 +96,30 @@ void SliderCallback_D2(void *ptr)
 
 void setup(void)
 {
+#ifdef _DEBUG_HW_SERIAL
     // HW serial used for dobug messages
     //Serial.begin(9600); 
+#endif    
     // Initialize Nextion connection wiht selected baud in this case 19200
     if(!ND1->nexInit(19200))
     {
+#ifdef _DEBUG_HW_SERIAL
         Serial.println("nextion D1 init fails"); 
+#endif
     }
     if(!ND2->nexInit(19200))
-    {
+    { 
+#ifdef _DEBUG_HW_SERIAL
         Serial.println("nextion D2 init fails"); 
+#endif
     }
     /* Register the pop event callback function of the dual state button component. */
     sSlider_D1.attachPop(SliderCallback_D1, &sSlider_D1);
     sSlider_D2.attachPop(SliderCallback_D2, &sSlider_D2);
 
+#ifdef _DEBUG_HW_SERIAL
     Serial.println("setup done");
+#endif
 
 }
 

@@ -8,6 +8,7 @@ Jyrki Berg 2/8/2020 (https://github.com/jyberg) Version 1.2.0
 # Introduction
 
 Nextion Arduino library provides an easy-to-use way to manipulate Nextion serial displays.<br />
+Old deprecated Enhanced Nextion Library with single display support can be found with Release tag 0.12.1
 
 This new major updated library version has atleast following improvements:
 
@@ -17,6 +18,7 @@ This new major updated library version has atleast following improvements:
   - Nextion objects requires pointer to instance.
   - Instance callback functios must be initialized to instance object.
 - Connection initialization improved.
+- Serial communication stabilization improved.
 - Implementation divided to ./src ans ./include folders
 - STD_SUPPORT define replased with platform ESP8266 define if other platforms suppors needed std functionality add platform define with or (||)
 - TFT file upload added to behing of NEX_ENABLE_TFT_UPLOAD define
@@ -51,27 +53,26 @@ See EXAMPLES how to take new version in the use + Multiple displau support with 
 
 Earlier improvemnets:
 
-- systemStartUpCallback function pointer name corrected to match Nextion functionality/documentation new name: nextionReadyCallback
+- Function return values corrected.
+- systemStartUpCallback function pointer name corrected to match Nextion functionality/documentation new name: nextionReadyCallback.
 - Error code list updated (NexHardware.cpp)
-- nextionStartupCallback function added. Called when when Nextion has started or reset
-- Added support for NodeMcu/esp8266, Software serial, Software serial can be used with arduino
+- nextionStartupCallback function added. Called when when Nextion has started or reset.
+- Added support for NodeMcu/esp8266, Software serial, Software serial can be used with arduino.
 - Added support for global Nextion objects. (Optional page parameter added in the components)
-- NexVariable corrected to use int32_t data type
-- NextText corrected to return tru/false, and string length is returned in len parameter
-- NextText String object support added
-- other small bug fixes done
+- NexVariable corrected to use int32_t data type.
+- NextText corrected to return tru/false, and string length is returned in len parameter.
+- NextText String object support added.
+- Other small bug fixes done.
 - Added to support global Nextion events like CurrentPageIdCallback,systemStartUpCallback,... see NexHardware.h
 - Waveform corrections:
-  - Inheritance to support toutch events
-  - return values corrected
-  - set/get channel colour corrected to support all channels
+  - Inheritance to support toutch events.
+  - set/get channel colour corrected to support all channels.
 - Waveform enhancedments:
   - Suport scaled values:
    - define min and max values + coponent height in pixels (component support 255 pixel max height). When value is added to changell it is automatically scaled to component size and min/max value definitions.
-  - Add multiple values to line
-  - Clear component
-- Added get component height/width function calls to NexObject  
-- examples Nextion editor projects corrected
+  - Add multiple values to line.
+  - Clear component.
+- Added get component height/width function calls to NexObject.
 - C style versions added for functions that uses std::vector etc..
 
 
@@ -80,7 +81,6 @@ Earlier improvemnets:
 **All boards, which has one or more hardware serial, can be supported.**
 
 For example:
-
   - Iteaduino MEGA2560
   - Iteaduino UNO
   - Arduino MEGA2560
@@ -92,7 +92,7 @@ For example:
 
 In configuration file NexConfig.h, you can configure:
 - Define standard (dafault) or fast timeout,  you may use fast timeout in case of baudrate higher than 115200
-- Define DEBUG_SERIAL_ENABLE to enable debug serial, ans used debug serial port
+- Define DEBUG_SERIAL_ENABLE to enable debug serial, and used debug serial port
 - Enable Next TFT file upload functionality
 - Enable HardwareSerial support by definign NEX_ENABLE_HW_SERIAL
 - Enable SoftwareSerial support by definign NEX_ENABLE_SW_SERIAL
@@ -120,4 +120,4 @@ Nextion and NodeMcu/Esp8266 is sensitive with power quality and current. Especia
 - https://www.itead.cc/wiki/Nextion_Instruction_Set 
 - https://nextion.itead.cc/resources/documents/instruction-set/  
 - http://wiki.iteadstudio.com/Nextion_HMI_Solution 
-- 
+ 

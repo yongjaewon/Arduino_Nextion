@@ -1,5 +1,19 @@
 {
   "name": "Enhanced-Nextion-Library",
+  "version": "1.2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jyberg/Enhanced-Nextion-Library.git",
+    "branch": "master"
+  },
+  "description": "Arduino / NodeMcu Library for Nextion displays. Support for multiple connected dispalayse simultaneusly",
+  "authors": [
+    {
+      "name": "Jyrki Berg",
+      "url": "https://github.com/jyberg",
+      "maintainer": true
+    }
+  ], 
   "keywords": [
     "Arduino",
     "NodeMCU",
@@ -8,14 +22,7 @@
     "Display",
     "Touch screen"
   ],
-  "description": "Arduino / NodeMcu Library for Nextion displays. Support for multiple connected dispalayse simultaneusly",
-  "authors": [
-    {
-      "name": "Jyrki Berg",
-      "url": "https://github.com/jyberg",
-      "maintainer": true
-    }
-  ],
+  "license": "MIT",
   "dependencies": [
     {
       "name": "SoftwareSerial",
@@ -34,12 +41,6 @@
       "frameworks": "arduino"
     }
   ],
-  "version": "1.2.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jyberg/Enhanced-Nextion-Library.git",
-    "branch": "Multi-display-support"
-  },
   "frameworks": "arduino",
   "platforms": "*"
 }

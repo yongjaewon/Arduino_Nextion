@@ -14,7 +14,7 @@
  * published by the Free Software Foundation; either version 2 of
  * the License, or (at your option) any later version.
  * 
- * @copyright 2019 Jyrki Berg
+ * @copyright 2020 Jyrki Berg
  **/
 #include "NexObject.h"
 #include "NexHardware.h"

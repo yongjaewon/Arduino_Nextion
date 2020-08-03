@@ -22,7 +22,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "Enhanced Nextion Library Documentation", "index.html", [
+  [ "Enhanced Nextion Library with multiple display support Documentation", "index.html", [
     [ "Home Page", "index.html", [
       [ "Introduction", "index.html#autotoc_md2", null ],
       [ "Suppported Mainboards", "index.html#autotoc_md3", null ],
@@ -69,7 +69,7 @@ var NAVTREEINDEX =
 [
 "_nex_button_8cpp.html",
 "class_nex_number.html#ab7385399a058983cecd6207be2a2a2ef",
-"class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4"
+"class_nextion_if.html#aecebac99c7e8e0747d93806d59739ea2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

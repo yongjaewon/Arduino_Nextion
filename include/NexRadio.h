@@ -5,7 +5,7 @@
  *
  * @author huang xiaoming (email:<xiaoming.huang@itead.cc>)
  * @date 2016/9/13
- * @author Jyrki Berg 2/17/2019 (https://github.com/jyberg)
+ * @author Jyrki Berg 8/3/2020 (https://github.com/jyberg)
  *
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
@@ -14,7 +14,7 @@
  * published by the Free Software Foundation; either version 2 of
  * the License, or (at your option) any later version.
  * 
- * @copyright 2019 Jyrki Berg
+ * @copyright 2020 Jyrki Berg
  *
  */
 
@@ -52,7 +52,7 @@ class NexRadio:public NexTouch
 public: /* methods */
 
     /**
-     * @copydoc NexObject::NexObject(const Nextion*,uint8_t,uint8_t,const char*,const NexObject*);
+     * @copydoc NexObject::NexObject(Nextion*, uint8_t, uint8_t, const char*, const NexObject*)
      */
     NexRadio(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
 	

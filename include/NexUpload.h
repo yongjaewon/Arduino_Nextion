@@ -14,7 +14,7 @@
  * published by the Free Software Foundation; either version 2 of
  * the License, or (at your option) any later version.
  * 
- * @copyright 2019 Jyrki Berg
+ * @copyright 2020 Jyrki Berg
  *
  * 
  */
@@ -65,17 +65,17 @@ public: /* methods */
      */
     ~NexUpload();
     
-    /*
+    /**
      * start download.
      * 
      * @param tftFile - tft file.
      *
-     *  * @return true if success, false for failure. 
+     * @return true if success, false for failure. 
      */
     bool upload(File  &tftFile);
 private: /* methods */
     
-    /*
+    /**
      * Re-initialize connection
      * 
      * Ensure that Nextion is in passive mode:
@@ -84,7 +84,7 @@ private: /* methods */
      */
     void Reconnect();
 
-    /*
+    /**
      * Initialize upload.
      * 
      * @param tftFile - tft file.
@@ -102,7 +102,7 @@ private: /* methods */
      */
     bool _downloadTftFile(File  &tftFile);
 };
-#endif
 /**
  * @}
  */
+#endif

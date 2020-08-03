@@ -1,8 +1,8 @@
 /**
- * @example CompWaveform.ino
+ * @example CompSlider.ino
  *
  * @par How to Use
- * Show how to use API of class NexWaveform with auto scaling.  
+ * Show how to use API of class fo Slider component.  
  *
  * @author Jyrki Berg 8/2/2020 (https://github.com/jyberg)
  * 

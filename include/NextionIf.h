@@ -5,11 +5,12 @@
  *
  * @author Jyrki Berg 11/23/2019 (https://github.com/jyberg)
  * 
- * @copyright 2019 Jyrki Berg
+ * @copyright 2020 Jyrki Berg
  *
  */
 
 #pragma once
+#include "NexConfig.h"
 #include "NexHardwareInterface.h"
 class Nextion;
 
@@ -39,7 +40,7 @@ public:
 * @retval true - success.
 * @retval false - failed. 
 */
-bool recvRetNumber(uint32_t *number, size_t timeout = 100) final;
+bool recvRetNumber(uint32_t *number, size_t timeout = NEX_TIMEOUT_RETURN) final;
 
 /* Receive signed number
 *
@@ -49,7 +50,7 @@ bool recvRetNumber(uint32_t *number, size_t timeout = 100) final;
 * @retval true - success.
 * @retval false - failed. 
 */
-bool recvRetNumber(int32_t *number, size_t timeout = 100) final;
+bool recvRetNumber(int32_t *number, size_t timeout = NEX_TIMEOUT_RETURN) final;
 
 /* Receive string
 *
@@ -60,7 +61,7 @@ bool recvRetNumber(int32_t *number, size_t timeout = 100) final;
 * @retval true - success.
 * @retval false - failed. 
 */
-virtual bool recvRetString(String &str, size_t timeout = 100, bool start_flag = true) final;
+virtual bool recvRetString(String &str, size_t timeout = NEX_TIMEOUT_RETURN, bool start_flag = true) final;
 
 /* Receive string
 *
@@ -72,7 +73,7 @@ virtual bool recvRetString(String &str, size_t timeout = 100, bool start_flag = 
 * @retval true - success.
 * @retval false - failed. 
 */
-bool recvRetString(char *buffer, uint16_t &len, size_t timeout = 100, bool start_flag = true) final;
+bool recvRetString(char *buffer, uint16_t &len, size_t timeout = NEX_TIMEOUT_RETURN, bool start_flag = true) final;
 
 /* Send Command to device
 *
@@ -110,7 +111,7 @@ void sendRawByte(const uint8_t byte) final;
  * @param timeout  timeout ms
  * @return size_t read bytes can be less that size (timeout case) 
  */
-size_t readBytes(uint8_t* buffer, size_t size, size_t timeout =100) final;
+size_t readBytes(uint8_t* buffer, size_t size, size_t timeout =NEX_TIMEOUT_RETURN) final;
 
 /* Receive command
 *
@@ -131,7 +132,7 @@ bool recvCommand(const uint8_t command, size_t timeout) final;
  * @retval false - failed. 
  *
  */
-bool recvRetCommandFinished(size_t timeout = 200) final;
+bool recvRetCommandFinished(size_t timeout = NEX_TIMEOUT_COMMAND) final;
 
 /*
  * Transpared data mode setup successfully 
@@ -142,7 +143,7 @@ bool recvRetCommandFinished(size_t timeout = 200) final;
  * @retval false - failed. 
  *
  */
-bool RecvTransparendDataModeReady(size_t timeout = 400) final;
+bool RecvTransparendDataModeReady(size_t timeout = NEX_TIMEOUT_TRANSPARENT_DATA_MODE) final;
 
 /*
  * Transpared data mode finished 
@@ -153,7 +154,7 @@ bool RecvTransparendDataModeReady(size_t timeout = 400) final;
  * @retval false - failed. 
  *
  */
-bool RecvTransparendDataModeFinished(size_t timeout = 200) final;
+bool RecvTransparendDataModeFinished(size_t timeout = NEX_TIMEOUT_COMMAND) final;
 
 /**
  * current baud value

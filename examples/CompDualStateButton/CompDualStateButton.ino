@@ -9,12 +9,16 @@
  * @date    2015/11/11
  * @updated 2016/12/25 bring HMI up to v0.32 to avoid too old issues
  * @convert by Patrick Martin, no other changes made
+ * @author Jyrki Berg 8/3/2020 (https://github.com/jyberg)
+
  * @copyright 
  * Copyright (C) 2014-2015 ITEAD Intelligent Systems Co., Ltd. \n
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
  * published by the Free Software Foundation; either version 2 of
  * the License, or (at your option) any later version.
+ * 
+ * @copyright 2020 Jyrki Berg
  */
 #include <SoftwareSerial.h>
 

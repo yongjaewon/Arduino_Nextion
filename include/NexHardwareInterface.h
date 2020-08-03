@@ -5,7 +5,7 @@
  *
  * @author Jyrki Berg 11/23/2019 (https://github.com/jyberg)
  * 
- * @copyright 2019 Jyrki Berg
+ * @copyright 2020 Jyrki Berg
  */
 
 #pragma once

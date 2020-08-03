@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Enhanced Nextion Library Documentation: include/NexWaveform.h Source File</title>
+<title>Enhanced Nextion Library with multiple display support Documentation: include/NexWaveform.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="Logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Enhanced Nextion Library Documentation
+   <div id="projectname">Enhanced Nextion Library with multiple display support Documentation
    </div>
    <div id="projectbrief">For Arduino and NodeMCU users</div>
   </td>
@@ -165,7 +165,7 @@ $(document).ready(function(){initNavTree('_nex_waveform_8h_source.html','');});
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            }</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="class_nextion_if.html#a46fbd5c657a8c4ccd0d2261196332c38">RecvTransparendDataModeReady</a>())</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="class_nextion_if.html#ab7ca457f58940cf526189862d0efbf60">RecvTransparendDataModeReady</a>())</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            {</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                ret=<span class="keyword">false</span>;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                <span class="keywordflow">break</span>;</div>
@@ -174,7 +174,7 @@ $(document).ready(function(){initNavTree('_nex_waveform_8h_source.html','');});
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            {</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                <a class="code" href="class_nextion_if.html#a561978463cac4a1199ab769536038d04">sendRawByte</a>(<a class="code" href="class_nex_waveform.html#ae7261431f2c441f7a104c729bd0a4d72">ScaleToForm</a>(values[offset++]));</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            }</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="class_nextion_if.html#a5c8a311207d8dc86d80f9c116ba37ca9">RecvTransparendDataModeFinished</a>())</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="class_nextion_if.html#ac6cea245555dc5e5eaa97c698e4185a6">RecvTransparendDataModeFinished</a>())</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            {</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                ret=<span class="keyword">false</span>;</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            }</div>
@@ -216,7 +216,7 @@ $(document).ready(function(){initNavTree('_nex_waveform_8h_source.html','');});
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            }</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="class_nextion_if.html#a46fbd5c657a8c4ccd0d2261196332c38">RecvTransparendDataModeReady</a>())</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="class_nextion_if.html#ab7ca457f58940cf526189862d0efbf60">RecvTransparendDataModeReady</a>())</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            {</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                ret=<span class="keyword">false</span>;</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                <span class="keywordflow">break</span>;</div>
@@ -225,7 +225,7 @@ $(document).ready(function(){initNavTree('_nex_waveform_8h_source.html','');});
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            {</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                <a class="code" href="class_nextion_if.html#a561978463cac4a1199ab769536038d04">sendRawByte</a>(<a class="code" href="class_nex_waveform.html#ae7261431f2c441f7a104c729bd0a4d72">ScaleToForm</a>(values[offset++]));</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="class_nextion_if.html#a5c8a311207d8dc86d80f9c116ba37ca9">RecvTransparendDataModeFinished</a>())</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="class_nextion_if.html#ac6cea245555dc5e5eaa97c698e4185a6">RecvTransparendDataModeFinished</a>())</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            {</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                ret=<span class="keyword">false</span>;</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            }</div>
@@ -279,7 +279,6 @@ $(document).ready(function(){initNavTree('_nex_waveform_8h_source.html','');});
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_nextion_if_html_abd81ed645e43818c7fc90ba5a055cf52"><div class="ttname"><a href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">NextionIf::sendCommand</a></div><div class="ttdeci">void sendCommand(const char *cmd) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00043">NextionIf.cpp:43</a></div></div>
-<div class="ttc" id="aclass_nextion_if_html_a46fbd5c657a8c4ccd0d2261196332c38"><div class="ttname"><a href="class_nextion_if.html#a46fbd5c657a8c4ccd0d2261196332c38">NextionIf::RecvTransparendDataModeReady</a></div><div class="ttdeci">bool RecvTransparendDataModeReady(size_t timeout=400) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00081">NextionIf.cpp:81</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_ad886e8280a67dd6e12748367b9e9683e"><div class="ttname"><a href="class_nex_waveform.html#ad886e8280a67dd6e12748367b9e9683e">NexWaveform::Set_channel_color</a></div><div class="ttdeci">bool Set_channel_color(uint8_t ch, uint32_t number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8cpp_source.html#l00150">NexWaveform.cpp:150</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_af70a542ba57fac7ad9da2b829c122cdf"><div class="ttname"><a href="class_nex_waveform.html#af70a542ba57fac7ad9da2b829c122cdf">NexWaveform::m_scale</a></div><div class="ttdeci">float m_scale</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8h_source.html#l00325">NexWaveform.h:325</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_a61a0d6c8da7e7bfcba8e78b1ddd2cb76"><div class="ttname"><a href="class_nex_waveform.html#a61a0d6c8da7e7bfcba8e78b1ddd2cb76">NexWaveform::Get_background_color_bco</a></div><div class="ttdeci">bool Get_background_color_bco(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8cpp_source.html#l00043">NexWaveform.cpp:43</a></div></div>
@@ -296,17 +295,18 @@ $(document).ready(function(){initNavTree('_nex_waveform_8h_source.html','');});
 <div class="ttc" id="aclass_nex_waveform_html_aefec5eb25ee698c8c940c9190d60b696"><div class="ttname"><a href="class_nex_waveform.html#aefec5eb25ee698c8c940c9190d60b696">NexWaveform::Set_background_color_bco</a></div><div class="ttdeci">bool Set_background_color_bco(uint32_t number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8cpp_source.html#l00053">NexWaveform.cpp:53</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_ac4cca8cb25847ee3384a008c5f7622dc"><div class="ttname"><a href="class_nex_waveform.html#ac4cca8cb25847ee3384a008c5f7622dc">NexWaveform::m_minVal</a></div><div class="ttdeci">float m_minVal</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8h_source.html#l00323">NexWaveform.h:323</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_ad70ab7ace95de034229770bb3af73e55"><div class="ttname"><a href="class_nex_waveform.html#ad70ab7ace95de034229770bb3af73e55">NexWaveform::addValue</a></div><div class="ttdeci">bool addValue(uint8_t ch, T value)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8h_source.html#l00076">NexWaveform.h:76</a></div></div>
+<div class="ttc" id="aclass_nextion_if_html_ab7ca457f58940cf526189862d0efbf60"><div class="ttname"><a href="class_nextion_if.html#ab7ca457f58940cf526189862d0efbf60">NextionIf::RecvTransparendDataModeReady</a></div><div class="ttdeci">bool RecvTransparendDataModeReady(size_t timeout=NEX_TIMEOUT_TRANSPARENT_DATA_MODE) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00081">NextionIf.cpp:81</a></div></div>
 <div class="ttc" id="aclass_nex_object_html"><div class="ttname"><a href="class_nex_object.html">NexObject</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_object_8h_source.html#l00041">NexObject.h:41</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_a841232b523021965c1372caa8a8b978a"><div class="ttname"><a href="class_nex_waveform.html#a841232b523021965c1372caa8a8b978a">NexWaveform::Get_grid_color_gdc</a></div><div class="ttdeci">bool Get_grid_color_gdc(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8cpp_source.html#l00067">NexWaveform.cpp:67</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_a85e776a5347c22efd9abe9bb8cfdbddb"><div class="ttname"><a href="class_nex_waveform.html#a85e776a5347c22efd9abe9bb8cfdbddb">NexWaveform::Set_grid_height_gdh</a></div><div class="ttdeci">bool Set_grid_height_gdh(uint32_t number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8cpp_source.html#l00123">NexWaveform.cpp:123</a></div></div>
 <div class="ttc" id="aclass_nex_object_html_a8139b294806c1684fc95b635a33b1b15"><div class="ttname"><a href="class_nex_object.html#a8139b294806c1684fc95b635a33b1b15">NexObject::getObjCid</a></div><div class="ttdeci">uint8_t getObjCid(void)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_object_8cpp_source.html#l00033">NexObject.cpp:33</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_a3b450578539dc9f77b14273f3d5f3bad"><div class="ttname"><a href="class_nex_waveform.html#a3b450578539dc9f77b14273f3d5f3bad">NexWaveform::Clear</a></div><div class="ttdeci">bool Clear(uint8_t ch)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8cpp_source.html#l00166">NexWaveform.cpp:166</a></div></div>
-<div class="ttc" id="aclass_nextion_if_html_a5c8a311207d8dc86d80f9c116ba37ca9"><div class="ttname"><a href="class_nextion_if.html#a5c8a311207d8dc86d80f9c116ba37ca9">NextionIf::RecvTransparendDataModeFinished</a></div><div class="ttdeci">bool RecvTransparendDataModeFinished(size_t timeout=200) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00086">NextionIf.cpp:86</a></div></div>
 <div class="ttc" id="aclass_nextion_if_html_a561978463cac4a1199ab769536038d04"><div class="ttname"><a href="class_nextion_if.html#a561978463cac4a1199ab769536038d04">NextionIf::sendRawByte</a></div><div class="ttdeci">void sendRawByte(const uint8_t byte) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00060">NextionIf.cpp:60</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_ad24ac8029249c5a4772bb9bb1ce3c618"><div class="ttname"><a href="class_nex_waveform.html#ad24ac8029249c5a4772bb9bb1ce3c618">NexWaveform::addValues</a></div><div class="ttdeci">bool addValues(uint8_t ch, T *values, uint16_t len)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8h_source.html#l00164">NexWaveform.h:164</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html"><div class="ttname"><a href="class_nex_waveform.html">NexWaveform</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8h_source.html#l00040">NexWaveform.h:40</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_ab396211f736824a0210446e68dc3edf4"><div class="ttname"><a href="class_nex_waveform.html#ab396211f736824a0210446e68dc3edf4">NexWaveform::Set_grid_color_gdc</a></div><div class="ttdeci">bool Set_grid_color_gdc(uint32_t number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8cpp_source.html#l00077">NexWaveform.cpp:77</a></div></div>
 <div class="ttc" id="a_nex_touch_8h_html"><div class="ttname"><a href="_nex_touch_8h.html">NexTouch.h</a></div></div>
+<div class="ttc" id="aclass_nextion_if_html_ac6cea245555dc5e5eaa97c698e4185a6"><div class="ttname"><a href="class_nextion_if.html#ac6cea245555dc5e5eaa97c698e4185a6">NextionIf::RecvTransparendDataModeFinished</a></div><div class="ttdeci">bool RecvTransparendDataModeFinished(size_t timeout=NEX_TIMEOUT_COMMAND) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00086">NextionIf.cpp:86</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

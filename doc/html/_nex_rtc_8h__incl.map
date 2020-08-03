@@ -1,6 +1,7 @@
 <map id="include/NexRtc.h" name="include/NexRtc.h">
-<area shape="rect" id="node1" title=" " alt="" coords="24,5,145,32"/>
-<area shape="rect" id="node2" href="$_nextion_if_8h.html" title=" " alt="" coords="43,80,126,107"/>
-<area shape="rect" id="node3" href="$_nex_hardware_interface_8h.html" title=" " alt="" coords="5,155,164,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="45,229,125,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="65,5,187,32"/>
+<area shape="rect" id="node2" href="$_nextion_if_8h.html" title=" " alt="" coords="85,80,167,107"/>
+<area shape="rect" id="node3" href="$_nex_config_8h.html" title=" " alt="" coords="5,155,97,181"/>
+<area shape="rect" id="node4" href="$_nex_hardware_interface_8h.html" title=" " alt="" coords="121,155,280,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="161,229,241,256"/>
 </map>

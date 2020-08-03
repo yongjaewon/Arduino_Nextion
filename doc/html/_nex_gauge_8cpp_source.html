@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Enhanced Nextion Library Documentation: src/NexGauge.cpp Source File</title>
+<title>Enhanced Nextion Library with multiple display support Documentation: src/NexGauge.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="Logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Enhanced Nextion Library Documentation
+   <div id="projectname">Enhanced Nextion Library with multiple display support Documentation
    </div>
    <div id="projectbrief">For Arduino and NodeMCU users</div>
   </td>
@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('_nex_gauge_8cpp_source.html','');});
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">getObjGlobalPageName</a>(cmd);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    cmd += <span class="stringliteral">&quot;.val&quot;</span>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">recvRetNumber</a>(number);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a52e958c86fc48cbc5717f2d291fa0524">recvRetNumber</a>(number);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_nex_gauge.html#a448ce9ad69f54c156c325d578a96b765">   37</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_gauge.html#a448ce9ad69f54c156c325d578a96b765">NexGauge::setValue</a>(uint32_t number)</div>
@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('_nex_gauge_8cpp_source.html','');});
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    cmd += <span class="stringliteral">&quot;.val=&quot;</span>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    cmd += buf;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a1b8522cec488aba3603d25caff816914">recvRetCommandFinished</a>();</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_nex_gauge.html#a95c199438866ab2c2d16c3b624b3e5ae">   49</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_gauge.html#a95c199438866ab2c2d16c3b624b3e5ae">NexGauge::Get_background_color_bco</a>(uint32_t *number)</div>
@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('_nex_gauge_8cpp_source.html','');});
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">getObjGlobalPageName</a>(cmd);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    cmd += <span class="stringliteral">&quot;.bco&quot;</span>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">recvRetNumber</a>(number);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a52e958c86fc48cbc5717f2d291fa0524">recvRetNumber</a>(number);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_nex_gauge.html#a2d2fe2d81da81e14a66260c501d644b3">   59</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_gauge.html#a2d2fe2d81da81e14a66260c501d644b3">NexGauge::Set_background_color_bco</a>(uint32_t number)</div>
@@ -141,7 +141,7 @@ $(document).ready(function(){initNavTree('_nex_gauge_8cpp_source.html','');});
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    cmd += buf;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a1b8522cec488aba3603d25caff816914">recvRetCommandFinished</a>();</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_nex_gauge.html#a6d598c7a3f48a7f3031833060bc5b64e">   72</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_gauge.html#a6d598c7a3f48a7f3031833060bc5b64e">NexGauge::Get_font_color_pco</a>(uint32_t *number)</div>
@@ -151,7 +151,7 @@ $(document).ready(function(){initNavTree('_nex_gauge_8cpp_source.html','');});
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">getObjGlobalPageName</a>(cmd);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    cmd += <span class="stringliteral">&quot;.pco&quot;</span>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">recvRetNumber</a>(number);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a52e958c86fc48cbc5717f2d291fa0524">recvRetNumber</a>(number);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="class_nex_gauge.html#ace00cba20b5cf5e1374c1a57bbf9a5f5">   82</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_gauge.html#ace00cba20b5cf5e1374c1a57bbf9a5f5">NexGauge::Set_font_color_pco</a>(uint32_t number)</div>
@@ -163,7 +163,7 @@ $(document).ready(function(){initNavTree('_nex_gauge_8cpp_source.html','');});
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    cmd += <span class="stringliteral">&quot;.pco=&quot;</span>;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    cmd += buf;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a1b8522cec488aba3603d25caff816914">recvRetCommandFinished</a>();</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 <div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="class_nex_gauge.html#a49784509a3dbc8f5186833e9260608cf">   94</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_gauge.html#a49784509a3dbc8f5186833e9260608cf">NexGauge::Get_pointer_thickness_wid</a>(uint32_t *number)</div>
@@ -173,7 +173,7 @@ $(document).ready(function(){initNavTree('_nex_gauge_8cpp_source.html','');});
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">getObjGlobalPageName</a>(cmd);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    cmd += <span class="stringliteral">&quot;.wid&quot;</span>;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">recvRetNumber</a>(number);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a52e958c86fc48cbc5717f2d291fa0524">recvRetNumber</a>(number);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
 <div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="class_nex_gauge.html#adacdbcb25fdf45654ebc88f572e3bce9">  104</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_gauge.html#adacdbcb25fdf45654ebc88f572e3bce9">NexGauge::Set_pointer_thickness_wid</a>(uint32_t number)</div>
@@ -185,7 +185,7 @@ $(document).ready(function(){initNavTree('_nex_gauge_8cpp_source.html','');});
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    cmd += <span class="stringliteral">&quot;.wid=&quot;</span>;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    cmd += buf;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a1b8522cec488aba3603d25caff816914">recvRetCommandFinished</a>();</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
 <div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="class_nex_gauge.html#ad4fd8254b08666679d000ebc17eb402a">  116</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_gauge.html#ad4fd8254b08666679d000ebc17eb402a">NexGauge::Get_background_cropi_picc</a>(uint32_t *number)</div>
@@ -195,7 +195,7 @@ $(document).ready(function(){initNavTree('_nex_gauge_8cpp_source.html','');});
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">getObjGlobalPageName</a>(cmd);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    cmd += <span class="stringliteral">&quot;.picc&quot;</span>;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">recvRetNumber</a>(number);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a52e958c86fc48cbc5717f2d291fa0524">recvRetNumber</a>(number);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
 <div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="class_nex_gauge.html#a223fa8a91a87439047f22ca1c33660df">  126</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_gauge.html#a223fa8a91a87439047f22ca1c33660df">NexGauge::Set_background_crop_picc</a>(uint32_t number)</div>
@@ -207,7 +207,7 @@ $(document).ready(function(){initNavTree('_nex_gauge_8cpp_source.html','');});
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    cmd += <span class="stringliteral">&quot;.picc=&quot;</span>;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    cmd += buf;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a1b8522cec488aba3603d25caff816914">recvRetCommandFinished</a>();</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
@@ -219,17 +219,17 @@ $(document).ready(function(){initNavTree('_nex_gauge_8cpp_source.html','');});
 <div class="ttc" id="aclass_nex_gauge_html_a223fa8a91a87439047f22ca1c33660df"><div class="ttname"><a href="class_nex_gauge.html#a223fa8a91a87439047f22ca1c33660df">NexGauge::Set_background_crop_picc</a></div><div class="ttdeci">bool Set_background_crop_picc(uint32_t number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gauge_8cpp_source.html#l00126">NexGauge.cpp:126</a></div></div>
 <div class="ttc" id="aclass_nex_gauge_html_a38400023bc6333d06fa80c1271d62ea4"><div class="ttname"><a href="class_nex_gauge.html#a38400023bc6333d06fa80c1271d62ea4">NexGauge::NexGauge</a></div><div class="ttdeci">NexGauge()=delete</div></div>
 <div class="ttc" id="aclass_nex_gauge_html_aeea8933513ebba11584ad97f8c8b5e69"><div class="ttname"><a href="class_nex_gauge.html#aeea8933513ebba11584ad97f8c8b5e69">NexGauge::getValue</a></div><div class="ttdeci">bool getValue(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gauge_8cpp_source.html#l00028">NexGauge.cpp:28</a></div></div>
-<div class="ttc" id="aclass_nextion_if_html_a99b9325caee5f8beded1f0602eb0d28d"><div class="ttname"><a href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">NextionIf::recvRetNumber</a></div><div class="ttdeci">bool recvRetNumber(uint32_t *number, size_t timeout=100) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00023">NextionIf.cpp:23</a></div></div>
 <div class="ttc" id="aclass_nex_gauge_html_a49784509a3dbc8f5186833e9260608cf"><div class="ttname"><a href="class_nex_gauge.html#a49784509a3dbc8f5186833e9260608cf">NexGauge::Get_pointer_thickness_wid</a></div><div class="ttdeci">bool Get_pointer_thickness_wid(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gauge_8cpp_source.html#l00094">NexGauge.cpp:94</a></div></div>
 <div class="ttc" id="aclass_nex_gauge_html_a2d2fe2d81da81e14a66260c501d644b3"><div class="ttname"><a href="class_nex_gauge.html#a2d2fe2d81da81e14a66260c501d644b3">NexGauge::Set_background_color_bco</a></div><div class="ttdeci">bool Set_background_color_bco(uint32_t number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gauge_8cpp_source.html#l00059">NexGauge.cpp:59</a></div></div>
-<div class="ttc" id="aclass_nextion_if_html_afdc1e3f9a50ced4b85b14fa61b8411e4"><div class="ttname"><a href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">NextionIf::recvRetCommandFinished</a></div><div class="ttdeci">bool recvRetCommandFinished(size_t timeout=200) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00076">NextionIf.cpp:76</a></div></div>
 <div class="ttc" id="aclass_nextion_html"><div class="ttname"><a href="class_nextion.html">Nextion</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8h_source.html#l00061">NexHardware.h:61</a></div></div>
 <div class="ttc" id="aclass_nex_gauge_html_a95c199438866ab2c2d16c3b624b3e5ae"><div class="ttname"><a href="class_nex_gauge.html#a95c199438866ab2c2d16c3b624b3e5ae">NexGauge::Get_background_color_bco</a></div><div class="ttdeci">bool Get_background_color_bco(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gauge_8cpp_source.html#l00049">NexGauge.cpp:49</a></div></div>
 <div class="ttc" id="a_nex_hardware_8h_html"><div class="ttname"><a href="_nex_hardware_8h.html">NexHardware.h</a></div></div>
 <div class="ttc" id="aclass_nex_object_html"><div class="ttname"><a href="class_nex_object.html">NexObject</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_object_8h_source.html#l00041">NexObject.h:41</a></div></div>
 <div class="ttc" id="aclass_nex_object_html_af5d1ddf5b17c23532ed6aedaad98d2bd"><div class="ttname"><a href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">NexObject::getObjGlobalPageName</a></div><div class="ttdeci">void getObjGlobalPageName(String &amp;gName)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_object_8cpp_source.html#l00052">NexObject.cpp:52</a></div></div>
 <div class="ttc" id="aclass_nex_gauge_html_ad4fd8254b08666679d000ebc17eb402a"><div class="ttname"><a href="class_nex_gauge.html#ad4fd8254b08666679d000ebc17eb402a">NexGauge::Get_background_cropi_picc</a></div><div class="ttdeci">bool Get_background_cropi_picc(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gauge_8cpp_source.html#l00116">NexGauge.cpp:116</a></div></div>
+<div class="ttc" id="aclass_nextion_if_html_a52e958c86fc48cbc5717f2d291fa0524"><div class="ttname"><a href="class_nextion_if.html#a52e958c86fc48cbc5717f2d291fa0524">NextionIf::recvRetNumber</a></div><div class="ttdeci">bool recvRetNumber(uint32_t *number, size_t timeout=NEX_TIMEOUT_RETURN) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00023">NextionIf.cpp:23</a></div></div>
 <div class="ttc" id="aclass_nex_gauge_html_a6d598c7a3f48a7f3031833060bc5b64e"><div class="ttname"><a href="class_nex_gauge.html#a6d598c7a3f48a7f3031833060bc5b64e">NexGauge::Get_font_color_pco</a></div><div class="ttdeci">bool Get_font_color_pco(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gauge_8cpp_source.html#l00072">NexGauge.cpp:72</a></div></div>
+<div class="ttc" id="aclass_nextion_if_html_a1b8522cec488aba3603d25caff816914"><div class="ttname"><a href="class_nextion_if.html#a1b8522cec488aba3603d25caff816914">NextionIf::recvRetCommandFinished</a></div><div class="ttdeci">bool recvRetCommandFinished(size_t timeout=NEX_TIMEOUT_COMMAND) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00076">NextionIf.cpp:76</a></div></div>
 <div class="ttc" id="aclass_nex_gauge_html_ace00cba20b5cf5e1374c1a57bbf9a5f5"><div class="ttname"><a href="class_nex_gauge.html#ace00cba20b5cf5e1374c1a57bbf9a5f5">NexGauge::Set_font_color_pco</a></div><div class="ttdeci">bool Set_font_color_pco(uint32_t number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_gauge_8cpp_source.html#l00082">NexGauge.cpp:82</a></div></div>
 <div class="ttc" id="a_nex_gauge_8h_html"><div class="ttname"><a href="_nex_gauge_8h.html">NexGauge.h</a></div></div>
 <!-- start footer part -->
