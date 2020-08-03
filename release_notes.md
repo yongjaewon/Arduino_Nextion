@@ -1,7 +1,7 @@
 # Release Notes
 
 --------------------------------------------------------------------------------
-# Release v0.12.00
+# Release v0.12.1
 - Function return values corrected
 - component refresh removed bacause automatic in case of component variable value change
 - NexSlider bacround image and crop image functions
