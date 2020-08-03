@@ -91,7 +91,7 @@ public:
      * @return true if success, false for failure
      */
     
-    uint32_t get_pwmfreq(uint32_t *number);
+    bool get_pwmfreq(uint32_t *number);
      
 };
     

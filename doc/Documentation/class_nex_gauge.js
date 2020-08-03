@@ -1,10 +1,10 @@
 var class_nex_gauge =
 [
-    [ "NexGauge", "class_nex_gauge.html#ac79040067d42f7f1ba16cc4a1dfd8b9b", null ],
-    [ "Get_background_color_bco", "class_nex_gauge.html#a03a6441159939961b64728dded177e92", null ],
-    [ "Get_background_cropi_picc", "class_nex_gauge.html#a0a6b394a16b03beb6046ec3795d409fe", null ],
-    [ "Get_font_color_pco", "class_nex_gauge.html#a830152d58485d55f475376261d52ff62", null ],
-    [ "Get_pointer_thickness_wid", "class_nex_gauge.html#a50b4daf1b8dfb3cc5c329a3664341e11", null ],
+    [ "NexGauge", "class_nex_gauge.html#ab53eef24798a5d675d4e6928d5519d18", null ],
+    [ "Get_background_color_bco", "class_nex_gauge.html#a95c199438866ab2c2d16c3b624b3e5ae", null ],
+    [ "Get_background_cropi_picc", "class_nex_gauge.html#ad4fd8254b08666679d000ebc17eb402a", null ],
+    [ "Get_font_color_pco", "class_nex_gauge.html#a6d598c7a3f48a7f3031833060bc5b64e", null ],
+    [ "Get_pointer_thickness_wid", "class_nex_gauge.html#a49784509a3dbc8f5186833e9260608cf", null ],
     [ "getValue", "class_nex_gauge.html#aeea8933513ebba11584ad97f8c8b5e69", null ],
     [ "Set_background_color_bco", "class_nex_gauge.html#a2d2fe2d81da81e14a66260c501d644b3", null ],
     [ "Set_background_crop_picc", "class_nex_gauge.html#a223fa8a91a87439047f22ca1c33660df", null ],

@@ -1,0 +1,9 @@
+<map id="NexVariable" name="NexVariable">
+<area shape="rect" id="node1" title=" " alt="" coords="45,412,137,439"/>
+<area shape="rect" id="node2" href="$class_nex_touch.html" title=" " alt="" coords="51,336,131,363"/>
+<area shape="rect" id="node3" href="$class_nex_object.html" title=" " alt="" coords="49,260,132,287"/>
+<area shape="rect" id="node4" href="$class_nextion_if.html" title=" " alt="" coords="55,184,127,211"/>
+<area shape="rect" id="node5" href="$class_nextion_interface.html" title=" " alt="" coords="5,5,120,32"/>
+<area shape="rect" id="node6" href="$class_nextion.html" title=" " alt="" coords="100,95,167,121"/>
+<area shape="rect" id="node7" href="$structnex_queued_event.html" title=" " alt="" coords="144,5,264,32"/>
+</map>

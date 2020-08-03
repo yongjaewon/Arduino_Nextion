@@ -1,6 +1,6 @@
 var group___configuration =
 [
-    [ "dbSerial", "group___configuration.html#ga9abc2a70f2ba1b5a4edc63e807ee172e", null ],
-    [ "DEBUG_SERIAL_ENABLE", "group___configuration.html#ga9b3a5e4cc28fc65f02c9b197e8a4c955", null ],
-    [ "nexSerial", "group___configuration.html#ga2738b05a77cd5052e440af5b00b0ecbd", null ]
+    [ "NEX_SERIAL_DEFAULT_BAUD", "group___configuration.html#ga0d9afe49b80c7a5c460c0fd86f3c10ff", null ],
+    [ "NEX_SOFTWARE_SERIAL", "group___configuration.html#gacd0cd66d46e7b5c0615b80cbb619cc69", null ],
+    [ "NEX_TIMEOUT_STANDARD", "group___configuration.html#ga5e399427a4fb32529f5af170aae6ddc5", null ]
 ];

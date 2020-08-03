@@ -52,7 +52,7 @@ bool NexGpio::digital_write(uint32_t port,uint32_t value)
 
 uint32_t NexGpio::digital_read(uint32_t port)
 {
-    uint32_t number;
+    uint32_t number{0xffffffff};
     char buf;
     
     String cmd = String("get ");
@@ -97,7 +97,7 @@ bool NexGpio::set_pwmfreq(uint32_t value)
     return recvRetCommandFinished();   
 }
 
-uint32_t NexGpio::get_pwmfreq(uint32_t *number)
+bool NexGpio::get_pwmfreq(uint32_t *number)
 {
     String cmd = String("get pwmf");
     sendCommand(cmd.c_str());

@@ -18,9 +18,9 @@ var hierarchy =
         [ "NexSlider", "class_nex_slider.html", null ],
         [ "NexText", "class_nex_text.html", null ],
         [ "NexTimer", "class_nex_timer.html", null ],
-        [ "NexVariable", "class_nex_variable.html", null ]
-      ] ],
-      [ "NexWaveform", "class_nex_waveform.html", null ]
+        [ "NexVariable", "class_nex_variable.html", null ],
+        [ "NexWaveform", "class_nex_waveform.html", null ]
+      ] ]
     ] ],
     [ "NexRtc", "class_nex_rtc.html", null ],
     [ "NexUpload", "class_nex_upload.html", null ]

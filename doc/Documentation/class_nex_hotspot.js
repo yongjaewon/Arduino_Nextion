@@ -1,4 +1,4 @@
 var class_nex_hotspot =
 [
-    [ "NexHotspot", "class_nex_hotspot.html#ad2408e74f5445941897702c4c78fddbf", null ]
+    [ "NexHotspot", "class_nex_hotspot.html#a9675503f2d0487322203e371d65c0d08", null ]
 ];
