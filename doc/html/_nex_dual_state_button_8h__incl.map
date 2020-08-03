@@ -1,8 +1,9 @@
 <map id="include/NexDualStateButton.h" name="include/NexDualStateButton.h">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,201,32"/>
-<area shape="rect" id="node2" href="$_nex_touch_8h.html" title=" " alt="" coords="58,80,149,107"/>
-<area shape="rect" id="node3" href="$_nex_object_8h.html" title=" " alt="" coords="56,155,151,181"/>
-<area shape="rect" id="node4" href="$_nextion_if_8h.html" title=" " alt="" coords="62,229,145,256"/>
-<area shape="rect" id="node5" href="$_nex_hardware_interface_8h.html" title=" " alt="" coords="24,304,183,331"/>
-<area shape="rect" id="node6" title=" " alt="" coords="63,379,143,405"/>
+<area shape="rect" id="node1" title=" " alt="" coords="28,5,224,32"/>
+<area shape="rect" id="node2" href="$_nex_touch_8h.html" title=" " alt="" coords="81,80,171,107"/>
+<area shape="rect" id="node3" href="$_nex_object_8h.html" title=" " alt="" coords="79,155,173,181"/>
+<area shape="rect" id="node4" href="$_nextion_if_8h.html" title=" " alt="" coords="85,229,167,256"/>
+<area shape="rect" id="node5" href="$_nex_config_8h.html" title=" " alt="" coords="5,304,97,331"/>
+<area shape="rect" id="node6" href="$_nex_hardware_interface_8h.html" title=" " alt="" coords="121,304,280,331"/>
+<area shape="rect" id="node7" title=" " alt="" coords="161,379,241,405"/>
 </map>

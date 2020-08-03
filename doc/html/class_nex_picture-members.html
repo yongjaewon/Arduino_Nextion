@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Enhanced Nextion Library Documentation: Member List</title>
+<title>Enhanced Nextion Library with multiple display support Documentation: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="Logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Enhanced Nextion Library Documentation
+   <div id="projectname">Enhanced Nextion Library with multiple display support Documentation
    </div>
    <div id="projectbrief">For Arduino and NodeMCU users</div>
   </td>
@@ -129,15 +129,15 @@ $(document).ready(function(){initNavTree('class_nex_picture.html','');});
   <tr class="even"><td class="entry"><a class="el" href="class_nex_touch.html#a1d103432845b45a625869b5cd9bec505">pop</a>(void)</td><td class="entry"><a class="el" href="class_nex_touch.html">NexTouch</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_nex_object.html#abeff0c61474e8b3ce6bac76771820b64">printObjInfo</a>(void)</td><td class="entry"><a class="el" href="class_nex_object.html">NexObject</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_nex_touch.html#ae808be665ae930e2ffdf3aff88bd3206">push</a>(void)</td><td class="entry"><a class="el" href="class_nex_touch.html">NexTouch</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_nextion_if.html#aa32b913a8588815a279cbdafd3844dba">readBytes</a>(uint8_t *buffer, size_t size, size_t timeout=100) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_nextion_if.html#a3c039b7a79de159b9b2f1427999b2206">readBytes</a>(uint8_t *buffer, size_t size, size_t timeout=NEX_TIMEOUT_RETURN) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_nextion_if.html#a25ab9a9d142f04e196a23c527baf5268">recvCommand</a>(const uint8_t command, size_t timeout) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>(size_t timeout=200) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">recvRetNumber</a>(uint32_t *number, size_t timeout=100) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_nextion_if.html#a8d4a14ec5390bdd46bd22426687e5695">recvRetNumber</a>(int32_t *number, size_t timeout=100) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_nextion_if.html#ad823cd090ddb02c7ec62f109412e30d2">recvRetString</a>(String &amp;str, size_t timeout=100, bool start_flag=true) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_nextion_if.html#aaacc2d437c457e69fcb3e19fd4d93934">recvRetString</a>(char *buffer, uint16_t &amp;len, size_t timeout=100, bool start_flag=true) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_nextion_if.html#a5c8a311207d8dc86d80f9c116ba37ca9">RecvTransparendDataModeFinished</a>(size_t timeout=200) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_nextion_if.html#a46fbd5c657a8c4ccd0d2261196332c38">RecvTransparendDataModeReady</a>(size_t timeout=400) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_nextion_if.html#a1b8522cec488aba3603d25caff816914">recvRetCommandFinished</a>(size_t timeout=NEX_TIMEOUT_COMMAND) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_nextion_if.html#a52e958c86fc48cbc5717f2d291fa0524">recvRetNumber</a>(uint32_t *number, size_t timeout=NEX_TIMEOUT_RETURN) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_nextion_if.html#ac0f862ce15f90af5af8870f4d0ee1d17">recvRetNumber</a>(int32_t *number, size_t timeout=NEX_TIMEOUT_RETURN) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_nextion_if.html#a29891ee7dd8de7cf1023be1e575b57dc">recvRetString</a>(String &amp;str, size_t timeout=NEX_TIMEOUT_RETURN, bool start_flag=true) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_nextion_if.html#a8030af470b1d8198cab84e1072756b90">recvRetString</a>(char *buffer, uint16_t &amp;len, size_t timeout=NEX_TIMEOUT_RETURN, bool start_flag=true) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_nextion_if.html#ac6cea245555dc5e5eaa97c698e4185a6">RecvTransparendDataModeFinished</a>(size_t timeout=NEX_TIMEOUT_COMMAND) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_nextion_if.html#ab7ca457f58940cf526189862d0efbf60">RecvTransparendDataModeReady</a>(size_t timeout=NEX_TIMEOUT_TRANSPARENT_DATA_MODE) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_nex_object.html#a66ab3a2e7ad5f9c1428890f318544568">refresh</a>()</td><td class="entry"><a class="el" href="class_nex_object.html">NexObject</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(const char *cmd) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_nextion_if.html#a561978463cac4a1199ab769536038d04">sendRawByte</a>(const uint8_t byte) final</td><td class="entry"><a class="el" href="class_nextion_if.html">NextionIf</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>

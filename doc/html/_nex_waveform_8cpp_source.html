@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Enhanced Nextion Library Documentation: src/NexWaveform.cpp Source File</title>
+<title>Enhanced Nextion Library with multiple display support Documentation: src/NexWaveform.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="Logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Enhanced Nextion Library Documentation
+   <div id="projectname">Enhanced Nextion Library with multiple display support Documentation
    </div>
    <div id="projectbrief">For Arduino and NodeMCU users</div>
   </td>
@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('_nex_waveform_8cpp_source.html','');})
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">getObjGlobalPageName</a>(cmd);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    cmd += <span class="stringliteral">&quot;.bco&quot;</span>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">recvRetNumber</a>(number);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a52e958c86fc48cbc5717f2d291fa0524">recvRetNumber</a>(number);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_nex_waveform.html#aefec5eb25ee698c8c940c9190d60b696">   53</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_waveform.html#aefec5eb25ee698c8c940c9190d60b696">NexWaveform::Set_background_color_bco</a>(uint32_t number)</div>
@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('_nex_waveform_8cpp_source.html','');})
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    cmd += buf;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a1b8522cec488aba3603d25caff816914">recvRetCommandFinished</a>();</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_nex_waveform.html#a841232b523021965c1372caa8a8b978a">   67</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_waveform.html#a841232b523021965c1372caa8a8b978a">NexWaveform::Get_grid_color_gdc</a>(uint32_t *number)</div>
@@ -147,7 +147,7 @@ $(document).ready(function(){initNavTree('_nex_waveform_8cpp_source.html','');})
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">getObjGlobalPageName</a>(cmd);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    cmd += <span class="stringliteral">&quot;.gdc&quot;</span>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">recvRetNumber</a>(number);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a52e958c86fc48cbc5717f2d291fa0524">recvRetNumber</a>(number);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="class_nex_waveform.html#ab396211f736824a0210446e68dc3edf4">   77</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_waveform.html#ab396211f736824a0210446e68dc3edf4">NexWaveform::Set_grid_color_gdc</a>(uint32_t number)</div>
@@ -160,7 +160,7 @@ $(document).ready(function(){initNavTree('_nex_waveform_8cpp_source.html','');})
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    cmd += <span class="stringliteral">&quot;.gdc=&quot;</span>;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    cmd += buf;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a1b8522cec488aba3603d25caff816914">recvRetCommandFinished</a>();</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="class_nex_waveform.html#a151321ce6ac8e340f3f7979dcb3514dc">   90</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_waveform.html#a151321ce6ac8e340f3f7979dcb3514dc">NexWaveform::Get_grid_width_gdw</a>(uint32_t *number)</div>
@@ -170,7 +170,7 @@ $(document).ready(function(){initNavTree('_nex_waveform_8cpp_source.html','');})
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">getObjGlobalPageName</a>(cmd);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    cmd += <span class="stringliteral">&quot;.gdw&quot;</span>;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">recvRetNumber</a>(number);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a52e958c86fc48cbc5717f2d291fa0524">recvRetNumber</a>(number);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="class_nex_waveform.html#a41cb6d8b1ff6c309d1c4e8a1f73304fe">  100</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_waveform.html#a41cb6d8b1ff6c309d1c4e8a1f73304fe">NexWaveform::Set_grid_width_gdw</a>(uint32_t number)</div>
@@ -183,7 +183,7 @@ $(document).ready(function(){initNavTree('_nex_waveform_8cpp_source.html','');})
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    cmd += <span class="stringliteral">&quot;.gdw=&quot;</span>;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    cmd += buf;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a1b8522cec488aba3603d25caff816914">recvRetCommandFinished</a>();</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
 <div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="class_nex_waveform.html#aef62c946717e090a44843a4faa6cbccd">  113</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_waveform.html#aef62c946717e090a44843a4faa6cbccd">NexWaveform::Get_grid_height_gdh</a>(uint32_t *number)</div>
@@ -193,7 +193,7 @@ $(document).ready(function(){initNavTree('_nex_waveform_8cpp_source.html','');})
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">getObjGlobalPageName</a>(cmd);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    cmd += <span class="stringliteral">&quot;.gdh&quot;</span>;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">recvRetNumber</a>(number);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a52e958c86fc48cbc5717f2d291fa0524">recvRetNumber</a>(number);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
 <div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="class_nex_waveform.html#a85e776a5347c22efd9abe9bb8cfdbddb">  123</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_waveform.html#a85e776a5347c22efd9abe9bb8cfdbddb">NexWaveform::Set_grid_height_gdh</a>(uint32_t number)</div>
@@ -206,7 +206,7 @@ $(document).ready(function(){initNavTree('_nex_waveform_8cpp_source.html','');})
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    cmd += <span class="stringliteral">&quot;.gdh=&quot;</span>;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    cmd += buf;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a1b8522cec488aba3603d25caff816914">recvRetCommandFinished</a>();</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
 <div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="class_nex_waveform.html#abef55fe5df27accddefa671494bb6837">  136</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_waveform.html#abef55fe5df27accddefa671494bb6837">NexWaveform::Get_channel_color</a>(uint8_t ch, uint32_t *number)</div>
@@ -220,7 +220,7 @@ $(document).ready(function(){initNavTree('_nex_waveform_8cpp_source.html','');})
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    cmd += <span class="stringliteral">&quot;.pco&quot;</span>;</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    cmd += buf;</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">recvRetNumber</a>(number);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a52e958c86fc48cbc5717f2d291fa0524">recvRetNumber</a>(number);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
 <div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="class_nex_waveform.html#ad886e8280a67dd6e12748367b9e9683e">  150</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_nex_waveform.html#ad886e8280a67dd6e12748367b9e9683e">NexWaveform::Set_channel_color</a>(uint8_t ch, uint32_t number)</div>
@@ -236,7 +236,7 @@ $(document).ready(function(){initNavTree('_nex_waveform_8cpp_source.html','');})
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    utoa(number, buf, 10);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    cmd += buf;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a1b8522cec488aba3603d25caff816914">recvRetCommandFinished</a>();</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
 <div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="class_nex_waveform.html#a3b450578539dc9f77b14273f3d5f3bad">  166</a></span>&#160; <span class="keywordtype">bool</span> <a class="code" href="class_nex_waveform.html#a3b450578539dc9f77b14273f3d5f3bad">NexWaveform::Clear</a>(uint8_t ch)</div>
@@ -250,7 +250,7 @@ $(document).ready(function(){initNavTree('_nex_waveform_8cpp_source.html','');})
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    utoa(ch, buf, 10);</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    cmd += buf;</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="class_nextion_if.html#abd81ed645e43818c7fc90ba5a055cf52">sendCommand</a>(cmd.c_str());</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">recvRetCommandFinished</a>();</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_nextion_if.html#a1b8522cec488aba3603d25caff816914">recvRetCommandFinished</a>();</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; }</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
@@ -261,14 +261,12 @@ $(document).ready(function(){initNavTree('_nex_waveform_8cpp_source.html','');})
 <div class="ttc" id="aclass_nex_waveform_html_a61a0d6c8da7e7bfcba8e78b1ddd2cb76"><div class="ttname"><a href="class_nex_waveform.html#a61a0d6c8da7e7bfcba8e78b1ddd2cb76">NexWaveform::Get_background_color_bco</a></div><div class="ttdeci">bool Get_background_color_bco(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8cpp_source.html#l00043">NexWaveform.cpp:43</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_aef62c946717e090a44843a4faa6cbccd"><div class="ttname"><a href="class_nex_waveform.html#aef62c946717e090a44843a4faa6cbccd">NexWaveform::Get_grid_height_gdh</a></div><div class="ttdeci">bool Get_grid_height_gdh(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8cpp_source.html#l00113">NexWaveform.cpp:113</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_a41cb6d8b1ff6c309d1c4e8a1f73304fe"><div class="ttname"><a href="class_nex_waveform.html#a41cb6d8b1ff6c309d1c4e8a1f73304fe">NexWaveform::Set_grid_width_gdw</a></div><div class="ttdeci">bool Set_grid_width_gdw(uint32_t number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8cpp_source.html#l00100">NexWaveform.cpp:100</a></div></div>
-<div class="ttc" id="aclass_nextion_if_html_a99b9325caee5f8beded1f0602eb0d28d"><div class="ttname"><a href="class_nextion_if.html#a99b9325caee5f8beded1f0602eb0d28d">NextionIf::recvRetNumber</a></div><div class="ttdeci">bool recvRetNumber(uint32_t *number, size_t timeout=100) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00023">NextionIf.cpp:23</a></div></div>
 <div class="ttc" id="aclass_nex_touch_html"><div class="ttname"><a href="class_nex_touch.html">NexTouch</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_touch_8h_source.html#l00055">NexTouch.h:55</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_a151321ce6ac8e340f3f7979dcb3514dc"><div class="ttname"><a href="class_nex_waveform.html#a151321ce6ac8e340f3f7979dcb3514dc">NexWaveform::Get_grid_width_gdw</a></div><div class="ttdeci">bool Get_grid_width_gdw(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8cpp_source.html#l00090">NexWaveform.cpp:90</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_ad1fc6f90eecb3bfcc3cf5676c8bd6a0f"><div class="ttname"><a href="class_nex_waveform.html#ad1fc6f90eecb3bfcc3cf5676c8bd6a0f">NexWaveform::m_hight</a></div><div class="ttdeci">uint8_t m_hight</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8h_source.html#l00326">NexWaveform.h:326</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_ad5d681f7164a71e0884570e504a1b073"><div class="ttname"><a href="class_nex_waveform.html#ad5d681f7164a71e0884570e504a1b073">NexWaveform::m_maxVal</a></div><div class="ttdeci">float m_maxVal</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8h_source.html#l00324">NexWaveform.h:324</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_a844acf4ad585a417d52d923de440aebf"><div class="ttname"><a href="class_nex_waveform.html#a844acf4ad585a417d52d923de440aebf">NexWaveform::NexWaveform</a></div><div class="ttdeci">NexWaveform()=delete</div></div>
 <div class="ttc" id="aclass_nex_waveform_html_abef55fe5df27accddefa671494bb6837"><div class="ttname"><a href="class_nex_waveform.html#abef55fe5df27accddefa671494bb6837">NexWaveform::Get_channel_color</a></div><div class="ttdeci">bool Get_channel_color(uint8_t ch, uint32_t *number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8cpp_source.html#l00136">NexWaveform.cpp:136</a></div></div>
-<div class="ttc" id="aclass_nextion_if_html_afdc1e3f9a50ced4b85b14fa61b8411e4"><div class="ttname"><a href="class_nextion_if.html#afdc1e3f9a50ced4b85b14fa61b8411e4">NextionIf::recvRetCommandFinished</a></div><div class="ttdeci">bool recvRetCommandFinished(size_t timeout=200) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00076">NextionIf.cpp:76</a></div></div>
 <div class="ttc" id="aclass_nextion_html"><div class="ttname"><a href="class_nextion.html">Nextion</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_hardware_8h_source.html#l00061">NexHardware.h:61</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_aefec5eb25ee698c8c940c9190d60b696"><div class="ttname"><a href="class_nex_waveform.html#aefec5eb25ee698c8c940c9190d60b696">NexWaveform::Set_background_color_bco</a></div><div class="ttdeci">bool Set_background_color_bco(uint32_t number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8cpp_source.html#l00053">NexWaveform.cpp:53</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_ac4cca8cb25847ee3384a008c5f7622dc"><div class="ttname"><a href="class_nex_waveform.html#ac4cca8cb25847ee3384a008c5f7622dc">NexWaveform::m_minVal</a></div><div class="ttdeci">float m_minVal</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8h_source.html#l00323">NexWaveform.h:323</a></div></div>
@@ -277,9 +275,11 @@ $(document).ready(function(){initNavTree('_nex_waveform_8cpp_source.html','');})
 <div class="ttc" id="aclass_nex_object_html"><div class="ttname"><a href="class_nex_object.html">NexObject</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_object_8h_source.html#l00041">NexObject.h:41</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_a841232b523021965c1372caa8a8b978a"><div class="ttname"><a href="class_nex_waveform.html#a841232b523021965c1372caa8a8b978a">NexWaveform::Get_grid_color_gdc</a></div><div class="ttdeci">bool Get_grid_color_gdc(uint32_t *number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8cpp_source.html#l00067">NexWaveform.cpp:67</a></div></div>
 <div class="ttc" id="aclass_nex_object_html_af5d1ddf5b17c23532ed6aedaad98d2bd"><div class="ttname"><a href="class_nex_object.html#af5d1ddf5b17c23532ed6aedaad98d2bd">NexObject::getObjGlobalPageName</a></div><div class="ttdeci">void getObjGlobalPageName(String &amp;gName)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_object_8cpp_source.html#l00052">NexObject.cpp:52</a></div></div>
+<div class="ttc" id="aclass_nextion_if_html_a52e958c86fc48cbc5717f2d291fa0524"><div class="ttname"><a href="class_nextion_if.html#a52e958c86fc48cbc5717f2d291fa0524">NextionIf::recvRetNumber</a></div><div class="ttdeci">bool recvRetNumber(uint32_t *number, size_t timeout=NEX_TIMEOUT_RETURN) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00023">NextionIf.cpp:23</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_a85e776a5347c22efd9abe9bb8cfdbddb"><div class="ttname"><a href="class_nex_waveform.html#a85e776a5347c22efd9abe9bb8cfdbddb">NexWaveform::Set_grid_height_gdh</a></div><div class="ttdeci">bool Set_grid_height_gdh(uint32_t number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8cpp_source.html#l00123">NexWaveform.cpp:123</a></div></div>
 <div class="ttc" id="aclass_nex_object_html_a8139b294806c1684fc95b635a33b1b15"><div class="ttname"><a href="class_nex_object.html#a8139b294806c1684fc95b635a33b1b15">NexObject::getObjCid</a></div><div class="ttdeci">uint8_t getObjCid(void)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_object_8cpp_source.html#l00033">NexObject.cpp:33</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_a3b450578539dc9f77b14273f3d5f3bad"><div class="ttname"><a href="class_nex_waveform.html#a3b450578539dc9f77b14273f3d5f3bad">NexWaveform::Clear</a></div><div class="ttdeci">bool Clear(uint8_t ch)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8cpp_source.html#l00166">NexWaveform.cpp:166</a></div></div>
+<div class="ttc" id="aclass_nextion_if_html_a1b8522cec488aba3603d25caff816914"><div class="ttname"><a href="class_nextion_if.html#a1b8522cec488aba3603d25caff816914">NextionIf::recvRetCommandFinished</a></div><div class="ttdeci">bool recvRetCommandFinished(size_t timeout=NEX_TIMEOUT_COMMAND) final</div><div class="ttdef"><b>Definition:</b> <a href="_nextion_if_8cpp_source.html#l00076">NextionIf.cpp:76</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html"><div class="ttname"><a href="class_nex_waveform.html">NexWaveform</a></div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8h_source.html#l00040">NexWaveform.h:40</a></div></div>
 <div class="ttc" id="aclass_nex_waveform_html_ab396211f736824a0210446e68dc3edf4"><div class="ttname"><a href="class_nex_waveform.html#ab396211f736824a0210446e68dc3edf4">NexWaveform::Set_grid_color_gdc</a></div><div class="ttdeci">bool Set_grid_color_gdc(uint32_t number)</div><div class="ttdef"><b>Definition:</b> <a href="_nex_waveform_8cpp_source.html#l00077">NexWaveform.cpp:77</a></div></div>
 <!-- start footer part -->

@@ -1,5 +1,6 @@
 var group___component =
 [
+    [ "# Enhanced Nextion Library with multi dispaly instance support", "index.html#autotoc_md1", null ],
     [ "NexButton", "class_nex_button.html", [
       [ "NexButton", "class_nex_button.html#a6e1740a88dfca4e1f2b196ce0ca83635", null ],
       [ "NexButton", "class_nex_button.html#a8937f17fca4908e97e9f84c8076234dc", null ],

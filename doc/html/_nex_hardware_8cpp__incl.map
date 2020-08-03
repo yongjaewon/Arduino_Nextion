@@ -1,13 +1,13 @@
 <map id="src/NexHardware.cpp" name="src/NexHardware.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="335,5,481,32"/>
-<area shape="rect" id="node2" href="$_nex_hardware_8h.html" title=" " alt="" coords="230,80,341,107"/>
-<area shape="rect" id="node9" href="$_nex_touch_8h.html" title=" " alt="" coords="487,80,577,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,155,83,181"/>
-<area shape="rect" id="node4" href="$_nex_config_8h.html" title=" " alt="" coords="107,155,199,181"/>
-<area shape="rect" id="node5" href="$_nex_hardware_interface_8h.html" title=" " alt="" coords="270,304,429,331"/>
-<area shape="rect" id="node7" title=" " alt="" coords="275,155,395,181"/>
-<area shape="rect" id="node8" title=" " alt="" coords="419,155,535,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="309,379,389,405"/>
-<area shape="rect" id="node10" href="$_nex_object_8h.html" title=" " alt="" coords="559,155,654,181"/>
-<area shape="rect" id="node11" href="$_nextion_if_8h.html" title=" " alt="" coords="420,229,503,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="319,5,465,32"/>
+<area shape="rect" id="node2" href="$_nex_hardware_8h.html" title=" " alt="" coords="281,229,391,256"/>
+<area shape="rect" id="node9" href="$_nex_touch_8h.html" title=" " alt="" coords="389,80,480,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="291,304,368,331"/>
+<area shape="rect" id="node4" href="$_nex_config_8h.html" title=" " alt="" coords="575,304,667,331"/>
+<area shape="rect" id="node5" href="$_nex_hardware_interface_8h.html" title=" " alt="" coords="393,304,551,331"/>
+<area shape="rect" id="node7" title=" " alt="" coords="5,304,125,331"/>
+<area shape="rect" id="node8" title=" " alt="" coords="150,304,266,331"/>
+<area shape="rect" id="node6" title=" " alt="" coords="432,379,512,405"/>
+<area shape="rect" id="node10" href="$_nex_object_8h.html" title=" " alt="" coords="417,155,511,181"/>
+<area shape="rect" id="node11" href="$_nextion_if_8h.html" title=" " alt="" coords="431,229,513,256"/>
 </map>
