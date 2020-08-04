@@ -1,7 +1,7 @@
 # Release Notes
 
 --------------------------------------------------------------------------------
-# Release v1.2.2
+# Release v1.2.3
 - EspSoftwareSerial Dependency removed.
 
 # Release v1.2.0

@@ -1,6 +1,6 @@
 {
   "name": "Enhanced-Nextion-Library",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/jyberg/Enhanced-Nextion-Library.git",
@@ -25,14 +25,12 @@
   "license": "MIT",
   "dependencies": [
     {
-      "name": "SoftwareSerial",
-      "version": ">=1.0",
-      "authors": "Arduino",
-      "frameworks": "arduino"
-    },
-    {
+      "platforms":
+      [
+        "espressif8266"
+      ],
       "name": "SdFat",
-      "version": ">=1.1.0",
+      "version": ">=1.1.4",
       "authors": "Bill Greiman",
       "frameworks": "arduino"
     }
