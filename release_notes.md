@@ -1,6 +1,8 @@
 # Release Notes
-
 --------------------------------------------------------------------------------
+# Release v1.2.4
+Add ability to change back- and foreground picture in NexProgressBar
+
 # Release v1.2.3
 - EspSoftwareSerial Dependency removed.
 
