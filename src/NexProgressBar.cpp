@@ -46,6 +46,32 @@ bool NexProgressBar::setValue(uint32_t number)
     sendCommand(cmd.c_str());
     return recvRetCommandFinished();
 }
+
+bool NexProgressBar::set_background_picture(uint32_t number)
+{
+    char buf[10] = {0};
+    String cmd;
+    utoa(number, buf, 10);
+    getObjGlobalPageName(cmd);
+    cmd += ".bpic=";
+    cmd += buf;
+
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
+}
+
+bool NexProgressBar::set_foreground_picture(uint32_t number)
+{
+    char buf[10] = {0};
+    String cmd;
+    utoa(number, buf, 10);
+    getObjGlobalPageName(cmd);
+    cmd += ".ppic=";
+    cmd += buf;
+
+    sendCommand(cmd.c_str());
+    return recvRetCommandFinished();
+}
  
 bool NexProgressBar::Get_background_color_bco(uint32_t *number)
 {
