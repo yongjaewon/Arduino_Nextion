@@ -59,7 +59,25 @@ public: /* methods */
      * @return true if success, false for failure
      */
     bool setValue(uint32_t number);
-	
+
+    /**
+     * Set the value of background image (bpic)
+     *
+     * @param number - the value of the background image
+     *
+     * @return true if success, false for failure
+     */
+    bool set_background_picture(uint32_t number);
+
+    /**
+     * Set the value of foreground image (ppic)
+     *
+     * @param number - the value of the foreground image
+     *
+     * @return true if success, false for failure
+     */
+    bool set_foreground_picture(uint32_t number);
+
     /**
      * Get bco attribute of component
      *
