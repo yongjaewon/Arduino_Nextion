@@ -42,6 +42,7 @@
 #include "NexProgressBar.h"
 #include "NexRadio.h"
 #include "NexRtc.h"
+#include "NexScreen.h"
 #include "NexScrolltext.h"
 #include "NexSlider.h"
 #include "NexText.h"
