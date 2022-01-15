@@ -1,5 +1,9 @@
 # Release Notes
 --------------------------------------------------------------------------------
+# Release v1,3,0
+Added NexScreen to manage screen system variables (brightness for example)
+Added link to extended instruction set (including hidden commands) to readme.md, Thanks to UNUF Project
+
 # Release v1.2.4
 Add ability to change back- and foreground picture in NexProgressBar
 
