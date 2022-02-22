@@ -1,7 +1,7 @@
 # Release Notes
 --------------------------------------------------------------------------------
 
-# Release v1.4.0
+# Release v1.4.1
 Enabled attachPush call back function initialization for every component.
 
 # Release v1.3.0
