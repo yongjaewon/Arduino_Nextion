@@ -22,9 +22,6 @@
 //#include "NexHardware.h"
 
 
-void NexButton::attachPush(NexTouchEventCb push, void *ptr)
-{}
-
 
 NexButton::NexButton(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
     :NexTouch(nextion, pid, cid, name, page)

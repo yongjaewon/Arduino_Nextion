@@ -33,10 +33,6 @@ class NexObject;
 /**
  * NexDSButton component. 
  *
- * Commonly, you want to do something after push and pop it. It is recommanded that only
- * call @ref NexTouch::attachPop to satisfy your purpose. 
- * 
- * @warning Please do not call @ref NexTouch::attachPush on this component, even though you can. 
  */
 class NexDSButton: public NexTouch
 {

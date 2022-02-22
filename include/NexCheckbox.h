@@ -32,21 +32,10 @@ class NexObject;
 /**
  * NexCheckbox component. 
  *
- * Commonly, you want to do something after push and pop it. It is recommanded that only
- * call @ref NexTouch::attachPop to satisfy your purpose. 
- * 
- * @warning Please do not call @ref NexTouch::attachPush on this component, even though you can. 
  */
 class NexCheckbox: public NexTouch
 {
     NexCheckbox()=delete;
-
-     /**
-     * attachPush
-     * 
-     * @warning Please do not call @ref NexTouch::attachPush on this component, even though you can. 
-     */
-    virtual void attachPush(NexTouchEventCb push, void *ptr = nullptr) final;
  
 public: /* methods */
 

@@ -20,9 +20,6 @@
 #include "NexHardware.h"
 
 
-void NexRadio::attachPush(NexTouchEventCb push, void *ptr)
-{}
-
 NexRadio::NexRadio(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
     :NexTouch(nextion, pid, cid, name, page)
 {

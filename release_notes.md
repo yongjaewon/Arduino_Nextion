@@ -1,5 +1,9 @@
 # Release Notes
 --------------------------------------------------------------------------------
+
+# Release v1.4.0
+Enabled attachPush call back function initialization for every component.
+
 # Release v1.3.0
 Added NexScreen to manage screen system variables (brightness for example)
 Added link to extended instruction set (including hidden commands) to readme.md, Thanks to UNUF Project
