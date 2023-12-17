@@ -1,6 +1,9 @@
 # Release Notes
 --------------------------------------------------------------------------------
 
+# Release v1.4.3
+Corrected issue: Null pointer dereference in the event queue handling code #34 
+
 # Release v1.4.2
 Enabled attachPush call back function initialization for every component.
 
