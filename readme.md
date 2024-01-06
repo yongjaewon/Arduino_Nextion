@@ -1,11 +1,13 @@
 ﻿# Enhanced Nextion Library with multi display instance support
 
-Jyrki Berg 2/8/2020 (<https://github.com/jyberg>) Version 1.2.4
+Jyrki Berg 12/17/2023 (<https://github.com/jyberg>) Version 1.4.3
 
 ## Introduction
 
 Nextion Arduino library provides an easy-to-use way to manipulate Nextion serial displays.  
 Old deprecated Enhanced Nextion Library with single display support can be found with Release tag 0.12.1
+
+Nextion has also hidden commands see if intrested see link to UNUF project in Links section.
 
 This new major updated library version has atleast following improvements:
 
@@ -109,6 +111,7 @@ Nextion and NodeMcu/Esp8266 is sensitive with power quality and current. Especia
 
 ## Useful Links
 
+- <https://github.com/UNUF/nxt-doc/blob/main/Protocols/Full%20Instruction%20Set.md>
 - <https://nextion.itead.cc/resources/download/nextion-editor/>
 - <https://unofficialnextion.com/>
 - <https://nextion.itead.cc/resources/download/nextion-editor/>

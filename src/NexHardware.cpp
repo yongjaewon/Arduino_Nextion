@@ -94,7 +94,7 @@ void Nextion::ReadQueuedEvents()
                 }
                 else
                 {
-                    nexQueuedEvent *last = m_queuedEvents->m_next;
+                    nexQueuedEvent *last = m_queuedEvents;
                     while( last->m_next)
                     {
                         last = last->m_next;

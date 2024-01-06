@@ -20,8 +20,6 @@
 #include "NexCheckbox.h"
 #include "NexHardware.h"
 
-void NexCheckbox::attachPush(NexTouchEventCb push, void *ptr)
-{}
 
 
 NexCheckbox::NexCheckbox(Nextion *nextion, uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
