@@ -1,6 +1,6 @@
 ﻿# Enhanced Nextion Library with multi display instance support
 
-Jyrki Berg 12/17/2023 (<https://github.com/jyberg>) Version 1.5.0
+Jyrki Berg 01/08/2024 (<https://github.com/jyberg>) Version 1.5.0
 
 ## Introduction
 
