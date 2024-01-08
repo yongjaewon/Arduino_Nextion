@@ -1,5 +1,9 @@
 # Release Notes
 --------------------------------------------------------------------------------
+# Release v1.5.0
+Added Display a Resource Picture at specified coordinate.
+Added Crop Picture area from Resource Picture using defined area.
+Added Fill a defined area with specified color.
 
 # Release v1.4.3
 Corrected issue: Null pointer dereference in the event queue handling code #34 
