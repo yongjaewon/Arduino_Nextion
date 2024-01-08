@@ -101,6 +101,40 @@ public: /* methods */
 	* @return true if success, false for failure
 	*/
 	bool setWakeOnSerialData(uint32_t number);
+	
+	/**
+	* Display a Resource Picture at specified coordinate.
+	*	
+	* @x number, the x coordinate of upper left corner where picture hould be drawn
+	* @y number, the y coordinate of upper left corner where picture should be drawn
+	* @picid number, the number of the Resource Picture in the HMI design
+	* @return true if success, false for failure
+	*/
+	bool drawPicture(uint32_t x, uint32_t y, uint32_t id);
+
+    /**
+	* Crop Picture area from Resource Picture using defined area.
+	*	
+	* @x number, the x coordinate of upper left corner where picture hould be drawn
+	* @y number, the y coordinate of upper left corner where picture should be drawn
+	* @cw number, the width of the defined crop area
+	* @ch number, the height of the defined crop area
+	* @picid number, the number of the Resource Picture in the HMI design
+	* @return true if success, false for failure
+	*/
+	bool cropPicture(uint32_t x, uint32_t y, uint32_t cw, uint32_t ch, uint32_t id);
+	
+	/**
+	* Fill a defined area with specified color.
+	*	
+	* @x number, the x coordinate of upper left corner of defined fill area
+	* @y number, the y coordinate of upper left corner of defined fill area
+	* @w number, the width of the defined fill area
+	* @h number, the height of the defined fill area
+	* @color number, fill color
+	* @return true if success, false for failure
+	*/
+	bool fillArea(uint32_t x, uint32_t y, uint32_t w, uint32_t h, uint32_t color);
 };
 /**
 * @}

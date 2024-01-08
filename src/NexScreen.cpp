@@ -129,3 +129,86 @@ bool NexScreen::setWakeOnSerialData(uint32_t number) {
 	return recvRetCommandFinished();
 }
 
+
+bool NexScreen::drawPicture(uint32_t x, uint32_t y, uint32_t id) {
+  char buf[10] = {0};
+  
+  String cmd;  
+  cmd += "pic ";
+  
+  utoa(x, buf, 10);
+  cmd += buf;
+  
+  cmd += ",";
+  utoa(y, buf, 10);  
+  cmd += buf;
+  
+  cmd += ",";
+  utoa(id, buf, 10);  
+  cmd += buf;
+  
+  sendCommand(cmd.c_str());
+  return recvRetCommandFinished();
+}
+
+
+bool NexScreen::cropPicture(uint32_t x, uint32_t y, uint32_t w, uint32_t h, uint32_t id)
+{
+  char buf[10] = {0};
+  
+  String cmd;  
+  cmd += "picq ";
+    
+  utoa(x, buf, 10);
+  cmd += buf;
+  
+  cmd += ",";
+  utoa(y, buf, 10);  
+  cmd += buf;
+  
+  cmd += ",";
+  utoa(w, buf, 10);  
+  cmd += buf;
+  
+  cmd += ",";
+  utoa(h, buf, 10);  
+  cmd += buf;
+  
+  cmd += ",";
+  utoa(id, buf, 10);  
+  cmd += buf;
+  
+  sendCommand(cmd.c_str());
+  return recvRetCommandFinished();
+}
+
+
+bool NexScreen::fillArea(uint32_t x, uint32_t y, uint32_t w, uint32_t h, uint32_t color)
+{
+  char buf[10] = {0};
+  
+  String cmd;  
+  cmd += "fill ";
+    
+  utoa(x, buf, 10);
+  cmd += buf;
+  
+  cmd += ",";
+  utoa(y, buf, 10);  
+  cmd += buf;
+  
+  cmd += ",";
+  utoa(w, buf, 10);  
+  cmd += buf;
+  
+  cmd += ",";
+  utoa(h, buf, 10);  
+  cmd += buf;
+  
+  cmd += ",";
+  utoa(color, buf, 10);  
+  cmd += buf;
+  
+  sendCommand(cmd.c_str());
+  return recvRetCommandFinished();
+}
