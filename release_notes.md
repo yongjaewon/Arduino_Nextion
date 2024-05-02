@@ -1,5 +1,7 @@
 # Release Notes
 --------------------------------------------------------------------------------
+# Release v1.5.1
+Version number correction
 # Release v1.5.0
 Added Display a Resource Picture at specified coordinate.
 Added Crop Picture area from Resource Picture using defined area.
